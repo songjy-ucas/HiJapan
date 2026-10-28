@@ -1,6 +1,6 @@
 # HiJapan 用户使用说明
 
-本文档面向下载和使用 HiJapan 的普通用户，对应 `0.1.0 开发预览版`。后续版本新增或调整功能时，应同步更新本文档。
+本文档面向下载和使用 HiJapan 的普通用户，对应 `0.1.1 开发预览版`。后续版本新增或调整功能时，应同步更新本文档。
 
 ## 1. 软件能做什么
 
@@ -45,7 +45,7 @@ HiJapan 是一款在 Windows 电脑本地运行的日语学习软件。当前重
 在安装包所在文件夹打开 PowerShell：
 
 ```powershell
-Get-FileHash -Algorithm SHA256 -LiteralPath '.\HiJapan 日语随行-0.1.0 Setup.exe'
+Get-FileHash -Algorithm SHA256 -LiteralPath '.\HiJapan 日语随行-0.1.1 Setup.exe'
 ```
 
 把结果与同一 Release 中的 `SHA256SUMS.txt` 对照。

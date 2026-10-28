@@ -54,6 +54,9 @@ const createWindow = () => {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
+  if (process.platform === 'win32') {
+    app.setAppUserModelId('com.hijapan.desktop');
+  }
   session.defaultSession.setPermissionRequestHandler(
     (_webContents, _permission, callback) => {
       callback(false);

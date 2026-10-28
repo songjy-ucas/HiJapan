@@ -6,7 +6,7 @@
 
 HiJapan 是一款 Windows 桌面端优先、纯本地、无自建后端的日语学习软件。普通课程、学习记录、今日计划和间隔复习都在用户电脑上运行；只有用户主动配置并使用 AI 对话时，软件才会连接用户选择的 OpenAI-compatible API。
 
-> 当前版本：`0.1.0 开发预览版`。教材仍处于 `draft_needs_native_review` 状态，适合功能体验和协作开发，不应视为已完成日语专业审校的正式教材。
+> 当前版本：`0.1.1 开发预览版`。教材仍处于 `draft_needs_native_review` 状态，适合功能体验和协作开发，不应视为已完成日语专业审校的正式教材。
 
 ![HiJapan 启动画面](src/assets/splash-background.png)
 
@@ -30,7 +30,7 @@ HiJapan 是一款 Windows 桌面端优先、纯本地、无自建后端的日语
 | `HiJapan 日语随行-win32-x64-x.y.z.zip` | 不想安装或需要放在 U 盘中的用户 | 解压全部文件，再运行文件夹内的 `HiJapan 日语随行.exe` |
 | `SHA256SUMS.txt`                       | 需要验证下载完整性的用户        | 使用 `Get-FileHash` 对照 SHA-256                      |
 
-本地构建出的 `0.1.0` 预览产物位于 `dist/0.1.0-preview/`。该目录默认不提交到 Git。
+本地构建出的 `0.1.1` 预览产物位于 `dist/0.1.1-preview/`。该目录默认不提交到 Git。
 
 安装版和便携版的功能相同。普通用户不需要安装 Node.js、数据库或服务器，也不需要配置开发环境。当前安装包尚未进行商业代码签名，Windows SmartScreen 可能显示“未知发布者”；请只从项目官方 Releases 下载。
 
@@ -82,7 +82,7 @@ npm run make:win
 - [开发者说明](README_AUTHOR.md)：面向维护、扩展和发布项目的人。
 - [项目书](日语学习助手项目书.md)：产品目标、范围和阶段规划。
 - [Coding 计划](软件开发Coding计划_v1.1.md)：实现原则、模块拆分和验收要求。
-- [0.1.0 预览版说明](docs/releases/0.1.0-preview.md)：当前交付内容和限制。
+- [0.1.1 预览版说明](docs/releases/0.1.1-preview.md)：当前交付内容和限制。
 
 ## 许可证状态
 
