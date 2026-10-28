@@ -69,14 +69,12 @@ textarea:focus-visible {
 .brand-mark {
   width: 42px;
   height: 42px;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  background: var(--red);
-  color: #fff;
-  display: grid;
-  place-items: center;
-  border-radius: 12px 12px 12px 3px;
-  font-family: 'Yu Mincho', serif;
-  font-size: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  background: #fffaf0;
+  object-fit: cover;
+  display: block;
+  flex: none;
+  border-radius: 11px;
 }
 .brand strong,
 .brand span {
@@ -98,7 +96,7 @@ textarea:focus-visible {
 .brand.large .brand-mark {
   width: 54px;
   height: 54px;
-  font-size: 30px;
+  border-radius: 13px;
 }
 .brand.large strong {
   font-size: 26px;
@@ -1266,6 +1264,50 @@ textarea:focus {
   text-align: center;
   padding: 30px;
   background: var(--cream);
+}
+.splash-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #dff2fb;
+  background-image: url('./assets/splash-background.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.splash-screen::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 62%,
+    rgba(2, 67, 105, 0.12) 100%
+  );
+  pointer-events: none;
+}
+.splash-status {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 999px;
+  background: rgba(255, 253, 248, 0.86);
+  color: #153f5d;
+  box-shadow: 0 10px 35px rgba(18, 73, 105, 0.16);
+  backdrop-filter: blur(10px);
+  font-size: 12px;
+}
+.splash-status .spinner {
+  border-color: rgba(21, 63, 93, 0.18);
+  border-top-color: #c84235;
 }
 .spinner {
   width: 34px;

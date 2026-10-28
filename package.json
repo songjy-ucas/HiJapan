@@ -17,17 +17,18 @@
   "main": ".vite/build/main.cjs",
   "scripts": {
     "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make",
+    "package": "npm run assets:icon && electron-forge package",
+    "make": "npm run assets:icon && electron-forge make",
     "release": "electron-forge release",
-    "lint": "oxlint src scripts tests forge.config.mts vite.main.config.mts vite.preload.config.mts vite.renderer.config.mts vitest.config.mts && oxfmt --check src scripts tests forge.config.mts index.html package.json tsconfig.json vite.main.config.mts vite.preload.config.mts vite.renderer.config.mts vitest.config.mts README.md AGENTS.md",
-    "lint:fix": "oxlint --fix src scripts tests forge.config.mts vite.main.config.mts vite.preload.config.mts vite.renderer.config.mts vitest.config.mts && oxfmt --write src scripts tests forge.config.mts index.html package.json tsconfig.json vite.main.config.mts vite.preload.config.mts vite.renderer.config.mts vitest.config.mts README.md AGENTS.md",
+    "lint": "oxlint src scripts tests forge.config.mts vite.main.config.mts vite.preload.config.mts vite.renderer.config.mts vitest.config.mts && oxfmt --check src scripts tests forge.config.mts index.html package.json tsconfig.json vite.main.config.mts vite.preload.config.mts vite.renderer.config.mts vitest.config.mts README.md README_USER.md README_AUTHOR.md AGENTS.md",
+    "lint:fix": "oxlint --fix src scripts tests forge.config.mts vite.main.config.mts vite.preload.config.mts vite.renderer.config.mts vitest.config.mts && oxfmt --write src scripts tests forge.config.mts index.html package.json tsconfig.json vite.main.config.mts vite.preload.config.mts vite.renderer.config.mts vitest.config.mts README.md README_USER.md README_AUTHOR.md AGENTS.md",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
+    "assets:icon": "node scripts/assets/build-icons.mjs",
     "content:validate": "node scripts/content/validate-content.mjs",
     "release:check": "node scripts/content/validate-content.mjs --release && npm run typecheck && npm run lint && npm run test",
-    "make:win": "electron-forge make --platform=win32"
+    "make:win": "npm run assets:icon && electron-forge make --platform=win32"
   },
   "devDependencies": {
     "@electron-forge/cli": "^8.0.1",
@@ -50,6 +51,7 @@
     "jsdom": "^29.1.1",
     "oxfmt": "^0.75.0",
     "oxlint": "^1.90.0",
+    "png-to-ico": "^3.0.2",
     "typescript": "^6.0.3",
     "vite": "^8.3.5",
     "vitest": "^5.0.5"

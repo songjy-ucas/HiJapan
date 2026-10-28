@@ -19,7 +19,8 @@ const createWindow = () => {
     height: 820,
     minWidth: 960,
     minHeight: 640,
-    backgroundColor: '#f7f4ed',
+    backgroundColor: '#dff2fb',
+    show: false,
     autoHideMenuBar: true,
     webPreferences: {
       preload: path.join(__dirname, 'preload.cjs'),
@@ -29,6 +30,8 @@ const createWindow = () => {
       webSecurity: true,
     },
   });
+
+  mainWindow.once('ready-to-show', () => mainWindow.show());
 
   // and load the index.html of the app.
   if (MAIN_WINDOW_VITE_DEV_SERVER_URL) {

@@ -13,6 +13,7 @@ import type {
   Scene,
   TodayTask,
 } from '../shared/contracts';
+import appIconUrl from '../assets/app-icon-master.png';
 
 type View = 'today' | 'learn' | 'conversation' | 'review' | 'settings';
 
@@ -84,6 +85,7 @@ export function App() {
   const [view, setView] = useState<View>('today');
   const [selectedLesson, setSelectedLesson] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const [splashElapsed, setSplashElapsed] = useState(false);
   const [error, setError] = useState('');
 
   const refresh = useCallback(async () => {
@@ -99,9 +101,11 @@ export function App() {
 
   useEffect(() => {
     void refresh();
+    const timer = window.setTimeout(() => setSplashElapsed(true), 1600);
+    return () => window.clearTimeout(timer);
   }, [refresh]);
 
-  if (loading) return <LoadingScreen />;
+  if (loading || !splashElapsed) return <LoadingScreen />;
   if (error && !snapshot) return <FatalError message={error} retry={refresh} />;
   if (!snapshot?.isOnboarded) return <Onboarding onComplete={setSnapshot} />;
 
@@ -114,7 +118,7 @@ export function App() {
     <div className="app-shell">
       <aside className="sidebar">
         <div className="brand">
-          <div className="brand-mark">日</div>
+          <img className="brand-mark" src={appIconUrl} alt="" />
           <div>
             <strong>HiJapan</strong>
             <span>日语随行</span>
@@ -183,9 +187,11 @@ export function App() {
 
 function LoadingScreen() {
   return (
-    <div className="center-screen">
-      <div className="spinner" />
-      <p>正在准备本地课程…</p>
+    <div className="splash-screen" role="status" aria-live="polite">
+      <div className="splash-status">
+        <div className="spinner small" />
+        <span>正在准备本地课程…</span>
+      </div>
     </div>
   );
 }
@@ -235,7 +241,7 @@ function Onboarding({
     <div className="onboarding-shell">
       <section className="onboarding-aside">
         <div className="brand large">
-          <div className="brand-mark">日</div>
+          <img className="brand-mark" src={appIconUrl} alt="" />
           <div>
             <strong>HiJapan</strong>
             <span>按你的目的学习真正用得上的日语</span>
