@@ -1,7 +1,7 @@
 {
   "name": "hijapan",
   "productName": "HiJapan 日语随行",
-  "version": "0.1.1",
+  "version": "0.1.5",
   "private": true,
   "description": "纯本地、无后端的日语学习桌面软件",
   "keywords": [
@@ -20,8 +20,8 @@
     "package": "npm run assets:icon && electron-forge package",
     "make": "npm run assets:icon && electron-forge make",
     "release": "electron-forge release",
-    "lint": "oxlint src scripts tests forge.config.mts vite.main.config.mts vite.preload.config.mts vite.renderer.config.mts vitest.config.mts && oxfmt --check src scripts tests forge.config.mts index.html package.json tsconfig.json vite.main.config.mts vite.preload.config.mts vite.renderer.config.mts vitest.config.mts README.md README_USER.md README_AUTHOR.md AGENTS.md",
-    "lint:fix": "oxlint --fix src scripts tests forge.config.mts vite.main.config.mts vite.preload.config.mts vite.renderer.config.mts vitest.config.mts && oxfmt --write src scripts tests forge.config.mts index.html package.json tsconfig.json vite.main.config.mts vite.preload.config.mts vite.renderer.config.mts vitest.config.mts README.md README_USER.md README_AUTHOR.md AGENTS.md",
+    "lint": "oxlint src scripts tests forge.config.mts vite.main.config.mts vite.preload.config.mts vite.renderer.config.mts vitest.config.mts && oxfmt --check src scripts tests forge.config.mts index.html package.json tsconfig.json vite.main.config.mts vite.preload.config.mts vite.renderer.config.mts vitest.config.mts README.md README_USER.md README_AUTHOR.md APP开发日志.md AGENTS.md",
+    "lint:fix": "oxlint --fix src scripts tests forge.config.mts vite.main.config.mts vite.preload.config.mts vite.renderer.config.mts vitest.config.mts && oxfmt --write src scripts tests forge.config.mts index.html package.json tsconfig.json vite.main.config.mts vite.preload.config.mts vite.renderer.config.mts vitest.config.mts README.md README_USER.md README_AUTHOR.md APP开发日志.md AGENTS.md",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",

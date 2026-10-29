@@ -4,6 +4,12 @@ import started from 'electron-squirrel-startup';
 import { HiJapanDatabase } from './main/database';
 import { registerIpcHandlers } from './main/ipc';
 
+// HiJapan is a mostly static learning interface. Software rendering avoids
+// transient green/black Chromium compositor tiles seen on some Windows GPUs.
+if (process.platform === 'win32') {
+  app.disableHardwareAcceleration();
+}
+
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (started) {
   app.quit();
@@ -19,7 +25,7 @@ const createWindow = () => {
     height: 820,
     minWidth: 960,
     minHeight: 640,
-    backgroundColor: '#dff2fb',
+    backgroundColor: '#8fcff3',
     show: false,
     autoHideMenuBar: true,
     webPreferences: {

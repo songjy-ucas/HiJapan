@@ -4,13 +4,18 @@ import path from 'node:path';
 import { randomUUID } from 'node:crypto';
 import rawContentPack from '../../source/data/travel_priority_content.json';
 import { contentPackSchema, type ContentPack } from '../domain/content-schema';
+import { conversationRetentionCutoff } from '../domain/conversation';
+import { kanaCourse } from '../domain/kana';
 import { buildTodayPlan } from '../domain/planning';
 import { scheduleReview, type ReviewState } from '../domain/review';
 import type {
   AppSnapshot,
+  ConversationHistoryDetail,
+  ConversationHistoryItem,
   DialogueGroup,
   LessonDetail,
   LessonSummary,
+  KanaProgress,
   ProfileInput,
   ReviewCard,
   ReviewGrade,
@@ -40,6 +45,29 @@ const splitIds = (value: string) =>
     .map((part) => part.trim())
     .filter(Boolean);
 
+const conversationSummarySelect = `
+  SELECT
+    s.id,
+    s.scene,
+    s.difficulty,
+    s.correction_style AS correctionStyle,
+    s.status,
+    s.created_at AS createdAt,
+    s.ended_at AS endedAt,
+    COALESCE(
+      (SELECT MAX(m.created_at) FROM conversation_messages m WHERE m.session_id = s.id),
+      s.ended_at,
+      s.created_at
+    ) AS lastActivityAt,
+    (SELECT COUNT(*) FROM conversation_messages m WHERE m.session_id = s.id) AS messageCount,
+    COALESCE(
+      (SELECT m.content FROM conversation_messages m
+       WHERE m.session_id = s.id ORDER BY m.created_at DESC, m.rowid DESC LIMIT 1),
+      ''
+    ) AS preview
+  FROM conversation_sessions s
+`;
+
 export class HiJapanDatabase {
   private readonly db: DatabaseSync;
   private readonly content: ContentPack;
@@ -52,6 +80,7 @@ export class HiJapanDatabase {
     this.db.exec('PRAGMA journal_mode = WAL; PRAGMA foreign_keys = ON;');
     this.migrate();
     this.importContent();
+    this.pruneConversationHistory();
   }
 
   close() {
@@ -105,6 +134,12 @@ export class HiJapanDatabase {
         status TEXT NOT NULL,
         score REAL,
         updated_at TEXT NOT NULL
+      );
+
+      CREATE TABLE IF NOT EXISTS kana_progress (
+        lesson_id TEXT PRIMARY KEY,
+        basic_completed_at TEXT NOT NULL,
+        game_completed_at TEXT
       );
 
       CREATE TABLE IF NOT EXISTS learning_events (
@@ -294,7 +329,7 @@ export class HiJapanDatabase {
 
   getSnapshot(): AppSnapshot {
     const profile = this.getProfile();
-    const completedLessons = Number(
+    const completedTravelLessons = Number(
       (
         this.db
           .prepare(
@@ -303,13 +338,24 @@ export class HiJapanDatabase {
           .get() as { count: number }
       ).count,
     );
-    const totalLessons = Number(
+    const totalTravelLessons = Number(
       (
         this.db.prepare('SELECT COUNT(*) AS count FROM lessons').get() as {
           count: number;
         }
       ).count,
     );
+    const completedKanaLessons = Number(
+      (
+        this.db
+          .prepare('SELECT COUNT(*) AS count FROM kana_progress')
+          .get() as {
+          count: number;
+        }
+      ).count,
+    );
+    const completedLessons = completedTravelLessons + completedKanaLessons;
+    const totalLessons = totalTravelLessons + kanaCourse.lessons.length;
     const dueReviews = Number(
       (
         this.db
@@ -330,6 +376,7 @@ export class HiJapanDatabase {
     );
 
     return {
+      appVersion: app.getVersion(),
       isOnboarded: profile !== null,
       profile,
       stats: { completedLessons, totalLessons, dueReviews, learnedItems },
@@ -342,6 +389,7 @@ export class HiJapanDatabase {
           grammar: this.content.grammar.length,
           dialogues: this.content.dialogues.length,
           lessons: this.content.lessons.length,
+          kanaLessons: kanaCourse.lessons.length,
         },
       },
     };
@@ -410,6 +458,37 @@ export class HiJapanDatabase {
         .map((row) => JSON.parse(row.payload_json)),
       grammar: grammarRows.map((row) => JSON.parse(row.payload_json)),
     } as LessonDetail;
+  }
+
+  getKanaProgress(): KanaProgress {
+    const rows = this.db
+      .prepare(
+        'SELECT lesson_id, game_completed_at FROM kana_progress ORDER BY lesson_id',
+      )
+      .all() as Array<{ lesson_id: string; game_completed_at: string | null }>;
+    return {
+      completedLessonIds: rows.map((row) => row.lesson_id),
+      gameCompletedLessonIds: rows
+        .filter((row) => row.game_completed_at !== null)
+        .map((row) => row.lesson_id),
+    };
+  }
+
+  completeKanaLesson(lessonId: string, gameCompleted = false): KanaProgress {
+    const now = new Date().toISOString();
+    this.db
+      .prepare(`
+        INSERT INTO kana_progress (lesson_id, basic_completed_at, game_completed_at)
+        VALUES (?, ?, ?)
+        ON CONFLICT(lesson_id) DO UPDATE SET
+          basic_completed_at = COALESCE(kana_progress.basic_completed_at, excluded.basic_completed_at),
+          game_completed_at = CASE
+            WHEN excluded.game_completed_at IS NOT NULL THEN excluded.game_completed_at
+            ELSE kana_progress.game_completed_at
+          END
+      `)
+      .run(lessonId, now, gameCompleted ? now : null);
+    return this.getKanaProgress();
   }
 
   completeLesson(lessonId: string, difficultItemIds: string[]) {
@@ -640,6 +719,61 @@ export class HiJapanDatabase {
     return id;
   }
 
+  private toConversationHistoryItem(row: SqlRow): ConversationHistoryItem {
+    return {
+      id: String(row.id),
+      scene: String(row.scene) as Scene,
+      difficulty: String(row.difficulty) as 'starter' | 'N5' | 'N4',
+      correctionStyle: String(row.correctionStyle) as
+        | 'gentle'
+        | 'standard'
+        | 'strict',
+      status: row.status === 'completed' ? 'completed' : 'active',
+      createdAt: String(row.createdAt),
+      endedAt: row.endedAt ? String(row.endedAt) : null,
+      lastActivityAt: String(row.lastActivityAt),
+      messageCount: Number(row.messageCount),
+      preview: String(row.preview),
+    };
+  }
+
+  pruneConversationHistory(now = new Date()) {
+    const cutoff = conversationRetentionCutoff(now);
+    const expired = this.db
+      .prepare(
+        `SELECT s.id FROM conversation_sessions s
+         WHERE COALESCE(
+           (SELECT MAX(m.created_at) FROM conversation_messages m WHERE m.session_id = s.id),
+           s.ended_at,
+           s.created_at
+         ) < ?`,
+      )
+      .all(cutoff) as Array<{ id: string }>;
+    if (expired.length === 0) return 0;
+
+    const remove = this.db.prepare(
+      'DELETE FROM conversation_sessions WHERE id = ?',
+    );
+    this.db.exec('BEGIN IMMEDIATE');
+    try {
+      for (const { id } of expired) remove.run(id);
+      this.db.exec('COMMIT');
+      return expired.length;
+    } catch (error) {
+      this.db.exec('ROLLBACK');
+      throw error;
+    }
+  }
+
+  listConversationHistory() {
+    this.pruneConversationHistory();
+    return (
+      this.db
+        .prepare(`${conversationSummarySelect} ORDER BY lastActivityAt DESC`)
+        .all() as SqlRow[]
+    ).map((row) => this.toConversationHistoryItem(row));
+  }
+
   addMessage(sessionId: string, role: 'user' | 'assistant', content: string) {
     const message = {
       id: randomUUID(),
@@ -656,17 +790,37 @@ export class HiJapanDatabase {
     return message;
   }
 
-  getConversation(sessionId: string) {
-    const session = this.db
-      .prepare('SELECT * FROM conversation_sessions WHERE id = ?')
+  getConversation(sessionId: string): ConversationHistoryDetail {
+    this.pruneConversationHistory();
+    const row = this.db
+      .prepare(`${conversationSummarySelect} WHERE s.id = ?`)
       .get(sessionId) as SqlRow | undefined;
+    const session = row ? this.toConversationHistoryItem(row) : undefined;
     if (!session) throw new Error('CONVERSATION_NOT_FOUND');
     const messages = this.db
       .prepare(
-        'SELECT role, content FROM conversation_messages WHERE session_id = ? ORDER BY created_at',
+        `SELECT id, role, content, created_at AS createdAt
+         FROM conversation_messages
+         WHERE session_id = ? ORDER BY created_at, rowid`,
       )
-      .all(sessionId) as Array<{ role: 'user' | 'assistant'; content: string }>;
+      .all(sessionId) as ConversationHistoryDetail['messages'];
     return { session, messages };
+  }
+
+  deleteConversation(sessionId: string) {
+    this.db
+      .prepare('DELETE FROM conversation_sessions WHERE id = ?')
+      .run(sessionId);
+    return this.listConversationHistory();
+  }
+
+  deleteAllConversations() {
+    this.db.exec(`
+      BEGIN IMMEDIATE;
+      DELETE FROM conversation_messages;
+      DELETE FROM conversation_sessions;
+      COMMIT;
+    `);
   }
 
   endConversation(sessionId: string) {
@@ -678,9 +832,11 @@ export class HiJapanDatabase {
   }
 
   exportData() {
+    this.pruneConversationHistory();
     const tableNames = [
       'profiles',
       'lesson_progress',
+      'kana_progress',
       'learning_events',
       'review_states',
       'ai_provider_settings',
@@ -722,6 +878,7 @@ export class HiJapanDatabase {
     const tableColumns: Record<string, string[]> = {
       profiles: ['id', 'payload_json', 'created_at', 'updated_at'],
       lesson_progress: ['lesson_id', 'status', 'score', 'updated_at'],
+      kana_progress: ['lesson_id', 'basic_completed_at', 'game_completed_at'],
       learning_events: [
         'id',
         'content_id',
@@ -781,6 +938,7 @@ export class HiJapanDatabase {
       this.db.exec('ROLLBACK');
       throw error;
     }
+    this.pruneConversationHistory();
   }
 
   resetAllData() {
@@ -792,6 +950,7 @@ export class HiJapanDatabase {
       DELETE FROM review_states;
       DELETE FROM learning_events;
       DELETE FROM lesson_progress;
+      DELETE FROM kana_progress;
       DELETE FROM profiles;
       COMMIT;
     `);

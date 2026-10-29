@@ -15,6 +15,13 @@ const api: HiJapanApi = {
       ipcRenderer.invoke('learning:completeLesson', lessonId, difficultIds),
     listDialogues: (scene) =>
       ipcRenderer.invoke('learning:listDialogues', scene),
+    getKanaProgress: () => ipcRenderer.invoke('learning:getKanaProgress'),
+    completeKanaLesson: (lessonId, gameCompleted) =>
+      ipcRenderer.invoke(
+        'learning:completeKanaLesson',
+        lessonId,
+        gameCompleted,
+      ),
   },
   review: {
     getDue: (limit) => ipcRenderer.invoke('review:getDue', limit),
@@ -28,6 +35,11 @@ const api: HiJapanApi = {
     sendTurn: (input) => ipcRenderer.invoke('ai:sendTurn', input),
     finishConversation: (sessionId) =>
       ipcRenderer.invoke('ai:finishConversation', sessionId),
+    listHistory: () => ipcRenderer.invoke('ai:listHistory'),
+    getHistory: (sessionId) => ipcRenderer.invoke('ai:getHistory', sessionId),
+    deleteHistory: (sessionId) =>
+      ipcRenderer.invoke('ai:deleteHistory', sessionId),
+    deleteAllHistory: () => ipcRenderer.invoke('ai:deleteAllHistory'),
   },
   backup: {
     exportData: () => ipcRenderer.invoke('backup:exportData'),

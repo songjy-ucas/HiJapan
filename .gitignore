@@ -144,12 +144,37 @@ vite.config.ts.timestamp-*
 
 # Electron-Forge
 out/
+.tmp-build/
 
 # HiJapan local data and credentials
 *.sqlite
+*.sqlite-journal
 *.sqlite-shm
 *.sqlite-wal
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
 *.hijapan-backup.json
 credentials.json
 playwright-report/
 test-results/
+
+# Local editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*.tmp
+*.bak
+
+# Signing keys and private certificates
+*.key
+*.pem
+*.p12
+*.pfx
+*.pvk
+*.snk

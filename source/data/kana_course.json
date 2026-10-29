@@ -1,0 +1,648 @@
+{
+  "version": "kana-0.1.0",
+  "review_status": "draft_needs_native_review",
+  "lessons": [
+    {
+      "id": "kana-01-a-ka",
+      "title": "あ行・か行",
+      "rows": [
+        {
+          "name": "あ行",
+          "entries": [
+            {
+              "hiragana": "あ",
+              "katakana": "ア",
+              "romaji": "a",
+              "example_word_id": "kw-a-ai"
+            },
+            {
+              "hiragana": "い",
+              "katakana": "イ",
+              "romaji": "i",
+              "example_word_id": "kw-a-ie"
+            },
+            {
+              "hiragana": "う",
+              "katakana": "ウ",
+              "romaji": "u",
+              "example_word_id": "kw-a-ue"
+            },
+            {
+              "hiragana": "え",
+              "katakana": "エ",
+              "romaji": "e",
+              "example_word_id": "kw-a-ie"
+            },
+            {
+              "hiragana": "お",
+              "katakana": "オ",
+              "romaji": "o",
+              "example_word_id": "kw-a-ao"
+            }
+          ]
+        },
+        {
+          "name": "か行",
+          "entries": [
+            {
+              "hiragana": "か",
+              "katakana": "カ",
+              "romaji": "ka",
+              "example_word_id": "kw-a-kao"
+            },
+            {
+              "hiragana": "き",
+              "katakana": "キ",
+              "romaji": "ki",
+              "example_word_id": "kw-a-eki"
+            },
+            {
+              "hiragana": "く",
+              "katakana": "ク",
+              "romaji": "ku",
+              "example_word_id": "kw-a-kuuki"
+            },
+            {
+              "hiragana": "け",
+              "katakana": "ケ",
+              "romaji": "ke",
+              "example_word_id": "kw-a-keiko"
+            },
+            {
+              "hiragana": "こ",
+              "katakana": "コ",
+              "romaji": "ko",
+              "example_word_id": "kw-a-koe"
+            }
+          ]
+        }
+      ],
+      "words": [
+        {
+          "id": "kw-a-ai",
+          "japanese": "愛",
+          "reading": "あい",
+          "meaning_zh": "爱"
+        },
+        {
+          "id": "kw-a-ie",
+          "japanese": "家",
+          "reading": "いえ",
+          "meaning_zh": "家；房子"
+        },
+        {
+          "id": "kw-a-ue",
+          "japanese": "上",
+          "reading": "うえ",
+          "meaning_zh": "上面"
+        },
+        {
+          "id": "kw-a-ao",
+          "japanese": "青",
+          "reading": "あお",
+          "meaning_zh": "蓝色；青色"
+        },
+        {
+          "id": "kw-a-kao",
+          "japanese": "顔",
+          "reading": "かお",
+          "meaning_zh": "脸"
+        },
+        {
+          "id": "kw-a-eki",
+          "japanese": "駅",
+          "reading": "えき",
+          "meaning_zh": "车站"
+        },
+        {
+          "id": "kw-a-kuuki",
+          "japanese": "空気",
+          "reading": "くうき",
+          "meaning_zh": "空气"
+        },
+        {
+          "id": "kw-a-keiko",
+          "japanese": "稽古",
+          "reading": "けいこ",
+          "meaning_zh": "练习；训练"
+        },
+        {
+          "id": "kw-a-koe",
+          "japanese": "声",
+          "reading": "こえ",
+          "meaning_zh": "声音"
+        }
+      ]
+    },
+    {
+      "id": "kana-02-sa-ta",
+      "title": "さ行・た行",
+      "rows": [
+        {
+          "name": "さ行",
+          "entries": [
+            {
+              "hiragana": "さ",
+              "katakana": "サ",
+              "romaji": "sa",
+              "example_word_id": "kw-s-sake"
+            },
+            {
+              "hiragana": "し",
+              "katakana": "シ",
+              "romaji": "shi",
+              "example_word_id": "kw-s-sushi"
+            },
+            {
+              "hiragana": "す",
+              "katakana": "ス",
+              "romaji": "su",
+              "example_word_id": "kw-s-sushi"
+            },
+            {
+              "hiragana": "せ",
+              "katakana": "セ",
+              "romaji": "se",
+              "example_word_id": "kw-s-sekai"
+            },
+            {
+              "hiragana": "そ",
+              "katakana": "ソ",
+              "romaji": "so",
+              "example_word_id": "kw-s-soto"
+            }
+          ]
+        },
+        {
+          "name": "た行",
+          "entries": [
+            {
+              "hiragana": "た",
+              "katakana": "タ",
+              "romaji": "ta",
+              "example_word_id": "kw-s-tako"
+            },
+            {
+              "hiragana": "ち",
+              "katakana": "チ",
+              "romaji": "chi",
+              "example_word_id": "kw-s-chikatetsu"
+            },
+            {
+              "hiragana": "つ",
+              "katakana": "ツ",
+              "romaji": "tsu",
+              "example_word_id": "kw-s-kutsu"
+            },
+            {
+              "hiragana": "て",
+              "katakana": "テ",
+              "romaji": "te",
+              "example_word_id": "kw-s-te"
+            },
+            {
+              "hiragana": "と",
+              "katakana": "ト",
+              "romaji": "to",
+              "example_word_id": "kw-s-tokei"
+            }
+          ]
+        }
+      ],
+      "words": [
+        {
+          "id": "kw-s-sake",
+          "japanese": "酒",
+          "reading": "さけ",
+          "meaning_zh": "酒"
+        },
+        {
+          "id": "kw-s-sushi",
+          "japanese": "寿司",
+          "reading": "すし",
+          "meaning_zh": "寿司"
+        },
+        {
+          "id": "kw-s-sekai",
+          "japanese": "世界",
+          "reading": "せかい",
+          "meaning_zh": "世界"
+        },
+        {
+          "id": "kw-s-soto",
+          "japanese": "外",
+          "reading": "そと",
+          "meaning_zh": "外面"
+        },
+        {
+          "id": "kw-s-tako",
+          "japanese": "蛸",
+          "reading": "たこ",
+          "meaning_zh": "章鱼"
+        },
+        {
+          "id": "kw-s-chikatetsu",
+          "japanese": "地下鉄",
+          "reading": "ちかてつ",
+          "meaning_zh": "地铁"
+        },
+        {
+          "id": "kw-s-kutsu",
+          "japanese": "靴",
+          "reading": "くつ",
+          "meaning_zh": "鞋"
+        },
+        {
+          "id": "kw-s-te",
+          "japanese": "手",
+          "reading": "て",
+          "meaning_zh": "手"
+        },
+        {
+          "id": "kw-s-tokei",
+          "japanese": "時計",
+          "reading": "とけい",
+          "meaning_zh": "钟表"
+        }
+      ]
+    },
+    {
+      "id": "kana-03-na-ha",
+      "title": "な行・は行",
+      "rows": [
+        {
+          "name": "な行",
+          "entries": [
+            {
+              "hiragana": "な",
+              "katakana": "ナ",
+              "romaji": "na",
+              "example_word_id": "kw-n-natsu"
+            },
+            {
+              "hiragana": "に",
+              "katakana": "ニ",
+              "romaji": "ni",
+              "example_word_id": "kw-n-kuni"
+            },
+            {
+              "hiragana": "ぬ",
+              "katakana": "ヌ",
+              "romaji": "nu",
+              "example_word_id": "kw-n-inu"
+            },
+            {
+              "hiragana": "ね",
+              "katakana": "ネ",
+              "romaji": "ne",
+              "example_word_id": "kw-n-neko"
+            },
+            {
+              "hiragana": "の",
+              "katakana": "ノ",
+              "romaji": "no",
+              "example_word_id": "kw-n-kinoko"
+            }
+          ]
+        },
+        {
+          "name": "は行",
+          "entries": [
+            {
+              "hiragana": "は",
+              "katakana": "ハ",
+              "romaji": "ha",
+              "example_word_id": "kw-n-hana"
+            },
+            {
+              "hiragana": "ひ",
+              "katakana": "ヒ",
+              "romaji": "hi",
+              "example_word_id": "kw-n-hito"
+            },
+            {
+              "hiragana": "ふ",
+              "katakana": "フ",
+              "romaji": "fu",
+              "example_word_id": "kw-n-fune"
+            },
+            {
+              "hiragana": "へ",
+              "katakana": "ヘ",
+              "romaji": "he",
+              "example_word_id": "kw-n-heta"
+            },
+            {
+              "hiragana": "ほ",
+              "katakana": "ホ",
+              "romaji": "ho",
+              "example_word_id": "kw-n-hoshi"
+            }
+          ]
+        }
+      ],
+      "words": [
+        {
+          "id": "kw-n-natsu",
+          "japanese": "夏",
+          "reading": "なつ",
+          "meaning_zh": "夏天"
+        },
+        {
+          "id": "kw-n-kuni",
+          "japanese": "国",
+          "reading": "くに",
+          "meaning_zh": "国家"
+        },
+        {
+          "id": "kw-n-inu",
+          "japanese": "犬",
+          "reading": "いぬ",
+          "meaning_zh": "狗"
+        },
+        {
+          "id": "kw-n-neko",
+          "japanese": "猫",
+          "reading": "ねこ",
+          "meaning_zh": "猫"
+        },
+        {
+          "id": "kw-n-kinoko",
+          "japanese": "茸",
+          "reading": "きのこ",
+          "meaning_zh": "蘑菇"
+        },
+        {
+          "id": "kw-n-hana",
+          "japanese": "花",
+          "reading": "はな",
+          "meaning_zh": "花"
+        },
+        {
+          "id": "kw-n-hito",
+          "japanese": "人",
+          "reading": "ひと",
+          "meaning_zh": "人"
+        },
+        {
+          "id": "kw-n-fune",
+          "japanese": "船",
+          "reading": "ふね",
+          "meaning_zh": "船"
+        },
+        {
+          "id": "kw-n-heta",
+          "japanese": "下手",
+          "reading": "へた",
+          "meaning_zh": "不擅长"
+        },
+        {
+          "id": "kw-n-hoshi",
+          "japanese": "星",
+          "reading": "ほし",
+          "meaning_zh": "星星"
+        }
+      ]
+    },
+    {
+      "id": "kana-04-ma-ya",
+      "title": "ま行・や行",
+      "rows": [
+        {
+          "name": "ま行",
+          "entries": [
+            {
+              "hiragana": "ま",
+              "katakana": "マ",
+              "romaji": "ma",
+              "example_word_id": "kw-m-machi"
+            },
+            {
+              "hiragana": "み",
+              "katakana": "ミ",
+              "romaji": "mi",
+              "example_word_id": "kw-m-umi"
+            },
+            {
+              "hiragana": "む",
+              "katakana": "ム",
+              "romaji": "mu",
+              "example_word_id": "kw-m-mushi"
+            },
+            {
+              "hiragana": "め",
+              "katakana": "メ",
+              "romaji": "me",
+              "example_word_id": "kw-m-ame"
+            },
+            {
+              "hiragana": "も",
+              "katakana": "モ",
+              "romaji": "mo",
+              "example_word_id": "kw-m-momo"
+            }
+          ]
+        },
+        {
+          "name": "や行",
+          "entries": [
+            {
+              "hiragana": "や",
+              "katakana": "ヤ",
+              "romaji": "ya",
+              "example_word_id": "kw-m-yama"
+            },
+            {
+              "hiragana": "ゆ",
+              "katakana": "ユ",
+              "romaji": "yu",
+              "example_word_id": "kw-m-yuki"
+            },
+            {
+              "hiragana": "よ",
+              "katakana": "ヨ",
+              "romaji": "yo",
+              "example_word_id": "kw-m-yoko"
+            }
+          ]
+        }
+      ],
+      "words": [
+        {
+          "id": "kw-m-machi",
+          "japanese": "町",
+          "reading": "まち",
+          "meaning_zh": "城镇；街区"
+        },
+        {
+          "id": "kw-m-umi",
+          "japanese": "海",
+          "reading": "うみ",
+          "meaning_zh": "海"
+        },
+        {
+          "id": "kw-m-mushi",
+          "japanese": "虫",
+          "reading": "むし",
+          "meaning_zh": "虫"
+        },
+        {
+          "id": "kw-m-ame",
+          "japanese": "雨",
+          "reading": "あめ",
+          "meaning_zh": "雨"
+        },
+        {
+          "id": "kw-m-momo",
+          "japanese": "桃",
+          "reading": "もも",
+          "meaning_zh": "桃子"
+        },
+        {
+          "id": "kw-m-yama",
+          "japanese": "山",
+          "reading": "やま",
+          "meaning_zh": "山"
+        },
+        {
+          "id": "kw-m-yuki",
+          "japanese": "雪",
+          "reading": "ゆき",
+          "meaning_zh": "雪"
+        },
+        {
+          "id": "kw-m-yoko",
+          "japanese": "横",
+          "reading": "よこ",
+          "meaning_zh": "旁边；横向"
+        }
+      ]
+    },
+    {
+      "id": "kana-05-ra-wa",
+      "title": "ら行・わ行",
+      "rows": [
+        {
+          "name": "ら行",
+          "entries": [
+            {
+              "hiragana": "ら",
+              "katakana": "ラ",
+              "romaji": "ra",
+              "example_word_id": "kw-r-sakura"
+            },
+            {
+              "hiragana": "り",
+              "katakana": "リ",
+              "romaji": "ri",
+              "example_word_id": "kw-r-tori"
+            },
+            {
+              "hiragana": "る",
+              "katakana": "ル",
+              "romaji": "ru",
+              "example_word_id": "kw-r-kuruma"
+            },
+            {
+              "hiragana": "れ",
+              "katakana": "レ",
+              "romaji": "re",
+              "example_word_id": "kw-r-rekishi"
+            },
+            {
+              "hiragana": "ろ",
+              "katakana": "ロ",
+              "romaji": "ro",
+              "example_word_id": "kw-r-iro"
+            }
+          ]
+        },
+        {
+          "name": "わ行",
+          "entries": [
+            {
+              "hiragana": "わ",
+              "katakana": "ワ",
+              "romaji": "wa",
+              "example_word_id": "kw-r-watashi"
+            },
+            {
+              "hiragana": "を",
+              "katakana": "ヲ",
+              "romaji": "wo",
+              "example_word_id": "kw-r-honwo"
+            },
+            {
+              "hiragana": "ん",
+              "katakana": "ン",
+              "romaji": "n",
+              "example_word_id": "kw-r-hon"
+            }
+          ]
+        }
+      ],
+      "words": [
+        {
+          "id": "kw-r-sakura",
+          "japanese": "桜",
+          "reading": "さくら",
+          "meaning_zh": "樱花"
+        },
+        {
+          "id": "kw-r-tori",
+          "japanese": "鳥",
+          "reading": "とり",
+          "meaning_zh": "鸟"
+        },
+        {
+          "id": "kw-r-kuruma",
+          "japanese": "車",
+          "reading": "くるま",
+          "meaning_zh": "车"
+        },
+        {
+          "id": "kw-r-rekishi",
+          "japanese": "歴史",
+          "reading": "れきし",
+          "meaning_zh": "历史"
+        },
+        {
+          "id": "kw-r-iro",
+          "japanese": "色",
+          "reading": "いろ",
+          "meaning_zh": "颜色"
+        },
+        {
+          "id": "kw-r-watashi",
+          "japanese": "私",
+          "reading": "わたし",
+          "meaning_zh": "我"
+        },
+        {
+          "id": "kw-r-honwo",
+          "japanese": "本を",
+          "reading": "ほんを",
+          "meaning_zh": "把书……（を标记宾语）"
+        },
+        {
+          "id": "kw-r-hon",
+          "japanese": "本",
+          "reading": "ほん",
+          "meaning_zh": "书"
+        },
+        {
+          "id": "kw-r-kawa",
+          "japanese": "川",
+          "reading": "かわ",
+          "meaning_zh": "河流"
+        },
+        {
+          "id": "kw-r-niwa",
+          "japanese": "庭",
+          "reading": "にわ",
+          "meaning_zh": "庭院"
+        }
+      ]
+    }
+  ]
+}

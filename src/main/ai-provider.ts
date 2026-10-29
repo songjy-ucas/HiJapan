@@ -40,6 +40,8 @@ const sceneLabels = {
   sightseeing: '景点预约',
 } as const;
 
+const conversationPromptVersion = 'conversation-v2-bilingual';
+
 function chatEndpoint(baseUrl: string) {
   const normalized = baseUrl.trim().replace(/\/+$/, '');
   if (normalized.endsWith('/chat/completions')) return normalized;
@@ -114,8 +116,11 @@ export async function createConversationReply(
         ? '保持角色，但遇到会造成误解的错误时简短纠正。'
         : '保持角色，严重影响理解时才简短纠正。';
   const system = `你正在进行日语学习角色扮演。场景：${sceneLabels[conversation.scene]}。学习者等级：${conversation.difficulty}。
-你扮演场景中的日本工作人员，只用自然、简短、符合等级的日语回复；必要时可在括号中给一句中文提示。每次最多两句日语。
-不要替学习者完成任务，不要声称分析了没有提供的发音。${style}`;
+你扮演场景中的日本工作人员，使用自然、简短、符合等级的日语，每次最多两句日语。
+每一句日语后都必须紧跟全角括号中的简体中文翻译，不得省略中文。严格使用“日语句子（中文翻译）”格式，不要添加“日语：”“中文：”标签、罗马音、Markdown 或格式说明。
+示例：いらっしゃいませ。（欢迎光临。）何名様ですか。（请问几位？）
+不要替学习者完成任务，不要声称分析了没有提供的发音。${style}
+Prompt 版本：${conversationPromptVersion}`;
   return requestChat(config, [{ role: 'system', content: system }, ...history]);
 }
 

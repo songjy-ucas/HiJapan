@@ -87,6 +87,15 @@ export function registerIpcHandlers(
     const parsed = scene ? sceneSchema.parse(scene) : undefined;
     return database.listDialogues(parsed);
   });
+  handle('learning:getKanaProgress', () => database.getKanaProgress());
+  handle(
+    'learning:completeKanaLesson',
+    (_event, lessonId: string, gameCompleted?: boolean) =>
+      database.completeKanaLesson(
+        z.string().min(1).max(80).parse(lessonId),
+        z.boolean().optional().parse(gameCompleted) ?? false,
+      ),
+  );
 
   handle('review:getDue', (_event, limit?: number) =>
     database.getDueReviews(
@@ -129,20 +138,23 @@ export function registerIpcHandlers(
     await deleteApiKey();
     database.deleteAiSettings();
   });
+  handle('ai:listHistory', () => database.listConversationHistory());
+  handle('ai:getHistory', (_event, sessionIdRaw: string) =>
+    database.getConversation(z.string().uuid().parse(sessionIdRaw)),
+  );
+  handle('ai:deleteHistory', (_event, sessionIdRaw: string) =>
+    database.deleteConversation(z.string().uuid().parse(sessionIdRaw)),
+  );
+  handle('ai:deleteAllHistory', () => database.deleteAllConversations());
   handle('ai:sendTurn', async (_event, raw: unknown) => {
     const input = turnSchema.parse(raw);
     const settings = database.getAiSettingsRow();
     const apiKey = await loadApiKey();
     if (!settings?.enabled || !apiKey) throw new Error('AI_NOT_CONFIGURED');
 
-    const sessionId =
-      input.sessionId ??
-      database.createConversation(
-        input.scene,
-        input.difficulty,
-        input.correctionStyle,
-      );
-    const history = database.getConversation(sessionId).messages;
+    const history = input.sessionId
+      ? database.getConversation(input.sessionId).messages
+      : [];
     const nextHistory = [
       ...history,
       { role: 'user' as const, content: input.message },
@@ -152,6 +164,13 @@ export function registerIpcHandlers(
       input,
       nextHistory,
     );
+    const sessionId =
+      input.sessionId ??
+      database.createConversation(
+        input.scene,
+        input.difficulty,
+        input.correctionStyle,
+      );
     database.addMessage(sessionId, 'user', input.message);
     const reply = database.addMessage(sessionId, 'assistant', replyText);
     return { sessionId, reply };
@@ -166,12 +185,9 @@ export function registerIpcHandlers(
     const feedback = await createConversationFeedback(
       { baseUrl: settings.base_url, apiKey, model: settings.model },
       {
-        scene: String(session.scene) as Scene,
-        difficulty: String(session.difficulty) as 'starter' | 'N5' | 'N4',
-        correctionStyle: String(session.correction_style) as
-          | 'gentle'
-          | 'standard'
-          | 'strict',
+        scene: session.scene,
+        difficulty: session.difficulty,
+        correctionStyle: session.correctionStyle,
       },
       conversation.messages,
     );
@@ -196,11 +212,17 @@ export function registerIpcHandlers(
       'learning:getLesson',
       'learning:completeLesson',
       'learning:listDialogues',
+      'learning:getKanaProgress',
+      'learning:completeKanaLesson',
       'review:getDue',
       'review:grade',
       'ai:getSettings',
       'ai:saveAndTest',
       'ai:deleteSettings',
+      'ai:listHistory',
+      'ai:getHistory',
+      'ai:deleteHistory',
+      'ai:deleteAllHistory',
       'ai:sendTurn',
       'ai:finishConversation',
       'backup:exportData',

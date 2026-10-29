@@ -6,11 +6,15 @@ import { MakerRpm } from '@electron-forge/maker-rpm';
 import { VitePlugin } from '@electron-forge/plugin-vite';
 import { FusesPlugin } from '@electron-forge/plugin-fuses';
 import { FuseV1Options, FuseVersion } from '@electron/fuses';
+import path from 'node:path';
 
 const config: ForgeConfig = {
   packagerConfig: {
     asar: true,
     icon: 'src/assets/app-icon.ico',
+    download: {
+      cacheRoot: path.resolve('node_modules/.cache/electron'),
+    },
   },
   rebuildConfig: {},
   makers: [

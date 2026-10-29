@@ -10,3 +10,5 @@
 8. 领域规则应保持纯 TypeScript，并配套单元测试。
 9. 每次修改后运行相关的 content validate、typecheck、lint 和 test。
 10. 保留用户现有改动，不使用破坏性 Git 命令。
+11. 每次任务完成后必须更新根目录 `APP开发日志.md`，记录日期、任务目的、实际修改、验证结果和未验证事项；发布版本时整理进对应版本章节。
+12. 每次任务结束前评估 `README.md`、`README_USER.md` 和 `README_AUTHOR.md` 是否受影响；只更新确实相关的 README，并在开发日志中说明判断结果。

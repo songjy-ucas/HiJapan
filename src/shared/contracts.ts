@@ -73,6 +73,11 @@ export type LessonDetail = LessonSummary & {
   grammar: GrammarItem[];
 };
 
+export type KanaProgress = {
+  completedLessonIds: string[];
+  gameCompletedLessonIds: string[];
+};
+
 export type ProfileInput = {
   displayName: string;
   primaryMode: PrimaryMode;
@@ -82,6 +87,7 @@ export type ProfileInput = {
 };
 
 export type AppSnapshot = {
+  appVersion: string;
   isOnboarded: boolean;
   profile: ProfileInput | null;
   stats: {
@@ -155,6 +161,21 @@ export type ConversationTurnOutput = {
   reply: ChatMessage;
 };
 
+export type ConversationHistoryItem = ConversationStart & {
+  id: string;
+  status: 'active' | 'completed';
+  createdAt: string;
+  endedAt: string | null;
+  lastActivityAt: string;
+  messageCount: number;
+  preview: string;
+};
+
+export type ConversationHistoryDetail = {
+  session: ConversationHistoryItem;
+  messages: ChatMessage[];
+};
+
 export type ConversationFeedback = {
   taskCompleted: boolean;
   summaryZh: string;
@@ -194,6 +215,11 @@ export interface HiJapanApi {
       difficultItemIds: string[],
     ): Promise<AppSnapshot>;
     listDialogues(scene?: Scene): Promise<DialogueGroup[]>;
+    getKanaProgress(): Promise<KanaProgress>;
+    completeKanaLesson(
+      lessonId: string,
+      gameCompleted?: boolean,
+    ): Promise<KanaProgress>;
   };
   review: {
     getDue(limit?: number): Promise<ReviewCard[]>;
@@ -205,6 +231,10 @@ export interface HiJapanApi {
     deleteSettings(): Promise<void>;
     sendTurn(input: ConversationTurnInput): Promise<ConversationTurnOutput>;
     finishConversation(sessionId: string): Promise<ConversationFeedback>;
+    listHistory(): Promise<ConversationHistoryItem[]>;
+    getHistory(sessionId: string): Promise<ConversationHistoryDetail>;
+    deleteHistory(sessionId: string): Promise<ConversationHistoryItem[]>;
+    deleteAllHistory(): Promise<void>;
   };
   backup: {
     exportData(): Promise<BackupResult>;

@@ -4,7 +4,9 @@ import type {
   AppSnapshot,
   ChatMessage,
   ConversationFeedback,
+  ConversationHistoryItem,
   DialogueGroup,
+  KanaProgress,
   LessonDetail,
   LessonSummary,
   ProfileInput,
@@ -13,9 +15,26 @@ import type {
   Scene,
   TodayTask,
 } from '../shared/contracts';
+import { extractJapaneseSpeech } from '../domain/conversation';
+import {
+  createMemoryDeck,
+  getExampleWord,
+  getLessonEntries,
+  hasPriorKanaLessons,
+  kanaCourse,
+  shuffledKanaEntries,
+  type KanaEntry,
+  type KanaForm,
+  type KanaLesson,
+  type MemoryCard,
+} from '../domain/kana';
 import appIconUrl from '../assets/app-icon-master.png';
+import utaCardSakuraUrl from '../assets/uta-card-sakura.png';
+import utaCardToriiUrl from '../assets/uta-card-torii.png';
 
 type View = 'today' | 'learn' | 'conversation' | 'review' | 'settings';
+
+const MINIMUM_SPLASH_DURATION_MS = 2_600;
 
 const scenes: Array<{
   id: Scene;
@@ -67,16 +86,25 @@ function errorMessage(error: unknown) {
     return '请先在设置中配置并测试 AI API。';
   if (raw.includes('AI_BASE_URL_MUST_USE_HTTPS'))
     return 'API 地址必须使用 HTTPS；仅本机地址允许 HTTP。';
+  if (raw.includes('CONVERSATION_NOT_FOUND'))
+    return '这条对话已被删除或已超过 7 天保存期限。';
   if (raw.includes('SECURE_STORAGE_UNAVAILABLE'))
     return 'Windows 安全存储当前不可用。';
   return raw.replace(/^Error invoking remote method '[^']+': Error: /, '');
 }
 
 function speakJapanese(text: string) {
+  const japanese = extractJapaneseSpeech(text);
+  if (!japanese) return;
   window.speechSynthesis.cancel();
-  const utterance = new SpeechSynthesisUtterance(text);
+  const utterance = new SpeechSynthesisUtterance(japanese);
   utterance.lang = 'ja-JP';
   utterance.rate = 0.82;
+  const voices = window.speechSynthesis.getVoices();
+  const japaneseVoice =
+    voices.find((voice) => voice.lang.toLowerCase() === 'ja-jp') ??
+    voices.find((voice) => voice.lang.toLowerCase().startsWith('ja'));
+  if (japaneseVoice) utterance.voice = japaneseVoice;
   window.speechSynthesis.speak(utterance);
 }
 
@@ -101,11 +129,14 @@ export function App() {
 
   useEffect(() => {
     void refresh();
-    const timer = window.setTimeout(() => setSplashElapsed(true), 1600);
+    const timer = window.setTimeout(
+      () => setSplashElapsed(true),
+      MINIMUM_SPLASH_DURATION_MS,
+    );
     return () => window.clearTimeout(timer);
   }, [refresh]);
 
-  if (loading || !splashElapsed) return <LoadingScreen />;
+  if (loading || !splashElapsed) return <LoadingScreen startup />;
   if (error && !snapshot) return <FatalError message={error} retry={refresh} />;
   if (!snapshot?.isOnboarded) return <Onboarding onComplete={setSnapshot} />;
 
@@ -185,9 +216,13 @@ export function App() {
   );
 }
 
-function LoadingScreen() {
+function LoadingScreen({ startup = false }: { startup?: boolean }) {
   return (
-    <div className="splash-screen" role="status" aria-live="polite">
+    <div
+      className={startup ? 'splash-screen startup' : 'splash-screen'}
+      role="status"
+      aria-live="polite"
+    >
       <div className="splash-status">
         <div className="spinner small" />
         <span>正在准备本地课程…</span>
@@ -473,7 +508,7 @@ function TodayView({
           value={String(snapshot.stats.dueReviews)}
           accent
         />
-        <Stat label="内容版本" value={snapshot.content.version} />
+        <Stat label="软件版本" value={snapshot.appVersion} />
       </div>
       <section className="section-card">
         <div className="section-heading">
@@ -542,10 +577,21 @@ function Stat({
 }
 
 function LearnView({ openLesson }: { openLesson: (lessonId: string) => void }) {
+  const [learningArea, setLearningArea] = useState<'kana' | 'travel'>('kana');
   const [selectedScene, setSelectedScene] = useState<Scene>('restaurant');
   const [lessons, setLessons] = useState<LessonSummary[]>([]);
   const [dialogues, setDialogues] = useState<DialogueGroup[]>([]);
   const [tab, setTab] = useState<'lessons' | 'dialogues'>('lessons');
+  const [kanaLesson, setKanaLesson] = useState<KanaLesson | null>(null);
+  const [kanaProgress, setKanaProgress] = useState<KanaProgress | null>(null);
+
+  const refreshKanaProgress = useCallback(async () => {
+    setKanaProgress(await window.hiJapan.learning.getKanaProgress());
+  }, []);
+
+  useEffect(() => {
+    void refreshKanaProgress();
+  }, [refreshKanaProgress]);
 
   useEffect(() => {
     void Promise.all([
@@ -557,71 +603,678 @@ function LearnView({ openLesson }: { openLesson: (lessonId: string) => void }) {
     });
   }, [selectedScene]);
 
+  if (kanaLesson) {
+    return (
+      <KanaLessonPlayer
+        lesson={kanaLesson}
+        onBack={() => setKanaLesson(null)}
+        onProgress={refreshKanaProgress}
+      />
+    );
+  }
+
   return (
     <div className="page">
       <PageHeader
-        eyebrow="旅行模式"
-        title="场景课程"
-        description="先选现实场景，再学习马上能用的词汇和表达。"
+        eyebrow="本地学习资料"
+        title="选择学习内容"
+        description="五十音和旅行课程都完全离线运行，不需要配置 AI。"
       />
-      <div className="scene-tabs">
-        {scenes.map((scene) => (
+      <div className="learning-area-tabs">
+        <button
+          className={learningArea === 'kana' ? 'active' : ''}
+          onClick={() => setLearningArea('kana')}
+        >
+          <span className="area-kanji">あ</span>
+          <span>
+            <strong>五十音基础</strong>
+            <small>平假名、片假名、拼读与测试</small>
+          </span>
+        </button>
+        <button
+          className={learningArea === 'travel' ? 'active' : ''}
+          onClick={() => setLearningArea('travel')}
+        >
+          <span className="area-kanji">旅</span>
+          <span>
+            <strong>旅行场景日语</strong>
+            <small>酒店、餐厅、购物与景点</small>
+          </span>
+        </button>
+      </div>
+
+      {learningArea === 'kana' ? (
+        <section className="kana-course-map">
+          <div className="kana-course-intro">
+            <div>
+              <span className="eyebrow">五节课程 · 每节两行</span>
+              <h2>从 あ 行学到 わ 行</h2>
+              <p>
+                建议先认识平假名与片假名，再用已学假名拼读词语；也可以自由跳到连线、翻牌复习，或把已经掌握的课程直接标记完成。
+              </p>
+            </div>
+            <strong>
+              {kanaProgress?.completedLessonIds.length ?? 0} /{' '}
+              {kanaCourse.lessons.length}
+            </strong>
+          </div>
+          <div className="kana-lesson-grid">
+            {kanaCourse.lessons.map((lesson, index) => {
+              const completed =
+                kanaProgress?.completedLessonIds.includes(lesson.id) ?? false;
+              const gameCompleted =
+                kanaProgress?.gameCompletedLessonIds.includes(lesson.id) ??
+                false;
+              return (
+                <button
+                  className={`kana-lesson-card ${completed ? 'completed' : ''}`}
+                  key={lesson.id}
+                  onClick={() => setKanaLesson(lesson)}
+                >
+                  <span className="kana-step">{index + 1}</span>
+                  <span className="kana-lesson-copy">
+                    <small>
+                      {lesson.rows.map((row) => row.name).join(' + ')}
+                    </small>
+                    <strong>{lesson.title}</strong>
+                    <span>
+                      {lesson.rows
+                        .flatMap((row) => row.entries)
+                        .map((entry) => entry.hiragana)
+                        .join('　')}
+                    </span>
+                  </span>
+                  <span className="kana-status">
+                    {gameCompleted
+                      ? '学习与游戏已完成'
+                      : completed
+                        ? '已完成或标记掌握'
+                        : index === 0
+                          ? '建议从这里开始'
+                          : '可自由开始'}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+          <p className="content-review-note">
+            本五十音课程为开发审阅版，日语词例仍需母语者正式审核。
+          </p>
+        </section>
+      ) : (
+        <>
+          <div className="scene-tabs">
+            {scenes.map((scene) => (
+              <button
+                className={selectedScene === scene.id ? 'active' : ''}
+                key={scene.id}
+                onClick={() => setSelectedScene(scene.id)}
+              >
+                <span>{scene.icon}</span>
+                {scene.name}
+              </button>
+            ))}
+          </div>
+          <div className="subtabs">
+            <button
+              className={tab === 'lessons' ? 'active' : ''}
+              onClick={() => setTab('lessons')}
+            >
+              课程
+            </button>
+            <button
+              className={tab === 'dialogues' ? 'active' : ''}
+              onClick={() => setTab('dialogues')}
+            >
+              固定对话
+            </button>
+          </div>
+          {tab === 'lessons' ? (
+            <div className="lesson-grid">
+              {lessons.map((lesson, index) => (
+                <button
+                  className="lesson-card"
+                  key={lesson.lessonId}
+                  onClick={() => openLesson(lesson.lessonId)}
+                >
+                  <div className="lesson-index">
+                    {String(index + 1).padStart(2, '0')}
+                  </div>
+                  <div className="lesson-card-copy">
+                    <div className="meta-row">
+                      <span>{lesson.level}</span>
+                      <span>{lesson.minutes} 分钟</span>
+                      <span>{lesson.itemCount} 项内容</span>
+                    </div>
+                    <h2>{lesson.title}</h2>
+                    <p>{lesson.objectives}</p>
+                  </div>
+                  <span className={`status-pill ${lesson.status}`}>
+                    {lesson.status === 'completed'
+                      ? '已完成'
+                      : lesson.status === 'in_progress'
+                        ? '继续'
+                        : '开始'}
+                  </span>
+                </button>
+              ))}
+            </div>
+          ) : (
+            <DialogueList groups={dialogues} />
+          )}
+        </>
+      )}
+    </div>
+  );
+}
+
+type KanaStage =
+  | 'menu'
+  | 'characters'
+  | 'words'
+  | 'practice-choice'
+  | 'current-test'
+  | 'cumulative-test'
+  | 'game'
+  | 'finished';
+
+function KanaLessonPlayer({
+  lesson,
+  onBack,
+  onProgress,
+}: {
+  lesson: KanaLesson;
+  onBack: () => void;
+  onProgress: () => Promise<void>;
+}) {
+  const lessonIndex = kanaCourse.lessons.findIndex(
+    (item) => item.id === lesson.id,
+  );
+  const entries = lesson.rows.flatMap((row) => row.entries);
+  const [stage, setStage] = useState<KanaStage>('menu');
+  const [position, setPosition] = useState(0);
+
+  const goTo = (nextStage: KanaStage) => {
+    setPosition(0);
+    setStage(nextStage);
+  };
+
+  const nextCharacter = () => {
+    if (position < entries.length - 1) setPosition(position + 1);
+    else {
+      goTo('words');
+    }
+  };
+  const nextWord = () => {
+    if (position < lesson.words.length - 1) setPosition(position + 1);
+    else {
+      goTo('practice-choice');
+    }
+  };
+  const saveCompletion = async (gameCompleted = false) => {
+    await window.hiJapan.learning.completeKanaLesson(lesson.id, gameCompleted);
+    await onProgress();
+  };
+  const skipLesson = async () => {
+    if (
+      !window.confirm(
+        `确认将“${lesson.title}”标记为已掌握吗？之后仍可随时回来重新学习。`,
+      )
+    )
+      return;
+    await saveCompletion(false);
+    onBack();
+  };
+
+  if (stage === 'menu' || stage === 'practice-choice') {
+    return (
+      <div className="kana-entry-page">
+        <button className="back-button" onClick={onBack}>
+          ← 返回五十音课程
+        </button>
+        <section className="kana-entry-panel">
+          <span className="eyebrow">
+            {stage === 'menu' ? '自由选择学习方式' : '已完成认识与拼读'}
+          </span>
+          <h1>{lesson.title}</h1>
+          <p>
+            {stage === 'menu'
+              ? '你可以按推荐顺序学习，也可以直接进入适合自己的复习方式。所有选项都在本机运行。'
+              : '接下来可以自由选择连线或翻牌练习，也可以跳过练习并完成本节。'}
+          </p>
+          <div className="kana-entry-options">
+            <button className="featured" onClick={() => goTo('characters')}>
+              <span>学</span>
+              <strong>
+                {stage === 'menu' ? '完整学习本节' : '重新学习本节'}
+              </strong>
+              <small>认识假名 → 拼读词语</small>
+            </button>
+            <button onClick={() => goTo('current-test')}>
+              <span>結</span>
+              <strong>本节连线复习</strong>
+              <small>只匹配 {lesson.title} 的假名</small>
+            </button>
+            {hasPriorKanaLessons(lessonIndex) && (
+              <button onClick={() => goTo('cumulative-test')}>
+                <span>復</span>
+                <strong>累计连线复习</strong>
+                <small>复习本节及此前全部假名</small>
+              </button>
+            )}
+            <button onClick={() => goTo('game')}>
+              <span>遊</span>
+              <strong>直接翻牌复习</strong>
+              <small>用歌牌游戏巩固记忆</small>
+            </button>
+          </div>
           <button
-            className={selectedScene === scene.id ? 'active' : ''}
-            key={scene.id}
-            onClick={() => setSelectedScene(scene.id)}
+            className="skip-lesson-button"
+            onClick={() => void skipLesson()}
           >
-            <span>{scene.icon}</span>
-            {scene.name}
+            我已经学过，标记掌握并跳过本节
           </button>
+        </section>
+      </div>
+    );
+  }
+
+  if (stage === 'game') {
+    return (
+      <KanaMemoryGame
+        lesson={lesson}
+        entries={getLessonEntries(lessonIndex, true)}
+        onBack={() => goTo('menu')}
+        onComplete={async () => {
+          await saveCompletion(true);
+          goTo('finished');
+        }}
+      />
+    );
+  }
+
+  if (stage === 'current-test' || stage === 'cumulative-test') {
+    const cumulative = stage === 'cumulative-test';
+    return (
+      <KanaMatchingTest
+        key={stage}
+        title={cumulative ? '累计连线复习' : '本节连线复习'}
+        description="请匹配"
+        entries={getLessonEntries(lessonIndex, cumulative)}
+        onBack={() => goTo('menu')}
+        onComplete={async () => {
+          await saveCompletion(false);
+          goTo('finished');
+        }}
+      />
+    );
+  }
+
+  if (stage === 'finished') {
+    return (
+      <div className="kana-celebration">
+        <button className="back-button" onClick={onBack}>
+          ← 返回五十音课程
+        </button>
+        <section>
+          <span className="celebration-mark">✓</span>
+          <span className="eyebrow">本节进度已保存</span>
+          <h1>{lesson.title} 已完成</h1>
+          <p>你可以返回课程自由选择下一节，也可以继续用连线或翻牌巩固。</p>
+          <div className="button-row centered">
+            <button className="primary" onClick={() => goTo('current-test')}>
+              再做本节连线
+            </button>
+            <button className="secondary" onClick={() => goTo('game')}>
+              玩翻牌游戏
+            </button>
+            <button className="secondary" onClick={onBack}>
+              返回课程
+            </button>
+          </div>
+        </section>
+      </div>
+    );
+  }
+
+  const currentEntry = entries[position];
+  const currentWord = lesson.words[position];
+  return (
+    <div className="kana-player">
+      <header className="lesson-toolbar">
+        <button className="back-button" onClick={onBack}>
+          ← 返回五十音课程
+        </button>
+        <div>
+          <strong>{lesson.title}</strong>
+          <small>
+            {stage === 'characters' ? '认识假名' : '用已学假名拼读词语'}
+          </small>
+        </div>
+        <span>
+          {position + 1} /{' '}
+          {stage === 'characters' ? entries.length : lesson.words.length}
+        </span>
+      </header>
+      <div className="progress-track">
+        <span
+          style={{
+            width: `${((position + 1) / (stage === 'characters' ? entries.length : lesson.words.length)) * 100}%`,
+          }}
+        />
+      </div>
+      {stage === 'characters' && currentEntry ? (
+        <section className="kana-study-card">
+          <span className="card-type">平假名 · 片假名 · 罗马音</span>
+          <div className="kana-pair-display">
+            <div>
+              <small>平假名</small>
+              <strong lang="ja">{currentEntry.hiragana}</strong>
+            </div>
+            <div>
+              <small>片假名</small>
+              <strong lang="ja">{currentEntry.katakana}</strong>
+            </div>
+          </div>
+          <div className="romaji-chip">{currentEntry.romaji}</div>
+          <button
+            className="audio-button icon-only"
+            onClick={() => speakJapanese(currentEntry.hiragana)}
+            aria-label="播放假名发音"
+            title="播放发音"
+          >
+            🔊
+          </button>
+          <button className="text-button compact" onClick={() => goTo('words')}>
+            跳过认识，直接拼读词语
+          </button>
+          <button className="primary wide" onClick={nextCharacter}>
+            {position === entries.length - 1 ? '开始拼读词语 →' : '认识了 →'}
+          </button>
+        </section>
+      ) : currentWord ? (
+        <section className="kana-study-card word-stage">
+          <span className="card-type">拼读练习 · 只使用已学假名</span>
+          <h1 lang="ja">{currentWord.japanese}</h1>
+          <p className="word-reading" lang="ja">
+            {currentWord.reading}
+          </p>
+          <strong className="word-meaning">{currentWord.meaning_zh}</strong>
+          <button
+            className="audio-button icon-only"
+            onClick={() => speakJapanese(currentWord.reading)}
+            aria-label="播放词语读音"
+            title="播放读音"
+          >
+            🔊
+          </button>
+          <button
+            className="text-button compact"
+            onClick={() => goTo('practice-choice')}
+          >
+            跳过词语，选择复习方式
+          </button>
+          <button className="primary wide" onClick={nextWord}>
+            {position === lesson.words.length - 1
+              ? '选择复习方式 →'
+              : '下一个词 →'}
+          </button>
+        </section>
+      ) : null}
+    </div>
+  );
+}
+
+function KanaMatchingTest({
+  title,
+  description,
+  entries,
+  onBack,
+  onComplete,
+}: {
+  title: string;
+  description: string;
+  entries: KanaEntry[];
+  onBack: () => void;
+  onComplete: () => void | Promise<void>;
+}) {
+  const forms: Array<{ id: KanaForm; label: string }> = [
+    { id: 'hiragana', label: '平假名' },
+    { id: 'katakana', label: '片假名' },
+    { id: 'romaji', label: '罗马音' },
+  ];
+  const [columns] = useState(() => ({
+    hiragana: shuffledKanaEntries(entries),
+    katakana: shuffledKanaEntries(entries),
+    romaji: shuffledKanaEntries(entries),
+  }));
+  const [selected, setSelected] = useState<Partial<Record<KanaForm, string>>>(
+    {},
+  );
+  const [completed, setCompleted] = useState<Set<string>>(() => new Set());
+  const [feedback, setFeedback] = useState<{
+    ok: boolean;
+    message: string;
+  } | null>(null);
+
+  const choose = (form: KanaForm, entry: KanaEntry) => {
+    if (completed.has(entry.romaji)) return;
+    const next = { ...selected, [form]: entry.romaji };
+    setSelected(next);
+    if (!next.hiragana || !next.katakana || !next.romaji) return;
+    if (next.hiragana === next.katakana && next.katakana === next.romaji) {
+      const word = getExampleWord(entry);
+      setCompleted((current) => new Set(current).add(entry.romaji));
+      setFeedback({
+        ok: true,
+        message: word
+          ? `${word.japanese}（${word.reading}）：${word.meaning_zh}`
+          : `${entry.hiragana} · ${entry.katakana} · ${entry.romaji}`,
+      });
+      if (word) speakJapanese(word.reading);
+      setSelected({});
+    } else {
+      setFeedback({
+        ok: false,
+        message: '这三个选项不属于同一个假名，请重试。',
+      });
+      window.setTimeout(() => {
+        setSelected({});
+        setFeedback(null);
+      }, 650);
+    }
+  };
+
+  const done = completed.size === entries.length;
+  return (
+    <div className="kana-test-page">
+      <header className="lesson-toolbar">
+        <button className="back-button" onClick={onBack}>
+          ← 返回上一步
+        </button>
+        <div>
+          <strong>{title}</strong>
+          <small>{description}</small>
+        </div>
+        <span>
+          {completed.size} / {entries.length}
+        </span>
+      </header>
+      <div className="progress-track">
+        <span
+          style={{ width: `${(completed.size / entries.length) * 100}%` }}
+        />
+      </div>
+      <div
+        className={
+          feedback?.ok
+            ? 'kana-test-feedback correct'
+            : feedback
+              ? 'kana-test-feedback wrong'
+              : 'kana-test-feedback'
+        }
+      >
+        {feedback?.message ?? '请匹配'}
+      </div>
+      <div className="kana-match-board">
+        {forms.map((form) => (
+          <section key={form.id}>
+            <h2>{form.label}</h2>
+            <div>
+              {columns[form.id].map((entry) => {
+                const isComplete = completed.has(entry.romaji);
+                const isSelected = selected[form.id] === entry.romaji;
+                return (
+                  <button
+                    className={`${isComplete ? 'matched' : ''} ${isSelected ? 'selected' : ''}`}
+                    disabled={isComplete}
+                    key={`${form.id}-${entry.romaji}`}
+                    onClick={() => choose(form.id, entry)}
+                  >
+                    {entry[form.id]}
+                    {isComplete && <span>✓</span>}
+                  </button>
+                );
+              })}
+            </div>
+          </section>
         ))}
       </div>
-      <div className="subtabs">
+      {done && (
         <button
-          className={tab === 'lessons' ? 'active' : ''}
-          onClick={() => setTab('lessons')}
+          className="primary kana-test-next"
+          onClick={() => void onComplete()}
         >
-          课程
+          完成本轮，继续 →
         </button>
-        <button
-          className={tab === 'dialogues' ? 'active' : ''}
-          onClick={() => setTab('dialogues')}
-        >
-          固定对话
+      )}
+    </div>
+  );
+}
+
+function KanaMemoryGame({
+  lesson,
+  entries,
+  onBack,
+  onComplete,
+}: {
+  lesson: KanaLesson;
+  entries: KanaEntry[];
+  onBack: () => void;
+  onComplete: () => Promise<void>;
+}) {
+  const [deck, setDeck] = useState<MemoryCard[]>(() =>
+    createMemoryDeck(entries),
+  );
+  const [openCards, setOpenCards] = useState<string[]>([]);
+  const [matchedCards, setMatchedCards] = useState<Set<string>>(
+    () => new Set(),
+  );
+  const [saving, setSaving] = useState(false);
+
+  const selectCard = (card: MemoryCard) => {
+    if (
+      openCards.length >= 2 ||
+      openCards.includes(card.id) ||
+      matchedCards.has(card.id)
+    )
+      return;
+    const next = [...openCards, card.id];
+    setOpenCards(next);
+    if (next.length !== 2) return;
+    const [firstId, secondId] = next;
+    const first = deck.find((item) => item.id === firstId);
+    const second = deck.find((item) => item.id === secondId);
+    if (first && second && first.matchId === second.matchId) {
+      window.setTimeout(() => {
+        setMatchedCards((current) =>
+          new Set(current).add(first.id).add(second.id),
+        );
+        setOpenCards([]);
+        const entry = entries.find((item) => item.romaji === first.matchId);
+        if (entry) speakJapanese(entry.hiragana);
+      }, 380);
+    } else {
+      window.setTimeout(() => setOpenCards([]), 780);
+    }
+  };
+
+  const won = matchedCards.size === deck.length;
+  const restart = () => {
+    setDeck(createMemoryDeck(entries));
+    setOpenCards([]);
+    setMatchedCards(new Set());
+  };
+  const save = async () => {
+    setSaving(true);
+    await onComplete();
+  };
+
+  return (
+    <div className="kana-game-page">
+      <header className="lesson-toolbar">
+        <button className="back-button" onClick={onBack}>
+          ← 暂停游戏
         </button>
-      </div>
-      {tab === 'lessons' ? (
-        <div className="lesson-grid">
-          {lessons.map((lesson, index) => (
+        <div>
+          <strong>{lesson.title} · 翻牌游戏</strong>
+          <small>找到属于同一个假名的两张牌</small>
+        </div>
+        <span>
+          {matchedCards.size / 2} / {deck.length / 2}
+        </span>
+      </header>
+      <div className="uta-game-board">
+        {deck.map((card) => {
+          const open = openCards.includes(card.id);
+          const matched = matchedCards.has(card.id);
+          return (
             <button
-              className="lesson-card"
-              key={lesson.lessonId}
-              onClick={() => openLesson(lesson.lessonId)}
+              className={`uta-card ${open ? 'open' : ''} ${matched ? 'removed' : ''}`}
+              disabled={matched}
+              key={card.id}
+              onClick={() => selectCard(card)}
+              aria-label={open ? card.value : '翻开歌牌'}
             >
-              <div className="lesson-index">
-                {String(index + 1).padStart(2, '0')}
-              </div>
-              <div className="lesson-card-copy">
-                <div className="meta-row">
-                  <span>{lesson.level}</span>
-                  <span>{lesson.minutes} 分钟</span>
-                  <span>{lesson.itemCount} 项内容</span>
-                </div>
-                <h2>{lesson.title}</h2>
-                <p>{lesson.objectives}</p>
-              </div>
-              <span className={`status-pill ${lesson.status}`}>
-                {lesson.status === 'completed'
-                  ? '已完成'
-                  : lesson.status === 'in_progress'
-                    ? '继续'
-                    : '开始'}
+              <span className="uta-card-inner">
+                <span
+                  className={`uta-card-back ${card.back}`}
+                  style={{
+                    backgroundImage: `url(${card.back === 'torii' ? utaCardToriiUrl : utaCardSakuraUrl})`,
+                  }}
+                  aria-hidden="true"
+                />
+                <span className="uta-card-front" lang="ja">
+                  <strong>{card.value}</strong>
+                  <small>
+                    {card.form === 'hiragana'
+                      ? '平假名'
+                      : card.form === 'katakana'
+                        ? '片假名'
+                        : '罗马音'}
+                  </small>
+                </span>
               </span>
             </button>
-          ))}
+          );
+        })}
+      </div>
+      {won && (
+        <div className="game-result">
+          <strong>全部配对完成！</strong>
+          <div className="button-row centered">
+            <button className="secondary" onClick={restart}>
+              再玩一局
+            </button>
+            <button
+              className="primary"
+              disabled={saving}
+              onClick={() => void save()}
+            >
+              {saving ? '正在保存…' : '保存游戏成绩'}
+            </button>
+          </div>
         </div>
-      ) : (
-        <DialogueList groups={dialogues} />
       )}
     </div>
   );
@@ -913,6 +1566,9 @@ function ReviewView({ onChange }: { onChange: () => Promise<void> }) {
 
 function ConversationView() {
   const [settings, setSettings] = useState<AiSettingsStatus | null>(null);
+  const [history, setHistory] = useState<ConversationHistoryItem[]>([]);
+  const [historyOpen, setHistoryOpen] = useState(false);
+  const [historyReadOnly, setHistoryReadOnly] = useState(false);
   const [scene, setScene] = useState<Scene>('restaurant');
   const [difficulty, setDifficulty] = useState<'starter' | 'N5' | 'N4'>(
     'starter',
@@ -927,13 +1583,72 @@ function ConversationView() {
   const [error, setError] = useState('');
   const [feedback, setFeedback] = useState<ConversationFeedback | null>(null);
 
-  useEffect(() => {
-    void window.hiJapan.ai.getSettings().then(setSettings);
+  const refreshHistory = useCallback(async () => {
+    setHistory(await window.hiJapan.ai.listHistory());
   }, []);
+
+  useEffect(() => {
+    void Promise.all([
+      window.hiJapan.ai.getSettings().then(setSettings),
+      refreshHistory(),
+    ]).catch((caught) => setError(errorMessage(caught)));
+  }, [refreshHistory]);
+
+  const startNewConversation = () => {
+    setFeedback(null);
+    setMessages([]);
+    setSessionId(null);
+    setHistoryReadOnly(false);
+    setHistoryOpen(false);
+    setError('');
+  };
+
+  const openHistory = async (item: ConversationHistoryItem) => {
+    if (sending) return;
+    setError('');
+    try {
+      const detail = await window.hiJapan.ai.getHistory(item.id);
+      setScene(detail.session.scene);
+      setDifficulty(detail.session.difficulty);
+      setCorrectionStyle(detail.session.correctionStyle);
+      setSessionId(detail.session.id);
+      setMessages(detail.messages);
+      setFeedback(null);
+      setHistoryReadOnly(
+        detail.session.status === 'completed' || !settings?.configured,
+      );
+      setHistoryOpen(false);
+    } catch (caught) {
+      setError(errorMessage(caught));
+      await refreshHistory();
+    }
+  };
+
+  const deleteHistory = async (id: string) => {
+    if (!window.confirm('确定删除这条本地对话记录吗？')) return;
+    try {
+      setHistory(await window.hiJapan.ai.deleteHistory(id));
+      if (sessionId === id) startNewConversation();
+    } catch (caught) {
+      setError(errorMessage(caught));
+    }
+  };
+
+  const deleteAllHistory = async () => {
+    if (!history.length || !window.confirm('确定清空近 7 天的全部对话记录吗？'))
+      return;
+    try {
+      await window.hiJapan.ai.deleteAllHistory();
+      setHistory([]);
+      startNewConversation();
+    } catch (caught) {
+      setError(errorMessage(caught));
+    }
+  };
 
   const send = async () => {
     const message = text.trim();
-    if (!message || sending) return;
+    if (!message || sending || historyReadOnly) return;
     setSending(true);
     setError('');
     setText('');
@@ -954,6 +1669,7 @@ function ConversationView() {
       });
       setSessionId(result.sessionId);
       setMessages((current) => [...current, result.reply]);
+      await refreshHistory();
     } catch (caught) {
       setMessages((current) =>
         current.filter((item) => item.id !== localMessage.id),
@@ -970,6 +1686,7 @@ function ConversationView() {
     setSending(true);
     try {
       setFeedback(await window.hiJapan.ai.finishConversation(sessionId));
+      await refreshHistory();
     } catch (caught) {
       setError(errorMessage(caught));
     } finally {
@@ -978,7 +1695,7 @@ function ConversationView() {
   };
 
   if (!settings) return <LoadingScreen />;
-  if (!settings.configured) {
+  if (!settings.configured && messages.length === 0) {
     return (
       <div className="page">
         <PageHeader
@@ -990,7 +1707,21 @@ function ConversationView() {
           <span>鍵</span>
           <h2>尚未配置 API</h2>
           <p>请在“设置”中填写服务地址、模型和 API Key，并完成连接测试。</p>
+          {history.length > 0 && (
+            <button className="secondary" onClick={() => setHistoryOpen(true)}>
+              查看近 7 天记录（{history.length}）
+            </button>
+          )}
         </section>
+        {historyOpen && (
+          <ConversationHistoryPanel
+            history={history}
+            onClose={() => setHistoryOpen(false)}
+            onOpen={(item) => void openHistory(item)}
+            onDelete={(id) => void deleteHistory(id)}
+            onDeleteAll={() => void deleteAllHistory()}
+          />
+        )}
       </div>
     );
   }
@@ -1003,6 +1734,12 @@ function ConversationView() {
           <h1>{scenes.find((item) => item.id === scene)?.name}</h1>
         </div>
         <div className="conversation-controls">
+          <button
+            className="secondary history-toggle"
+            onClick={() => setHistoryOpen((open) => !open)}
+          >
+            近 7 天记录{history.length > 0 ? ` · ${history.length}` : ''}
+          </button>
           <select
             value={scene}
             onChange={(event) => setScene(event.target.value as Scene)}
@@ -1039,22 +1776,24 @@ function ConversationView() {
           <button
             className="secondary"
             onClick={() => void finish()}
-            disabled={!sessionId || sending}
+            disabled={!sessionId || sending || historyReadOnly}
           >
             结束并复盘
           </button>
         </div>
       </header>
       {error && <InlineAlert message={error} onClose={() => setError('')} />}
-      {feedback ? (
-        <FeedbackPanel
-          feedback={feedback}
-          onRestart={() => {
-            setFeedback(null);
-            setMessages([]);
-            setSessionId(null);
-          }}
+      {historyOpen && (
+        <ConversationHistoryPanel
+          history={history}
+          onClose={() => setHistoryOpen(false)}
+          onOpen={(item) => void openHistory(item)}
+          onDelete={(id) => void deleteHistory(id)}
+          onDeleteAll={() => void deleteAllHistory()}
         />
+      )}
+      {feedback ? (
+        <FeedbackPanel feedback={feedback} onRestart={startNewConversation} />
       ) : (
         <>
           <div className="message-list">
@@ -1073,7 +1812,11 @@ function ConversationView() {
                 <div>
                   <p>{message.content}</p>
                   {message.role === 'assistant' && (
-                    <button onClick={() => speakJapanese(message.content)}>
+                    <button
+                      onClick={() => speakJapanese(message.content)}
+                      aria-label="朗读日语正文"
+                      title="只朗读日语正文"
+                    >
                       🔊
                     </button>
                   )}
@@ -1082,29 +1825,109 @@ function ConversationView() {
             ))}
             {sending && <div className="typing">对方正在回复…</div>}
           </div>
-          <div className="composer">
-            <textarea
-              value={text}
-              onChange={(event) => setText(event.target.value)}
-              placeholder="输入日语；Enter 发送，Shift+Enter 换行"
-              onKeyDown={(event) => {
-                if (event.key === 'Enter' && !event.shiftKey) {
-                  event.preventDefault();
-                  void send();
-                }
-              }}
-            />
-            <button
-              className="primary"
-              disabled={!text.trim() || sending}
-              onClick={() => void send()}
-            >
-              发送
-            </button>
-          </div>
+          {historyReadOnly ? (
+            <div className="history-readonly-bar">
+              <span>这是本地历史记录，当前仅供复习查看。</span>
+              <button className="primary" onClick={startNewConversation}>
+                开始新对话
+              </button>
+            </div>
+          ) : (
+            <div className="composer">
+              <textarea
+                value={text}
+                onChange={(event) => setText(event.target.value)}
+                placeholder="输入日语；Enter 发送，Shift+Enter 换行"
+                onKeyDown={(event) => {
+                  if (event.key === 'Enter' && !event.shiftKey) {
+                    event.preventDefault();
+                    void send();
+                  }
+                }}
+              />
+              <button
+                className="primary"
+                disabled={!text.trim() || sending}
+                onClick={() => void send()}
+              >
+                发送
+              </button>
+            </div>
+          )}
         </>
       )}
     </div>
+  );
+}
+
+function ConversationHistoryPanel({
+  history,
+  onClose,
+  onOpen,
+  onDelete,
+  onDeleteAll,
+}: {
+  history: ConversationHistoryItem[];
+  onClose: () => void;
+  onOpen: (item: ConversationHistoryItem) => void;
+  onDelete: (id: string) => void;
+  onDeleteAll: () => void;
+}) {
+  return (
+    <aside className="conversation-history" aria-label="近 7 天对话记录">
+      <header>
+        <div>
+          <span className="eyebrow">本地保存</span>
+          <h2>近 7 天对话</h2>
+        </div>
+        <button className="icon-button" onClick={onClose} aria-label="关闭记录">
+          ×
+        </button>
+      </header>
+      <p className="history-note">超过 7 天的记录会在本机自动删除。</p>
+      <div className="history-list">
+        {history.length === 0 ? (
+          <div className="history-empty">还没有可查看的对话。</div>
+        ) : (
+          history.map((item) => (
+            <article className="history-item" key={item.id}>
+              <button className="history-open" onClick={() => onOpen(item)}>
+                <strong>
+                  {scenes.find((scene) => scene.id === item.scene)?.name ??
+                    item.scene}
+                  <small>
+                    {item.status === 'active' ? '可继续' : '已结束'}
+                  </small>
+                </strong>
+                <span>
+                  {new Date(item.lastActivityAt).toLocaleString('zh-CN', {
+                    month: 'numeric',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                  })}
+                  {' · '}
+                  {item.messageCount} 条消息
+                </span>
+                <p>{item.preview || '尚未发送消息'}</p>
+              </button>
+              <button
+                className="history-delete"
+                onClick={() => onDelete(item.id)}
+                aria-label="删除这条对话记录"
+              >
+                删除
+              </button>
+            </article>
+          ))
+        )}
+      </div>
+      {history.length > 0 && (
+        <button className="danger-link" onClick={onDeleteAll}>
+          清空全部对话记录
+        </button>
+      )}
+    </aside>
   );
 }
 
@@ -1204,7 +2027,7 @@ function SettingsView({
       <section className="settings-section">
         <h2>学习数据</h2>
         <p>
-          内容版本 {snapshot.content.version}，已完成{' '}
+          教材包版本 {snapshot.content.version}，已完成{' '}
           {snapshot.stats.completedLessons} 课。
         </p>
         <div className="button-row">
@@ -1242,7 +2065,7 @@ function SettingsView({
       </section>
       <section className="about">
         <strong>HiJapan 日语随行</strong>
-        <span>v0.1.0 · Windows 桌面开发版 · 无自建后端</span>
+        <span>v{snapshot.appVersion} · Windows 桌面开发版 · 无自建后端</span>
       </section>
     </div>
   );
