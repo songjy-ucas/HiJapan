@@ -1,0 +1,167 @@
+{
+  "generated_on": "2026-10-29",
+  "status": "draft_needs_native_review",
+  "blocking_release_issues": [
+    "全部语法中文解释尚待翻译和母语者复核",
+    "Tatoeba 未覆盖的例句仍待中文翻译，已有社区翻译也必须复核",
+    "机器辅助中文词义不可直接作为正式教材发布",
+    "尚未制作经审核的阅读文章、听力音频、题目和人工解析"
+  ],
+  "levels": {
+    "N5": {
+      "counts": {
+        "vocabulary": 674,
+        "kanji": 84,
+        "grammar": 81,
+        "sentences": 1562,
+        "lessons": 57
+      },
+      "chinese_coverage": {
+        "vocabulary": {
+          "complete": 657,
+          "pending": 17,
+          "ratio": 0.9748
+        },
+        "kanji": {
+          "complete": 76,
+          "pending": 8,
+          "ratio": 0.9048
+        },
+        "grammar": {
+          "complete": 0,
+          "pending": 81,
+          "ratio": 0
+        },
+        "sentences": {
+          "complete": 116,
+          "pending": 1446,
+          "ratio": 0.0743
+        }
+      }
+    },
+    "N4": {
+      "counts": {
+        "vocabulary": 630,
+        "kanji": 169,
+        "grammar": 98,
+        "sentences": 1530,
+        "lessons": 53
+      },
+      "chinese_coverage": {
+        "vocabulary": {
+          "complete": 615,
+          "pending": 15,
+          "ratio": 0.9762
+        },
+        "kanji": {
+          "complete": 122,
+          "pending": 47,
+          "ratio": 0.7219
+        },
+        "grammar": {
+          "complete": 0,
+          "pending": 98,
+          "ratio": 0
+        },
+        "sentences": {
+          "complete": 91,
+          "pending": 1439,
+          "ratio": 0.0595
+        }
+      }
+    },
+    "N3": {
+      "counts": {
+        "vocabulary": 1659,
+        "kanji": 387,
+        "grammar": 101,
+        "sentences": 3521,
+        "lessons": 139
+      },
+      "chinese_coverage": {
+        "vocabulary": {
+          "complete": 1644,
+          "pending": 15,
+          "ratio": 0.991
+        },
+        "kanji": {
+          "complete": 226,
+          "pending": 161,
+          "ratio": 0.584
+        },
+        "grammar": {
+          "complete": 0,
+          "pending": 101,
+          "ratio": 0
+        },
+        "sentences": {
+          "complete": 159,
+          "pending": 3362,
+          "ratio": 0.0452
+        }
+      }
+    },
+    "N2": {
+      "counts": {
+        "vocabulary": 1778,
+        "kanji": 398,
+        "grammar": 123,
+        "sentences": 3417,
+        "lessons": 149
+      },
+      "chinese_coverage": {
+        "vocabulary": {
+          "complete": 1696,
+          "pending": 82,
+          "ratio": 0.9539
+        },
+        "kanji": {
+          "complete": 219,
+          "pending": 179,
+          "ratio": 0.5503
+        },
+        "grammar": {
+          "complete": 0,
+          "pending": 123,
+          "ratio": 0
+        },
+        "sentences": {
+          "complete": 135,
+          "pending": 3282,
+          "ratio": 0.0395
+        }
+      }
+    },
+    "N1": {
+      "counts": {
+        "vocabulary": 3070,
+        "kanji": 1345,
+        "grammar": 123,
+        "sentences": 5214,
+        "lessons": 269
+      },
+      "chinese_coverage": {
+        "vocabulary": {
+          "complete": 2769,
+          "pending": 301,
+          "ratio": 0.902
+        },
+        "kanji": {
+          "complete": 471,
+          "pending": 874,
+          "ratio": 0.3502
+        },
+        "grammar": {
+          "complete": 0,
+          "pending": 123,
+          "ratio": 0
+        },
+        "sentences": {
+          "complete": 185,
+          "pending": 5029,
+          "ratio": 0.0355
+        }
+      }
+    }
+  }
+}

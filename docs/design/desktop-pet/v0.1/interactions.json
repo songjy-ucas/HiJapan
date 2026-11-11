@@ -1,0 +1,159 @@
+{
+  "version": "0.1",
+  "date": "2026-11-09",
+  "status": "concept_pending_user_review",
+  "assetType": "pose_design_not_runtime_spritesheet",
+  "grid": {
+    "columns": 4,
+    "rows": 3
+  },
+  "modelSheet": "character-model-sheet-v01.png",
+  "poseSheet": "interaction-poses-12-v01.png",
+  "idlePng": "idle-transparent-v01.png",
+  "states": [
+    {
+      "id": "idle",
+      "labelZh": "待机",
+      "poseCell": {
+        "row": 1,
+        "column": 1
+      },
+      "trigger": "桌宠显示且没有其他事件",
+      "motion": "呼吸、眨眼、辫梢微摆",
+      "timing": "3–5 秒循环；眨眼随机间隔",
+      "returnState": "idle"
+    },
+    {
+      "id": "hello",
+      "labelZh": "挥手",
+      "poseCell": {
+        "row": 1,
+        "column": 2
+      },
+      "trigger": "软件启动或用户主动打招呼",
+      "motion": "抬手、左右摆手、收手",
+      "timing": "1.2–1.8 秒；启动一次",
+      "returnState": "idle"
+    },
+    {
+      "id": "walk",
+      "labelZh": "行走",
+      "poseCell": {
+        "row": 1,
+        "column": 3
+      },
+      "trigger": "用户开启活动模式",
+      "motion": "起步、左右交替迈步、收步",
+      "timing": "0.8–1.2 秒步行循环",
+      "returnState": "idle"
+    },
+    {
+      "id": "drag",
+      "labelZh": "拖拽",
+      "poseCell": {
+        "row": 1,
+        "column": 4
+      },
+      "trigger": "鼠标按下并超过拖动阈值",
+      "motion": "提起、悬空轻摆、落地站稳",
+      "timing": "跟随拖动；松手后约 0.4 秒回正",
+      "returnState": "idle"
+    },
+    {
+      "id": "study",
+      "labelZh": "学习陪伴",
+      "poseCell": {
+        "row": 2,
+        "column": 1
+      },
+      "trigger": "打开本地课程并选择陪伴",
+      "motion": "展开笔记、低头阅读、抬眼",
+      "timing": "4–6 秒安静循环",
+      "returnState": "idle"
+    },
+    {
+      "id": "listen",
+      "labelZh": "聆听",
+      "poseCell": {
+        "row": 2,
+        "column": 2
+      },
+      "trigger": "用户主动开始语音输入（后续实现）",
+      "motion": "侧耳、轻点头、回正",
+      "timing": "2–3 秒循环",
+      "returnState": "idle"
+    },
+    {
+      "id": "think",
+      "labelZh": "思考",
+      "poseCell": {
+        "row": 2,
+        "column": 3
+      },
+      "trigger": "用户主动发起的 AI 请求等待中",
+      "motion": "托腮、抬眼、短暂停顿",
+      "timing": "1.5–2.5 秒循环；请求结束即退出",
+      "returnState": "idle"
+    },
+    {
+      "id": "speak",
+      "labelZh": "讲解",
+      "poseCell": {
+        "row": 2,
+        "column": 4
+      },
+      "trigger": "系统朗读或用户主动打开说明",
+      "motion": "抬手、三种口型交替、收手",
+      "timing": "与实际播放开始/结束同步",
+      "returnState": "idle"
+    },
+    {
+      "id": "cheer",
+      "labelZh": "鼓励",
+      "poseCell": {
+        "row": 3,
+        "column": 1
+      },
+      "trigger": "答对、完成课程或用户点击互动",
+      "motion": "握拳、轻跳、落地",
+      "timing": "0.8–1.2 秒；连续答对合并反馈",
+      "returnState": "idle"
+    },
+    {
+      "id": "hint",
+      "labelZh": "提示",
+      "poseCell": {
+        "row": 3,
+        "column": 2
+      },
+      "trigger": "答错后用户选择查看提示",
+      "motion": "温和指向提示区、停留、收手",
+      "timing": "1.2–1.8 秒；不责备、不遮题",
+      "returnState": "idle"
+    },
+    {
+      "id": "rest",
+      "labelZh": "休息",
+      "poseCell": {
+        "row": 3,
+        "column": 3
+      },
+      "trigger": "用户主动休息或允许的定时提醒",
+      "motion": "坐下、捧杯、抬头",
+      "timing": "4–6 秒循环；提醒可关闭",
+      "returnState": "idle"
+    },
+    {
+      "id": "sleep",
+      "labelZh": "睡眠",
+      "poseCell": {
+        "row": 3,
+        "column": 4
+      },
+      "trigger": "用户手动休眠或设定的静默时段",
+      "motion": "抱膝闭眼、轻微呼吸",
+      "timing": "5–7 秒循环；点击唤醒",
+      "returnState": "idle"
+    }
+  ]
+}

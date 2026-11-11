@@ -6,6 +6,12 @@ import rawContentPack from '../../source/data/travel_priority_content.json';
 import { contentPackSchema, type ContentPack } from '../domain/content-schema';
 import { conversationRetentionCutoff } from '../domain/conversation';
 import { kanaCourse } from '../domain/kana';
+import {
+  getJlptCumulativeLesson,
+  getJlptLesson,
+  jlptCourse,
+  listJlptLessons,
+} from '../domain/jlpt';
 import { buildTodayPlan } from '../domain/planning';
 import { scheduleReview, type ReviewState } from '../domain/review';
 import type {
@@ -16,6 +22,9 @@ import type {
   LessonDetail,
   LessonSummary,
   KanaProgress,
+  JlptLessonCompletion,
+  JlptLevel,
+  JlptProgress,
   ProfileInput,
   ReviewCard,
   ReviewGrade,
@@ -139,6 +148,14 @@ export class HiJapanDatabase {
       CREATE TABLE IF NOT EXISTS kana_progress (
         lesson_id TEXT PRIMARY KEY,
         basic_completed_at TEXT NOT NULL,
+        game_completed_at TEXT
+      );
+
+      CREATE TABLE IF NOT EXISTS jlpt_progress (
+        lesson_id TEXT PRIMARY KEY,
+        level TEXT NOT NULL,
+        score REAL NOT NULL,
+        completed_at TEXT NOT NULL,
         game_completed_at TEXT
       );
 
@@ -354,8 +371,21 @@ export class HiJapanDatabase {
         }
       ).count,
     );
-    const completedLessons = completedTravelLessons + completedKanaLessons;
-    const totalLessons = totalTravelLessons + kanaCourse.lessons.length;
+    const completedJlptLessons = Number(
+      (
+        this.db
+          .prepare('SELECT COUNT(*) AS count FROM jlpt_progress')
+          .get() as {
+          count: number;
+        }
+      ).count,
+    );
+    const completedLessons =
+      completedTravelLessons + completedKanaLessons + completedJlptLessons;
+    const totalLessons =
+      totalTravelLessons +
+      kanaCourse.lessons.length +
+      jlptCourse.lessons.length;
     const dueReviews = Number(
       (
         this.db
@@ -390,6 +420,9 @@ export class HiJapanDatabase {
           dialogues: this.content.dialogues.length,
           lessons: this.content.lessons.length,
           kanaLessons: kanaCourse.lessons.length,
+          jlptVocabulary: jlptCourse.vocabulary.length,
+          jlptGrammar: jlptCourse.grammar.length,
+          jlptLessons: jlptCourse.lessons.length,
         },
       },
     };
@@ -489,6 +522,97 @@ export class HiJapanDatabase {
       `)
       .run(lessonId, now, gameCompleted ? now : null);
     return this.getKanaProgress();
+  }
+
+  getJlptProgress(): JlptProgress {
+    const rows = this.db
+      .prepare(
+        'SELECT lesson_id, score, game_completed_at FROM jlpt_progress ORDER BY lesson_id',
+      )
+      .all() as Array<{
+      lesson_id: string;
+      score: number;
+      game_completed_at: string | null;
+    }>;
+    return {
+      completedLessonIds: rows.map((row) => row.lesson_id),
+      scores: Object.fromEntries(rows.map((row) => [row.lesson_id, row.score])),
+      gameCompletedLessonIds: rows
+        .filter((row) => row.game_completed_at !== null)
+        .map((row) => row.lesson_id),
+    };
+  }
+
+  listJlptLessons(level: JlptLevel) {
+    const progress = this.getJlptProgress();
+    return listJlptLessons(level, progress.completedLessonIds, progress.scores);
+  }
+
+  getJlptLesson(lessonId: string) {
+    const progress = this.getJlptProgress();
+    const lesson = getJlptLesson(
+      lessonId,
+      progress.completedLessonIds,
+      progress.scores,
+    );
+    if (!lesson) throw new Error('CONTENT_NOT_FOUND');
+    return lesson;
+  }
+
+  getJlptCumulativeLesson(level: JlptLevel) {
+    return getJlptCumulativeLesson(
+      level,
+      this.getJlptProgress().completedLessonIds,
+    );
+  }
+
+  completeJlptLesson(input: JlptLessonCompletion): JlptProgress {
+    const lesson = this.getJlptLesson(input.lessonId);
+    const now = new Date().toISOString();
+    const contentIds = [
+      ...lesson.vocabulary.map((item) => item.id),
+      ...lesson.grammar.map((item) => item.id),
+    ];
+    const addEvent = this.db.prepare(`
+      INSERT INTO learning_events (id, content_id, lesson_id, event_type, grade, occurred_at)
+      VALUES (?, ?, ?, 'jlpt_lesson_completed', ?, ?)
+    `);
+    this.db.exec('BEGIN IMMEDIATE');
+    try {
+      this.db
+        .prepare(`
+          INSERT INTO jlpt_progress (lesson_id, level, score, completed_at, game_completed_at)
+          VALUES (?, ?, ?, ?, ?)
+          ON CONFLICT(lesson_id) DO UPDATE SET
+            score = excluded.score,
+            completed_at = excluded.completed_at,
+            game_completed_at = CASE
+              WHEN excluded.game_completed_at IS NOT NULL THEN excluded.game_completed_at
+              ELSE jlpt_progress.game_completed_at
+            END
+        `)
+        .run(
+          lesson.id,
+          lesson.level,
+          input.score,
+          now,
+          input.gameCompleted ? now : null,
+        );
+      for (const contentId of contentIds) {
+        addEvent.run(
+          randomUUID(),
+          contentId,
+          lesson.id,
+          input.difficultItemIds.includes(contentId) ? 'again' : 'good',
+          now,
+        );
+      }
+      this.db.exec('COMMIT');
+    } catch (error) {
+      this.db.exec('ROLLBACK');
+      throw error;
+    }
+    return this.getJlptProgress();
   }
 
   completeLesson(lessonId: string, difficultItemIds: string[]) {
@@ -837,6 +961,7 @@ export class HiJapanDatabase {
       'profiles',
       'lesson_progress',
       'kana_progress',
+      'jlpt_progress',
       'learning_events',
       'review_states',
       'ai_provider_settings',
@@ -879,6 +1004,13 @@ export class HiJapanDatabase {
       profiles: ['id', 'payload_json', 'created_at', 'updated_at'],
       lesson_progress: ['lesson_id', 'status', 'score', 'updated_at'],
       kana_progress: ['lesson_id', 'basic_completed_at', 'game_completed_at'],
+      jlpt_progress: [
+        'lesson_id',
+        'level',
+        'score',
+        'completed_at',
+        'game_completed_at',
+      ],
       learning_events: [
         'id',
         'content_id',
@@ -951,6 +1083,7 @@ export class HiJapanDatabase {
       DELETE FROM learning_events;
       DELETE FROM lesson_progress;
       DELETE FROM kana_progress;
+      DELETE FROM jlpt_progress;
       DELETE FROM profiles;
       COMMIT;
     `);

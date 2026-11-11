@@ -7,6 +7,12 @@ import type {
   ConversationHistoryItem,
   DialogueGroup,
   KanaProgress,
+  JlptGrammarItem,
+  JlptLessonDetail,
+  JlptLessonSummary,
+  JlptLevel,
+  JlptProgress,
+  JlptVocabularyItem,
   LessonDetail,
   LessonSummary,
   ProfileInput,
@@ -16,6 +22,7 @@ import type {
   TodayTask,
 } from '../shared/contracts';
 import { extractJapaneseSpeech } from '../domain/conversation';
+import type { PetPreferences, PetSnapshot } from '../shared/pet-contracts';
 import {
   createMemoryDeck,
   getExampleWord,
@@ -28,6 +35,16 @@ import {
   type KanaLesson,
   type MemoryCard,
 } from '../domain/kana';
+import {
+  createJlptMemoryDeck,
+  createJlptReadingMatchItems,
+  createSentenceChunks,
+  createSentenceCompletionPuzzle,
+  createSentenceOrderPuzzle,
+  toHiragana,
+  type JlptMemoryCard,
+  type JlptSentencePuzzle,
+} from '../domain/jlpt';
 import appIconUrl from '../assets/app-icon-master.png';
 import utaCardSakuraUrl from '../assets/uta-card-sakura.png';
 import utaCardToriiUrl from '../assets/uta-card-torii.png';
@@ -105,6 +122,14 @@ function speakJapanese(text: string) {
     voices.find((voice) => voice.lang.toLowerCase() === 'ja-jp') ??
     voices.find((voice) => voice.lang.toLowerCase().startsWith('ja'));
   if (japaneseVoice) utterance.voice = japaneseVoice;
+  utterance.onstart = () => {
+    void window.hiJapan.companion.setActivity('speak').catch(() => {});
+  };
+  const finishSpeech = () => {
+    void window.hiJapan.companion.setActivity('idle').catch(() => {});
+  };
+  utterance.onend = finishSpeech;
+  utterance.onerror = finishSpeech;
   window.speechSynthesis.speak(utterance);
 }
 
@@ -135,6 +160,28 @@ export function App() {
     );
     return () => window.clearTimeout(timer);
   }, [refresh]);
+
+  useEffect(
+    () =>
+      window.hiJapan.companion.onNavigate((destination) => {
+        setView(destination);
+        setSelectedLesson(null);
+      }),
+    [],
+  );
+  useEffect(() => {
+    void window.hiJapan.companion
+      .setActivity(view === 'learn' || view === 'review' ? 'study' : 'idle')
+      .catch(() => {});
+  }, [view]);
+  useEffect(
+    () =>
+      window.hiJapan.companion.onLesson((id) => {
+        setSelectedLesson(id);
+        setView('learn');
+      }),
+    [],
+  );
 
   if (loading || !splashElapsed) return <LoadingScreen startup />;
   if (error && !snapshot) return <FatalError message={error} retry={refresh} />;
@@ -194,7 +241,26 @@ export function App() {
           />
         )}
         {view === 'learn' &&
-          (selectedLesson ? (
+          (selectedLesson?.startsWith('kana-') ? (
+            <KanaLessonPlayer
+              key={selectedLesson}
+              lesson={kanaCourse.lessons.find(
+                (item) => item.id === selectedLesson,
+              )!}
+              onBack={() => setSelectedLesson(null)}
+              onProgress={refresh}
+            />
+          ) : selectedLesson?.startsWith('jlpt-') ? (
+            <JlptLessonPlayer
+              key={selectedLesson}
+              lessonId={selectedLesson.split('::')[0]!}
+              initialStage={
+                (selectedLesson.split('::')[1] as JlptStage) ?? 'menu'
+              }
+              onBack={() => setSelectedLesson(null)}
+              onProgress={refresh}
+            />
+          ) : selectedLesson ? (
             <LessonView
               lessonId={selectedLesson}
               onBack={() => setSelectedLesson(null)}
@@ -577,13 +643,21 @@ function Stat({
 }
 
 function LearnView({ openLesson }: { openLesson: (lessonId: string) => void }) {
-  const [learningArea, setLearningArea] = useState<'kana' | 'travel'>('kana');
+  const [learningArea, setLearningArea] = useState<'kana' | 'jlpt' | 'travel'>(
+    'kana',
+  );
   const [selectedScene, setSelectedScene] = useState<Scene>('restaurant');
   const [lessons, setLessons] = useState<LessonSummary[]>([]);
   const [dialogues, setDialogues] = useState<DialogueGroup[]>([]);
   const [tab, setTab] = useState<'lessons' | 'dialogues'>('lessons');
   const [kanaLesson, setKanaLesson] = useState<KanaLesson | null>(null);
   const [kanaProgress, setKanaProgress] = useState<KanaProgress | null>(null);
+  const [jlptLevel, setJlptLevel] = useState<JlptLevel>('N5');
+  const [jlptLessons, setJlptLessons] = useState<JlptLessonSummary[]>([]);
+  const [jlptProgress, setJlptProgress] = useState<JlptProgress | null>(null);
+  const [selectedJlptLesson, setSelectedJlptLesson] = useState<string | null>(
+    null,
+  );
 
   const refreshKanaProgress = useCallback(async () => {
     setKanaProgress(await window.hiJapan.learning.getKanaProgress());
@@ -603,12 +677,35 @@ function LearnView({ openLesson }: { openLesson: (lessonId: string) => void }) {
     });
   }, [selectedScene]);
 
+  const refreshJlpt = useCallback(async () => {
+    const [nextLessons, nextProgress] = await Promise.all([
+      window.hiJapan.learning.listJlptLessons(jlptLevel),
+      window.hiJapan.learning.getJlptProgress(),
+    ]);
+    setJlptLessons(nextLessons);
+    setJlptProgress(nextProgress);
+  }, [jlptLevel]);
+
+  useEffect(() => {
+    if (learningArea === 'jlpt') void refreshJlpt();
+  }, [learningArea, refreshJlpt]);
+
   if (kanaLesson) {
     return (
       <KanaLessonPlayer
         lesson={kanaLesson}
         onBack={() => setKanaLesson(null)}
         onProgress={refreshKanaProgress}
+      />
+    );
+  }
+
+  if (selectedJlptLesson) {
+    return (
+      <JlptLessonPlayer
+        lessonId={selectedJlptLesson}
+        onBack={() => setSelectedJlptLesson(null)}
+        onProgress={refreshJlpt}
       />
     );
   }
@@ -629,6 +726,16 @@ function LearnView({ openLesson }: { openLesson: (lessonId: string) => void }) {
           <span>
             <strong>五十音基础</strong>
             <small>平假名、片假名、拼读与测试</small>
+          </span>
+        </button>
+        <button
+          className={learningArea === 'jlpt' ? 'active' : ''}
+          onClick={() => setLearningArea('jlpt')}
+        >
+          <span className="area-kanji">級</span>
+          <span>
+            <strong>JLPT N5—N1</strong>
+            <small>词汇、语法、例句与综合测试</small>
           </span>
         </button>
         <button
@@ -699,6 +806,83 @@ function LearnView({ openLesson }: { openLesson: (lessonId: string) => void }) {
           </div>
           <p className="content-review-note">
             本五十音课程为开发审阅版，日语词例仍需母语者正式审核。
+          </p>
+        </section>
+      ) : learningArea === 'jlpt' ? (
+        <section className="jlpt-course-map">
+          <div className="jlpt-level-tabs" aria-label="选择 JLPT 等级">
+            {(['N5', 'N4', 'N3', 'N2', 'N1'] as JlptLevel[]).map((level) => (
+              <button
+                className={jlptLevel === level ? 'active' : ''}
+                key={level}
+                onClick={() => setJlptLevel(level)}
+              >
+                <strong>{level}</strong>
+                <small>
+                  {
+                    jlptProgress?.completedLessonIds.filter((id) =>
+                      id.startsWith(`jlpt-${level.toLowerCase()}-`),
+                    ).length
+                  }{' '}
+                  已完成
+                </small>
+              </button>
+            ))}
+          </div>
+          <div className="jlpt-course-intro">
+            <div>
+              <span className="eyebrow">每节 5—10 分钟 · 约 10 个新词</span>
+              <h2>{jlptLevel} 词汇与语法课程</h2>
+              <p>
+                先学习词义与语法例句，再完成本节匹配和组句测试；完成过课程后可随时进行综合复习。
+              </p>
+            </div>
+            <button
+              className="secondary"
+              disabled={
+                !jlptProgress?.completedLessonIds.some((id) =>
+                  id.startsWith(`jlpt-${jlptLevel.toLowerCase()}-`),
+                )
+              }
+              onClick={async () => {
+                const cumulative =
+                  await window.hiJapan.learning.getJlptCumulativeLesson(
+                    jlptLevel,
+                  );
+                if (cumulative)
+                  setSelectedJlptLesson(`cumulative:${jlptLevel}`);
+              }}
+            >
+              综合复习
+            </button>
+          </div>
+          <div className="jlpt-lesson-grid">
+            {jlptLessons.map((lesson) => (
+              <button
+                className={`jlpt-lesson-card ${lesson.status}`}
+                key={lesson.id}
+                onClick={() => setSelectedJlptLesson(lesson.id)}
+              >
+                <span className="jlpt-lesson-number">
+                  {String(lesson.lessonNumber).padStart(2, '0')}
+                </span>
+                <span>
+                  <strong>{lesson.title}</strong>
+                  <small>
+                    {lesson.vocabularyCount} 词 · {lesson.grammarCount} 语法 ·{' '}
+                    {lesson.minutes} 分钟
+                  </small>
+                </span>
+                <em>
+                  {lesson.status === 'completed'
+                    ? `${Math.round(lesson.lessonScore ?? 0)} 分`
+                    : '开始'}
+                </em>
+              </button>
+            ))}
+          </div>
+          <p className="content-review-note">
+            本课程为开发审阅版；中文机翻、等级划分和日语例句均待人工审核。
           </p>
         </section>
       ) : (
@@ -1272,6 +1456,735 @@ function KanaMemoryGame({
               onClick={() => void save()}
             >
               {saving ? '正在保存…' : '保存游戏成绩'}
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+type JlptStage =
+  | 'menu'
+  | 'vocabulary'
+  | 'grammar'
+  | 'matching'
+  | 'puzzle'
+  | 'game'
+  | 'finished';
+
+function JlptLessonPlayer({
+  initialStage = 'menu',
+  lessonId,
+  onBack,
+  onProgress,
+}: {
+  initialStage?: JlptStage;
+  lessonId: string;
+  onBack: () => void;
+  onProgress: () => Promise<void>;
+}) {
+  const cumulativeLevel = lessonId.startsWith('cumulative:')
+    ? (lessonId.split(':')[1] as JlptLevel)
+    : null;
+  const [lesson, setLesson] = useState<JlptLessonDetail | null>(null);
+  const [stage, setStage] = useState<JlptStage>(initialStage);
+  const [position, setPosition] = useState(0);
+  const [mistakes, setMistakes] = useState<string[]>([]);
+  const [revealedToken, setRevealedToken] = useState<number | null>(null);
+  const [showMoreExamples, setShowMoreExamples] = useState(false);
+  const [revealedExtraToken, setRevealedExtraToken] = useState<string | null>(
+    null,
+  );
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    const request = cumulativeLevel
+      ? window.hiJapan.learning.getJlptCumulativeLesson(cumulativeLevel)
+      : window.hiJapan.learning.getJlptLesson(lessonId);
+    void request
+      .then((value) => {
+        if (!value) throw new Error('请先完成至少一节课程，再进行综合复习。');
+        setLesson(value);
+        if (initialStage === 'puzzle' && !value.grammar.length)
+          setStage('matching');
+      })
+      .catch((caught) => setError(errorMessage(caught)));
+  }, [cumulativeLevel, lessonId]);
+
+  if (error) return <FatalError message={error} retry={async () => onBack()} />;
+  if (!lesson) return <LoadingScreen />;
+
+  const goTo = (next: JlptStage) => {
+    setPosition(0);
+    setRevealedToken(null);
+    setShowMoreExamples(false);
+    setRevealedExtraToken(null);
+    setStage(next);
+  };
+  const finish = async (gameCompleted = false) => {
+    if (!cumulativeLevel) {
+      const total = lesson.vocabulary.length + lesson.grammar.length;
+      const uniqueMistakes = [...new Set(mistakes)];
+      await window.hiJapan.learning.completeJlptLesson({
+        lessonId: lesson.id,
+        score:
+          total === 0
+            ? 100
+            : Math.max(0, ((total - uniqueMistakes.length) / total) * 100),
+        difficultItemIds: uniqueMistakes,
+        gameCompleted,
+      });
+      await onProgress();
+    }
+    goTo('finished');
+  };
+
+  if (stage === 'menu') {
+    return (
+      <div className="jlpt-entry-page">
+        <button className="back-button" onClick={onBack}>
+          ← 返回 JLPT 课程
+        </button>
+        <section className="jlpt-entry-panel">
+          <span className="eyebrow">
+            {cumulativeLevel
+              ? '只使用已完成课程出题'
+              : `${lesson.minutes} 分钟短课`}
+          </span>
+          <h1>{lesson.title}</h1>
+          <p>{lesson.description}</p>
+          <div className="jlpt-entry-options">
+            {!cumulativeLevel && (
+              <button className="featured" onClick={() => goTo('vocabulary')}>
+                <span>学</span>
+                <strong>完整学习本节</strong>
+                <small>单词 → 语法例句 → 测试</small>
+              </button>
+            )}
+            <button onClick={() => goTo('matching')}>
+              <span>試</span>
+              <strong>
+                {cumulativeLevel ? '开始综合测试' : '直接做本节测试'}
+              </strong>
+              <small>读音匹配、句子补全与完整组句</small>
+            </button>
+            <button onClick={() => goTo('game')}>
+              <span>遊</span>
+              <strong>词汇翻牌游戏</strong>
+              <small>平假名读音与单词释义配对</small>
+            </button>
+          </div>
+        </section>
+      </div>
+    );
+  }
+
+  if (stage === 'matching') {
+    return (
+      <JlptMatchingTest
+        vocabulary={lesson.vocabulary}
+        onBack={() => goTo('menu')}
+        onComplete={(wrongIds) => {
+          setMistakes((items) => [...items, ...wrongIds]);
+          if (lesson.grammar.length) goTo('puzzle');
+          else void finish(false);
+        }}
+      />
+    );
+  }
+  if (stage === 'puzzle') {
+    return (
+      <JlptSentenceTest
+        grammar={lesson.grammar}
+        vocabulary={lesson.vocabulary}
+        onBack={() => goTo('menu')}
+        onComplete={(wrongIds) => {
+          setMistakes((items) => [...items, ...wrongIds]);
+          void finish(false);
+        }}
+      />
+    );
+  }
+  if (stage === 'game') {
+    return (
+      <JlptMemoryGame
+        vocabulary={lesson.vocabulary}
+        title={lesson.title}
+        onBack={() => goTo('menu')}
+        onComplete={() => finish(true)}
+      />
+    );
+  }
+  if (stage === 'finished') {
+    return (
+      <div className="kana-celebration">
+        <button className="back-button" onClick={onBack}>
+          ← 返回 JLPT 课程
+        </button>
+        <section>
+          <span className="celebration-mark">✓</span>
+          <span className="eyebrow">
+            {cumulativeLevel ? '综合复习完成' : '进度已保存在本机'}
+          </span>
+          <h1>{lesson.title} 已完成</h1>
+          <p>错题会影响本节得分；你可以随时再次学习或继续下一节。</p>
+          <div className="button-row centered">
+            <button className="primary" onClick={() => goTo('matching')}>
+              再做一次测试
+            </button>
+            <button className="secondary" onClick={() => goTo('game')}>
+              玩翻牌游戏
+            </button>
+            <button className="secondary" onClick={onBack}>
+              返回课程
+            </button>
+          </div>
+        </section>
+      </div>
+    );
+  }
+
+  const vocabulary = lesson.vocabulary[position];
+  const grammar = lesson.grammar[position];
+  const studyingGrammar = stage === 'grammar';
+  const itemCount = studyingGrammar
+    ? lesson.grammar.length
+    : lesson.vocabulary.length;
+  const nextStudy = () => {
+    if (position < itemCount - 1) {
+      setPosition((value) => value + 1);
+      setRevealedToken(null);
+      setShowMoreExamples(false);
+      setRevealedExtraToken(null);
+    } else if (stage === 'vocabulary' && lesson.grammar.length) goTo('grammar');
+    else goTo('matching');
+  };
+
+  return (
+    <div className="jlpt-player">
+      <header className="lesson-toolbar">
+        <button className="back-button" onClick={onBack}>
+          ← 返回 JLPT 课程
+        </button>
+        <div>
+          <strong>{lesson.title}</strong>
+          <small>{studyingGrammar ? '语法与例句' : '新单词'}</small>
+        </div>
+        <span>
+          {position + 1} / {itemCount}
+        </span>
+      </header>
+      <div className="progress-track">
+        <span style={{ width: `${((position + 1) / itemCount) * 100}%` }} />
+      </div>
+      {!studyingGrammar && vocabulary ? (
+        <section className="jlpt-vocabulary-card">
+          <span className="card-type">{vocabulary.level} · 新单词</span>
+          <button
+            className="audio-button icon-only"
+            onClick={() => speakJapanese(vocabulary.reading)}
+            aria-label="播放单词读音"
+          >
+            🔊
+          </button>
+          <h1 lang="ja">{vocabulary.japanese}</h1>
+          <p className="word-reading" lang="ja">
+            {vocabulary.reading}
+          </p>
+          <strong className="jlpt-word-meaning">{vocabulary.meaningZh}</strong>
+          <button className="primary wide" onClick={nextStudy}>
+            {position === itemCount - 1
+              ? lesson.grammar.length
+                ? '进入语法学习 →'
+                : '进入本节测试 →'
+              : '下一个单词 →'}
+          </button>
+        </section>
+      ) : grammar ? (
+        <section className="jlpt-grammar-card">
+          <span className="card-type">{grammar.level} · 语法</span>
+          <h1 lang="ja">{grammar.pattern}</h1>
+          <div className="grammar-summary">
+            <strong>{grammar.meaningZh}</strong>
+            <span>{grammar.formationZh}</span>
+          </div>
+          <div className="grammar-example">
+            <button
+              className="speak-inline"
+              onClick={() => speakJapanese(grammar.exampleJapanese)}
+              aria-label="播放例句"
+            >
+              🔊
+            </button>
+            <div className="interactive-sentence" lang="ja">
+              {grammar.tokens.map((token, index) => (
+                <button
+                  key={`${token.surface}-${index}`}
+                  className={revealedToken === index ? 'active' : ''}
+                  onClick={() => setRevealedToken(index)}
+                >
+                  {token.reading && <small>{token.reading}</small>}
+                  <span>{token.surface}</span>
+                  {revealedToken === index && <em>{token.meaningZh}</em>}
+                </button>
+              ))}
+            </div>
+            <p>{grammar.exampleMeaningZh}</p>
+          </div>
+          <div className="grammar-explanation">
+            <strong>结合例句理解</strong>
+            <p>{grammar.explanationZh}</p>
+          </div>
+          {grammar.examples.length > 1 && (
+            <div className="grammar-more-examples">
+              <button
+                className="grammar-more-toggle"
+                onClick={() => {
+                  setShowMoreExamples((visible) => !visible);
+                  setRevealedExtraToken(null);
+                }}
+                aria-expanded={showMoreExamples}
+              >
+                {showMoreExamples
+                  ? '收起更多示例 ↑'
+                  : `更多示例（${grammar.examples.length - 1}）↓`}
+              </button>
+              {showMoreExamples && (
+                <div className="grammar-extra-list">
+                  {grammar.examples.slice(1).map((example, exampleIndex) => (
+                    <article key={example.id}>
+                      <div className="grammar-extra-heading">
+                        <span>示例 {exampleIndex + 2}</span>
+                        <button
+                          className="speak-inline"
+                          onClick={() => speakJapanese(example.japanese)}
+                          aria-label={`播放示例 ${exampleIndex + 2}`}
+                        >
+                          🔊
+                        </button>
+                      </div>
+                      <div className="interactive-sentence compact" lang="ja">
+                        {example.tokens.map((token, tokenIndex) => {
+                          const tokenId = `${example.id}:${tokenIndex}`;
+                          return (
+                            <button
+                              key={tokenId}
+                              className={
+                                revealedExtraToken === tokenId ? 'active' : ''
+                              }
+                              onClick={() => setRevealedExtraToken(tokenId)}
+                            >
+                              {token.reading && <small>{token.reading}</small>}
+                              <span>{token.surface}</span>
+                              {revealedExtraToken === tokenId && (
+                                <em>{token.meaningZh}</em>
+                              )}
+                            </button>
+                          );
+                        })}
+                      </div>
+                      <p>{example.meaningZh}</p>
+                    </article>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+          <button className="primary wide" onClick={nextStudy}>
+            {position === itemCount - 1 ? '进入本节测试 →' : '下一个语法 →'}
+          </button>
+        </section>
+      ) : null}
+    </div>
+  );
+}
+
+function JlptMatchingTest({
+  vocabulary,
+  onBack,
+  onComplete,
+}: {
+  vocabulary: JlptVocabularyItem[];
+  onBack: () => void;
+  onComplete: (wrongIds: string[]) => void;
+}) {
+  const [matchItems] = useState(() => createJlptReadingMatchItems(vocabulary));
+  const [readings] = useState(() =>
+    [...matchItems].sort(() => Math.random() - 0.5),
+  );
+  const [words] = useState(() =>
+    [...matchItems].sort(() => Math.random() - 0.5),
+  );
+  const [readingId, setReadingId] = useState<string | null>(null);
+  const [wordId, setWordId] = useState<string | null>(null);
+  const [matched, setMatched] = useState<Set<string>>(() => new Set());
+  const [wrongIds, setWrongIds] = useState<string[]>([]);
+  const choose = (side: 'reading' | 'word', id: string) => {
+    const nextReading = side === 'reading' ? id : readingId;
+    const nextWord = side === 'word' ? id : wordId;
+    setReadingId(nextReading);
+    setWordId(nextWord);
+    if (!nextReading || !nextWord) return;
+    if (nextReading === nextWord) {
+      setMatched((current) => new Set(current).add(id));
+      const item = matchItems.find((entry) => entry.id === id);
+      if (item) speakJapanese(item.reading);
+    } else setWrongIds((current) => [...current, nextReading, nextWord]);
+    window.setTimeout(() => {
+      setReadingId(null);
+      setWordId(null);
+    }, 280);
+  };
+  const done = matched.size === matchItems.length;
+  return (
+    <div className="jlpt-test-page">
+      <header className="lesson-toolbar">
+        <button className="back-button" onClick={onBack}>
+          ← 返回选择
+        </button>
+        <div>
+          <strong>单词读音匹配</strong>
+          <small>请匹配平假名读音与对应的单词（中文释义）</small>
+        </div>
+        <span>
+          {matched.size} / {matchItems.length}
+        </span>
+      </header>
+      <div className="jlpt-match-board">
+        <section>
+          <h2>平假名读音</h2>
+          {readings.map((item) => (
+            <button
+              key={item.id}
+              disabled={matched.has(item.id)}
+              className={`${matched.has(item.id) ? 'matched' : ''} ${readingId === item.id ? 'selected' : ''}`}
+              onClick={() => choose('reading', item.id)}
+            >
+              <strong className="reading-choice" lang="ja">
+                {toHiragana(item.reading)}
+              </strong>
+            </button>
+          ))}
+        </section>
+        <section>
+          <h2>单词（中文释义）</h2>
+          {words.map((item) => (
+            <button
+              key={item.id}
+              disabled={matched.has(item.id)}
+              className={`${matched.has(item.id) ? 'matched' : ''} ${wordId === item.id ? 'selected' : ''}`}
+              onClick={() => choose('word', item.id)}
+            >
+              <strong lang="ja">{item.japanese}</strong>
+              <small>（{item.meaningZh}）</small>
+            </button>
+          ))}
+        </section>
+      </div>
+      {done && (
+        <button
+          className="primary kana-test-next"
+          onClick={() => onComplete([...new Set(wrongIds)])}
+        >
+          继续句子测试 →
+        </button>
+      )}
+    </div>
+  );
+}
+
+function JlptSentenceTest({
+  grammar,
+  vocabulary,
+  onBack,
+  onComplete,
+}: {
+  grammar: JlptGrammarItem[];
+  vocabulary: JlptVocabularyItem[];
+  onBack: () => void;
+  onComplete: (wrongIds: string[]) => void;
+}) {
+  const questions = useMemo(() => {
+    if (grammar.length === 1)
+      return [
+        { grammar: grammar[0] as JlptGrammarItem, kind: 'completion' as const },
+        { grammar: grammar[0] as JlptGrammarItem, kind: 'order' as const },
+      ];
+    return grammar.map((item, index) => ({
+      grammar: item,
+      kind: index % 2 === 0 ? ('completion' as const) : ('order' as const),
+    }));
+  }, [grammar]);
+  const distractorPool = useMemo(
+    () => [
+      ...vocabulary.map((item) => item.japanese),
+      ...grammar.flatMap((item) => createSentenceChunks(item).chunks),
+    ],
+    [grammar, vocabulary],
+  );
+  const [position, setPosition] = useState(0);
+  const question = questions[position];
+  const current = question?.grammar;
+  const createPuzzle = useCallback(
+    (
+      item: (typeof questions)[number] | undefined,
+    ): JlptSentencePuzzle | null => {
+      if (!item) return null;
+      return item.kind === 'completion'
+        ? createSentenceCompletionPuzzle(
+            item.grammar,
+            distractorPool.filter(
+              (token) =>
+                !createSentenceChunks(item.grammar).chunks.includes(token),
+            ),
+          )
+        : createSentenceOrderPuzzle(item.grammar);
+    },
+    [distractorPool],
+  );
+  const [puzzle, setPuzzle] = useState<JlptSentencePuzzle | null>(() =>
+    createPuzzle(question),
+  );
+  const [selectedIndexes, setSelectedIndexes] = useState<number[]>([]);
+  const [wrongIds, setWrongIds] = useState<string[]>([]);
+  const [feedback, setFeedback] = useState('');
+  useEffect(() => {
+    if (question) {
+      setPuzzle(createPuzzle(question));
+      setSelectedIndexes([]);
+      setFeedback('');
+    }
+  }, [createPuzzle, question]);
+  if (!current || !puzzle) return null;
+  const selected = selectedIndexes.map((index) => puzzle.options[index]);
+  const check = () => {
+    const ok = selected.join('') === puzzle.answer.join('');
+    if (!ok) {
+      setWrongIds((items) => [...items, current.id]);
+      setFeedback(
+        puzzle.kind === 'completion'
+          ? '还有空格没有选对，请根据句意重新选择。'
+          : '顺序还不正确，请调整后再检查。',
+      );
+      return;
+    }
+    speakJapanese(current.exampleJapanese);
+    if (position < questions.length - 1) setPosition((value) => value + 1);
+    else onComplete([...new Set(wrongIds)]);
+  };
+  const removeSelected = (selectedPosition: number) =>
+    setSelectedIndexes((items) =>
+      items.filter((_, index) => index !== selectedPosition),
+    );
+  const punctuationAt = (index: number) =>
+    puzzle.punctuationSlots[index] ? (
+      <span className="fixed-punctuation" aria-label="固定标点">
+        {puzzle.punctuationSlots[index]}
+      </span>
+    ) : null;
+  return (
+    <div className="jlpt-test-page sentence-test">
+      <header className="lesson-toolbar">
+        <button className="back-button" onClick={onBack}>
+          ← 返回选择
+        </button>
+        <div>
+          <strong>
+            {puzzle.kind === 'completion' ? '句子补全' : '完整组句'}
+          </strong>
+          <small>
+            {puzzle.kind === 'completion'
+              ? '根据中文，从含干扰项的选项中补全一至两个词块'
+              : '根据中文排列完整词块；标点已经固定，无需选择'}
+          </small>
+        </div>
+        <span>
+          {position + 1} / {questions.length}
+        </span>
+      </header>
+      <section className="sentence-puzzle-card">
+        <span className="eyebrow">
+          {puzzle.kind === 'completion' ? '补全这句话' : '翻译这句话'}
+        </span>
+        <h2>{current.exampleMeaningZh}</h2>
+        {puzzle.kind === 'completion' ? (
+          <div className="sentence-answer sentence-completion" lang="ja">
+            {punctuationAt(0)}
+            {puzzle.chunks.map((chunk, chunkIndex) => {
+              const blankPosition = puzzle.blankIndexes.indexOf(chunkIndex);
+              const selectedToken =
+                blankPosition >= 0 ? selected[blankPosition] : null;
+              return (
+                <span className="sentence-slot" key={`${chunk}-${chunkIndex}`}>
+                  {blankPosition >= 0 ? (
+                    selectedToken ? (
+                      <button onClick={() => removeSelected(blankPosition)}>
+                        {selectedToken}
+                      </button>
+                    ) : (
+                      <span className="sentence-blank">
+                        空格 {blankPosition + 1}
+                      </span>
+                    )
+                  ) : (
+                    <span>{chunk}</span>
+                  )}
+                  {punctuationAt(chunkIndex + 1)}
+                </span>
+              );
+            })}
+          </div>
+        ) : (
+          <div className="sentence-answer sentence-order" lang="ja">
+            {punctuationAt(0)}
+            {puzzle.answer.map((_, answerIndex) => (
+              <span className="sentence-slot" key={`slot-${answerIndex}`}>
+                {selected[answerIndex] ? (
+                  <button onClick={() => removeSelected(answerIndex)}>
+                    {selected[answerIndex]}
+                  </button>
+                ) : (
+                  <span className="sentence-blank compact" />
+                )}
+                {punctuationAt(answerIndex + 1)}
+              </span>
+            ))}
+          </div>
+        )}
+        <div className="sentence-options">
+          {puzzle.options.map((token, index) => (
+            <button
+              key={`${token}-${index}`}
+              disabled={selectedIndexes.includes(index)}
+              onClick={() =>
+                setSelectedIndexes((items) =>
+                  items.length >= puzzle.answer.length
+                    ? items
+                    : [...items, index],
+                )
+              }
+            >
+              {token}
+            </button>
+          ))}
+        </div>
+        {feedback && <p className="puzzle-feedback">{feedback}</p>}
+        <div className="button-row centered">
+          <button className="secondary" onClick={() => setSelectedIndexes([])}>
+            重置
+          </button>
+          <button
+            className="primary"
+            disabled={selectedIndexes.length !== puzzle.answer.length}
+            onClick={check}
+          >
+            检查
+          </button>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function JlptMemoryGame({
+  vocabulary,
+  title,
+  onBack,
+  onComplete,
+}: {
+  vocabulary: JlptVocabularyItem[];
+  title: string;
+  onBack: () => void;
+  onComplete: () => Promise<void>;
+}) {
+  const [deck, setDeck] = useState<JlptMemoryCard[]>(() =>
+    createJlptMemoryDeck(vocabulary),
+  );
+  const [openCards, setOpenCards] = useState<string[]>([]);
+  const [matched, setMatched] = useState<Set<string>>(() => new Set());
+  const select = (card: JlptMemoryCard) => {
+    if (
+      openCards.length >= 2 ||
+      openCards.includes(card.id) ||
+      matched.has(card.id)
+    )
+      return;
+    const next = [...openCards, card.id];
+    setOpenCards(next);
+    if (next.length !== 2) return;
+    const pair = next.map((id) => deck.find((item) => item.id === id));
+    if (pair[0]?.matchId === pair[1]?.matchId)
+      window.setTimeout(() => {
+        setMatched((current) =>
+          new Set(current).add(next[0] as string).add(next[1] as string),
+        );
+        setOpenCards([]);
+      }, 360);
+    else window.setTimeout(() => setOpenCards([]), 760);
+  };
+  const won = matched.size === deck.length;
+  return (
+    <div className="kana-game-page">
+      <header className="lesson-toolbar">
+        <button className="back-button" onClick={onBack}>
+          ← 暂停游戏
+        </button>
+        <div>
+          <strong>{title} · 读音翻牌</strong>
+          <small>找到平假名读音与对应的单词（中文释义）</small>
+        </div>
+        <span>
+          {matched.size / 2} / {deck.length / 2}
+        </span>
+      </header>
+      <div className="uta-game-board">
+        {deck.map((card) => {
+          const open = openCards.includes(card.id);
+          return (
+            <button
+              className={`uta-card ${open ? 'open' : ''} ${matched.has(card.id) ? 'removed' : ''}`}
+              disabled={matched.has(card.id)}
+              key={card.id}
+              onClick={() => select(card)}
+            >
+              <span className="uta-card-inner">
+                <span
+                  className={`uta-card-back ${card.back}`}
+                  style={{
+                    backgroundImage: `url(${card.back === 'torii' ? utaCardToriiUrl : utaCardSakuraUrl})`,
+                  }}
+                />
+                <span className={`uta-card-front jlpt-card-front ${card.side}`}>
+                  <strong>{card.primaryText}</strong>
+                  {card.secondaryText && (
+                    <small className="jlpt-card-secondary">
+                      （{card.secondaryText}）
+                    </small>
+                  )}
+                  <em>{card.side === 'reading' ? '读音' : '单词'}</em>
+                </span>
+              </span>
+            </button>
+          );
+        })}
+      </div>
+      {won && (
+        <div className="game-result">
+          <strong>全部配对完成！</strong>
+          <div className="button-row centered">
+            <button
+              className="secondary"
+              onClick={() => {
+                setDeck(createJlptMemoryDeck(vocabulary));
+                setMatched(new Set());
+                setOpenCards([]);
+              }}
+            >
+              再玩一局
+            </button>
+            <button className="primary" onClick={() => void onComplete()}>
+              保存并完成
             </button>
           </div>
         </div>
@@ -2024,6 +2937,7 @@ function SettingsView({
         <p>用于自由对话；普通课程不调用 AI。</p>
         <AiSettingsPanel />
       </section>
+      <PetSettingsPanel />
       <section className="settings-section">
         <h2>学习数据</h2>
         <p>
@@ -2068,6 +2982,157 @@ function SettingsView({
         <span>v{snapshot.appVersion} · Windows 桌面开发版 · 无自建后端</span>
       </section>
     </div>
+  );
+}
+
+function PetSettingsPanel() {
+  const [state, setState] = useState<PetSnapshot | null>(null);
+  const [error, setError] = useState('');
+  const [saving, setSaving] = useState(false);
+  useEffect(() => {
+    let mounted = true;
+    void window.hiJapan.companion
+      .getState()
+      .then((next) => {
+        if (mounted) setState(next);
+      })
+      .catch(() => setError('桌宠配置读取失败，请重启后重试。'));
+    const off = window.hiJapan.companion.onState(setState);
+    return () => {
+      mounted = false;
+      off();
+    };
+  }, []);
+  const update = async (patch: Partial<PetPreferences>) => {
+    setSaving(true);
+    setError('');
+    try {
+      setState(await window.hiJapan.companion.updatePreferences(patch));
+    } catch {
+      setError('桌宠配置更新失败，请重试。');
+    } finally {
+      setSaving(false);
+    }
+  };
+  return (
+    <section className="settings-section pet-settings">
+      <h2>桌面学习伙伴</h2>
+      {state && (
+        <div className="pet-settings-options">
+          <label>
+            性格
+            <select
+              value={state.preferences.persona}
+              onChange={(event) =>
+                void update({
+                  persona: event.target.value as PetPreferences['persona'],
+                })
+              }
+            >
+              <option value="buddy">开朗学习搭档</option>
+              <option value="mentor">温柔严谨导师</option>
+              <option value="whale">聪明慵懒·傲娇鲸鱼少女</option>
+            </select>
+          </label>
+          <label>
+            关系
+            <select
+              value={state.preferences.relationship}
+              onChange={(event) =>
+                void update({
+                  relationship: event.target
+                    .value as PetPreferences['relationship'],
+                })
+              }
+            >
+              <option value="friend">朋友</option>
+              <option value="teacher">师生</option>
+              <option value="partner">虚构恋人（成年设定）</option>
+            </select>
+          </label>
+          <label>
+            自定义人设
+            <textarea
+              aria-label="自定义人设"
+              maxLength={2000}
+              defaultValue={state.preferences.customPersona}
+              onBlur={(event) =>
+                void update({ customPersona: event.target.value })
+              }
+              placeholder="可以粘贴 PERSONA_LOAD 风格的人设，失去焦点自动保存"
+            />
+          </label>
+          <p>
+            桌宠聊天共用下方/上方已配置的 AI
+            API；发送消息时会提交最近对话、人设和与问题相关的课程摘要。
+          </p>
+        </div>
+      )}
+      <button
+        className="secondary"
+        onClick={() =>
+          void window.hiJapan.companion
+            .resetPosition()
+            .catch(() => setError('位置重置失败，请重试。'))
+        }
+      >
+        重置到屏幕右下角
+      </button>
+      <p>
+        拖动角色移动位置，单击或右键打开互动菜单，双击回到学习。最小化主窗口后仍可陪伴；关闭软件时一起退出。
+      </p>
+      {error && <p role="alert">{error}</p>}
+      {state ? (
+        <>
+          {state.persistenceError && (
+            <p role="alert">偏好未能保存到本机，请检查应用数据目录是否可写。</p>
+          )}
+          <div className="pet-settings-options">
+            {(
+              [
+                ['enabled', '显示桌宠（下次启动保持此选择）'],
+                ['locked', '锁定位置，防止误拖动'],
+                ['reducedMotion', '减少动画'],
+                ['bubbles', '显示学习提示气泡'],
+              ] as const
+            ).map(([key, label]) => (
+              <label key={key}>
+                <input
+                  type="checkbox"
+                  checked={state.preferences[key]}
+                  disabled={saving}
+                  onChange={(event) =>
+                    void update({ [key]: event.target.checked })
+                  }
+                />
+                {label}
+              </label>
+            ))}
+            <label>
+              桌宠大小
+              <select
+                aria-label="桌宠大小"
+                value={state.preferences.scale}
+                disabled={saving}
+                onChange={(event) =>
+                  void update({ scale: Number(event.target.value) })
+                }
+              >
+                <option value={0.75}>小（75%）</option>
+                <option value={1}>标准（100%）</option>
+                <option value={1.25}>大（125%）</option>
+              </select>
+            </label>
+          </div>
+          <p className="pet-settings-note">
+            日常陪伴、课程反馈和动作均在本地执行。需要 AI
+            时，从互动菜单进入“对话”后主动发送。当前为透明立绘与轻量动效，逐帧表情动画后续加入。
+          </p>
+        </>
+      ) : (
+        !error && <p>正在读取桌宠设置…</p>
+      )}
+    </section>
   );
 }
 

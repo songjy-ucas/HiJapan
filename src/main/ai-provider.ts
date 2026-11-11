@@ -59,9 +59,10 @@ export function validateBaseUrl(value: string) {
   return value.trim().replace(/\/+$/, '');
 }
 
-async function requestChat(
+export async function requestChat(
   config: ProviderConfig,
   messages: ProviderMessage[],
+  maxTokens = 600,
 ) {
   const response = await fetch(chatEndpoint(config.baseUrl), {
     method: 'POST',
@@ -73,7 +74,7 @@ async function requestChat(
       model: config.model,
       messages,
       temperature: 0.4,
-      max_tokens: 600,
+      max_tokens: maxTokens,
     }),
     signal: AbortSignal.timeout(35_000),
   });

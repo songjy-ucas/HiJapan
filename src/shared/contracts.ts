@@ -78,6 +78,82 @@ export type KanaProgress = {
   gameCompletedLessonIds: string[];
 };
 
+export type JlptLevel = 'N5' | 'N4' | 'N3' | 'N2' | 'N1';
+
+export type JlptVocabularyItem = {
+  id: string;
+  level: JlptLevel;
+  japanese: string;
+  reading: string;
+  romaji: string;
+  meaningZh: string;
+  meaningStatus: string;
+  partOfSpeech: string[];
+  reviewStatus: string;
+};
+
+export type JlptSentenceToken = {
+  surface: string;
+  reading: string | null;
+  meaningZh: string;
+};
+
+export type JlptGrammarExample = {
+  id: string;
+  japanese: string;
+  reading: string;
+  meaningZh: string;
+  tokens: JlptSentenceToken[];
+};
+
+export type JlptGrammarItem = {
+  id: string;
+  level: JlptLevel;
+  pattern: string;
+  reading: string | null;
+  formationZh: string;
+  meaningZh: string;
+  explanationZh: string;
+  exampleJapanese: string;
+  exampleReading: string;
+  exampleMeaningZh: string;
+  tokens: JlptSentenceToken[];
+  examples: JlptGrammarExample[];
+  reviewStatus: string;
+  translationStatus: string;
+};
+
+export type JlptLessonSummary = {
+  id: string;
+  level: JlptLevel;
+  lessonNumber: number;
+  title: string;
+  description: string;
+  minutes: number;
+  vocabularyCount: number;
+  grammarCount: number;
+  status: 'not_started' | 'completed';
+  lessonScore: number | null;
+};
+
+export type JlptLessonDetail = JlptLessonSummary & {
+  vocabulary: JlptVocabularyItem[];
+  grammar: JlptGrammarItem[];
+};
+
+export type JlptProgress = {
+  completedLessonIds: string[];
+  scores: Record<string, number>;
+  gameCompletedLessonIds: string[];
+};
+
+export type JlptLessonCompletion = {
+  lessonId: string;
+  score: number;
+  difficultItemIds: string[];
+  gameCompleted?: boolean;
+};
+
 export type ProfileInput = {
   displayName: string;
   primaryMode: PrimaryMode;
@@ -201,6 +277,7 @@ export type DialogueGroup = {
 export type BackupResult = { ok: boolean; path?: string; message: string };
 
 export interface HiJapanApi {
+  companion: import('./pet-contracts').MainCompanionApi;
   app: {
     getSnapshot(): Promise<AppSnapshot>;
     saveProfile(input: ProfileInput): Promise<AppSnapshot>;
@@ -220,6 +297,11 @@ export interface HiJapanApi {
       lessonId: string,
       gameCompleted?: boolean,
     ): Promise<KanaProgress>;
+    listJlptLessons(level: JlptLevel): Promise<JlptLessonSummary[]>;
+    getJlptLesson(lessonId: string): Promise<JlptLessonDetail>;
+    getJlptProgress(): Promise<JlptProgress>;
+    completeJlptLesson(input: JlptLessonCompletion): Promise<JlptProgress>;
+    getJlptCumulativeLesson(level: JlptLevel): Promise<JlptLessonDetail | null>;
   };
   review: {
     getDue(limit?: number): Promise<ReviewCard[]>;

@@ -1,0 +1,6368 @@
+[
+  {
+    "id": "jlpt-n4-lesson-001",
+    "level": "N4",
+    "module_number": 1,
+    "lesson_number": 1,
+    "title": "普通形与日常叙述 · 新内容识别与语境理解 001",
+    "module_goal": "从礼貌形扩展到普通形、引用和连贯叙述",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "recognition",
+    "objectives": [
+      "学习本课词汇、汉字和语法，在短句中识别形式与核心功能。",
+      "掌握本课分配的 11 个词汇、3 个汉字和 1 个语法点。",
+      "精学 6 条目标例句，其余 22 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-4fff6d0441",
+        "jlpt-vocab-6a4011f27f",
+        "jlpt-vocab-c3c3ac9f48",
+        "jlpt-vocab-d1a343e501",
+        "jlpt-vocab-54e1f7a772",
+        "jlpt-vocab-2a6a55be8d",
+        "jlpt-vocab-4a3152836b",
+        "jlpt-vocab-e877021bf4",
+        "jlpt-vocab-91f0d5ac9e",
+        "jlpt-vocab-628b6b8e9d",
+        "jlpt-vocab-f935952fed"
+      ],
+      "kanji": [
+        "jlpt-kanji-4f1a",
+        "jlpt-kanji-540c",
+        "jlpt-kanji-4e8b"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-ageru-kureru-morau"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-4fff6d0441-1",
+        "jlpt-sentence-vocab-4fff6d0441-2",
+        "jlpt-sentence-vocab-6a4011f27f-1",
+        "jlpt-sentence-vocab-6a4011f27f-2",
+        "jlpt-sentence-vocab-c3c3ac9f48-1",
+        "jlpt-sentence-vocab-c3c3ac9f48-2"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-d1a343e501-1",
+        "jlpt-sentence-vocab-d1a343e501-2",
+        "jlpt-sentence-vocab-54e1f7a772-1",
+        "jlpt-sentence-vocab-54e1f7a772-2",
+        "jlpt-sentence-vocab-2a6a55be8d-1",
+        "jlpt-sentence-vocab-2a6a55be8d-2",
+        "jlpt-sentence-vocab-4a3152836b-1",
+        "jlpt-sentence-vocab-4a3152836b-2",
+        "jlpt-sentence-vocab-e877021bf4-1",
+        "jlpt-sentence-vocab-e877021bf4-2",
+        "jlpt-sentence-vocab-91f0d5ac9e-1",
+        "jlpt-sentence-vocab-91f0d5ac9e-2",
+        "jlpt-sentence-vocab-628b6b8e9d-1",
+        "jlpt-sentence-vocab-628b6b8e9d-2",
+        "jlpt-sentence-vocab-f935952fed-1",
+        "jlpt-sentence-vocab-f935952fed-2",
+        "jlpt-sentence-vocab-590fa58ca9-1",
+        "jlpt-sentence-vocab-590fa58ca9-2",
+        "jlpt-sentence-vocab-97bdb63259-1",
+        "jlpt-sentence-vocab-97bdb63259-2",
+        "jlpt-sentence-vocab-4c3461199c-1",
+        "jlpt-sentence-vocab-4c3461199c-2"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "kanji_reading",
+      "orthography",
+      "context_expression",
+      "sentence_grammar"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-002",
+    "level": "N4",
+    "module_number": 1,
+    "lesson_number": 2,
+    "title": "普通形与日常叙述 · 易混辨析与受控输出 002",
+    "module_goal": "从礼貌形扩展到普通形、引用和连贯叙述",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "contrast_and_use",
+    "objectives": [
+      "比较近义形式，在替换、排序和情境选择中正确使用。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-590fa58ca9",
+        "jlpt-vocab-97bdb63259",
+        "jlpt-vocab-4c3461199c",
+        "jlpt-vocab-7fe5e36942",
+        "jlpt-vocab-8c98c01eff",
+        "jlpt-vocab-b00801af22",
+        "jlpt-vocab-c1fb180c70",
+        "jlpt-vocab-0fa879c73d",
+        "jlpt-vocab-b921645383",
+        "jlpt-vocab-1056f23586",
+        "jlpt-vocab-ab0767b2f7",
+        "jlpt-vocab-88d4196563"
+      ],
+      "kanji": [
+        "jlpt-kanji-81ea",
+        "jlpt-kanji-793e",
+        "jlpt-kanji-767a"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-te-ageru",
+        "jlpt-grammar-n4-te-kureru"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-7fe5e36942-1",
+        "jlpt-sentence-vocab-7fe5e36942-2",
+        "jlpt-sentence-vocab-8c98c01eff-1",
+        "jlpt-sentence-vocab-8c98c01eff-2",
+        "jlpt-sentence-vocab-b00801af22-1",
+        "jlpt-sentence-vocab-b00801af22-2"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-c1fb180c70-1",
+        "jlpt-sentence-vocab-c1fb180c70-2",
+        "jlpt-sentence-vocab-0fa879c73d-1",
+        "jlpt-sentence-vocab-0fa879c73d-2",
+        "jlpt-sentence-vocab-b921645383-1",
+        "jlpt-sentence-vocab-b921645383-2",
+        "jlpt-sentence-vocab-1056f23586-1",
+        "jlpt-sentence-vocab-1056f23586-2",
+        "jlpt-sentence-vocab-ab0767b2f7-1",
+        "jlpt-sentence-vocab-ab0767b2f7-2",
+        "jlpt-sentence-vocab-d06643e4e1-1",
+        "jlpt-sentence-vocab-d06643e4e1-2",
+        "jlpt-sentence-vocab-160a8399af-1",
+        "jlpt-sentence-vocab-160a8399af-2",
+        "jlpt-sentence-vocab-367da027cb-1",
+        "jlpt-sentence-vocab-367da027cb-2",
+        "jlpt-sentence-vocab-52a79a5d69-1",
+        "jlpt-sentence-vocab-52a79a5d69-2",
+        "jlpt-sentence-vocab-629362dbfc-1",
+        "jlpt-sentence-vocab-629362dbfc-2",
+        "jlpt-sentence-vocab-da4198f39c-1",
+        "jlpt-sentence-vocab-da4198f39c-2",
+        "jlpt-sentence-vocab-20044dd689-1"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "paraphrase",
+      "usage",
+      "sentence_composition",
+      "quick_response"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-003",
+    "level": "N4",
+    "module_number": 1,
+    "lesson_number": 3,
+    "title": "普通形与日常叙述 · 听读整合与任务完成 003",
+    "module_goal": "从礼貌形扩展到普通形、引用和连贯叙述",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "integrated_input",
+    "objectives": [
+      "阅读短文或听取对话，提取关键信息并完成真实任务。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-d06643e4e1",
+        "jlpt-vocab-160a8399af",
+        "jlpt-vocab-367da027cb",
+        "jlpt-vocab-52a79a5d69",
+        "jlpt-vocab-629362dbfc",
+        "jlpt-vocab-da4198f39c",
+        "jlpt-vocab-20044dd689",
+        "jlpt-vocab-db01fd59d7",
+        "jlpt-vocab-ba5a03baf1",
+        "jlpt-vocab-372ce69caf",
+        "jlpt-vocab-770aa71095",
+        "jlpt-vocab-13ab63d79a"
+      ],
+      "kanji": [
+        "jlpt-kanji-8005",
+        "jlpt-kanji-5730",
+        "jlpt-kanji-696d"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-te-morau",
+        "jlpt-grammar-n4-te-kudasaru-te-itadaku"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-20044dd689-2",
+        "jlpt-sentence-vocab-db01fd59d7-1",
+        "jlpt-sentence-vocab-db01fd59d7-2",
+        "jlpt-sentence-vocab-ba5a03baf1-1",
+        "jlpt-sentence-vocab-ba5a03baf1-2",
+        "jlpt-sentence-vocab-372ce69caf-1"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-372ce69caf-2",
+        "jlpt-sentence-vocab-770aa71095-1",
+        "jlpt-sentence-vocab-770aa71095-2",
+        "jlpt-sentence-vocab-13ab63d79a-1",
+        "jlpt-sentence-vocab-13ab63d79a-2",
+        "jlpt-sentence-vocab-05b5de61ab-1",
+        "jlpt-sentence-vocab-05b5de61ab-2",
+        "jlpt-sentence-vocab-6dbf756da1-1",
+        "jlpt-sentence-vocab-6dbf756da1-2",
+        "jlpt-sentence-vocab-47cc7185d5-1",
+        "jlpt-sentence-vocab-47cc7185d5-2",
+        "jlpt-sentence-vocab-bf82bb12d2-1",
+        "jlpt-sentence-vocab-bf82bb12d2-2",
+        "jlpt-sentence-vocab-cf69ef2274-1",
+        "jlpt-sentence-vocab-cf69ef2274-2",
+        "jlpt-sentence-vocab-95f7288e1b-1",
+        "jlpt-sentence-vocab-95f7288e1b-2",
+        "jlpt-sentence-vocab-3de1fe452d-1",
+        "jlpt-sentence-vocab-3de1fe452d-2",
+        "jlpt-sentence-vocab-556e3e0d99-1",
+        "jlpt-sentence-vocab-556e3e0d99-2",
+        "jlpt-sentence-vocab-11d4a3118b-1",
+        "jlpt-sentence-vocab-11d4a3118b-2"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "context_expression",
+      "text_grammar",
+      "short_passage",
+      "task_comprehension",
+      "key_points"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-004",
+    "level": "N4",
+    "module_number": 1,
+    "lesson_number": 4,
+    "title": "普通形与日常叙述 · 新内容识别与语境理解 004",
+    "module_goal": "从礼貌形扩展到普通形、引用和连贯叙述",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "recognition",
+    "objectives": [
+      "学习本课词汇、汉字和语法，在短句中识别形式与核心功能。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-05b5de61ab",
+        "jlpt-vocab-6dbf756da1",
+        "jlpt-vocab-47cc7185d5",
+        "jlpt-vocab-bf82bb12d2",
+        "jlpt-vocab-cf69ef2274",
+        "jlpt-vocab-95f7288e1b",
+        "jlpt-vocab-3de1fe452d",
+        "jlpt-vocab-556e3e0d99",
+        "jlpt-vocab-11d4a3118b",
+        "jlpt-vocab-877a39a99f",
+        "jlpt-vocab-bc25dff617",
+        "jlpt-vocab-833af5347e"
+      ],
+      "kanji": [
+        "jlpt-kanji-65b9",
+        "jlpt-kanji-65b0",
+        "jlpt-kanji-5834"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-te-iku",
+        "jlpt-grammar-n4-te-kuru"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-877a39a99f-1",
+        "jlpt-sentence-vocab-877a39a99f-2",
+        "jlpt-sentence-vocab-833af5347e-1",
+        "jlpt-sentence-vocab-833af5347e-2",
+        "jlpt-sentence-vocab-bf69a1d9f2-1",
+        "jlpt-sentence-vocab-bf69a1d9f2-2"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-4bdd43130b-1",
+        "jlpt-sentence-vocab-4bdd43130b-2",
+        "jlpt-sentence-vocab-20989c0cb5-1",
+        "jlpt-sentence-vocab-20989c0cb5-2",
+        "jlpt-sentence-vocab-e54d4fef93-1",
+        "jlpt-sentence-vocab-e54d4fef93-2",
+        "jlpt-sentence-vocab-da1a2f9721-1",
+        "jlpt-sentence-vocab-da1a2f9721-2",
+        "jlpt-sentence-vocab-76d4bcd098-1",
+        "jlpt-sentence-vocab-76d4bcd098-2",
+        "jlpt-sentence-vocab-e6f3a7d91a-1",
+        "jlpt-sentence-vocab-e6f3a7d91a-2",
+        "jlpt-sentence-vocab-0dd54894db-1",
+        "jlpt-sentence-vocab-0dd54894db-2",
+        "jlpt-sentence-vocab-69589e0288-1",
+        "jlpt-sentence-vocab-69589e0288-2",
+        "jlpt-sentence-vocab-c7362b5e02-1",
+        "jlpt-sentence-vocab-c7362b5e02-2",
+        "jlpt-sentence-vocab-78d94c404b-1",
+        "jlpt-sentence-vocab-78d94c404b-2",
+        "jlpt-sentence-vocab-6d3b3fe0a4-1",
+        "jlpt-sentence-vocab-6d3b3fe0a4-2",
+        "jlpt-sentence-vocab-1b5a6286d6-1"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "kanji_reading",
+      "orthography",
+      "context_expression",
+      "sentence_grammar"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-005",
+    "level": "N4",
+    "module_number": 1,
+    "lesson_number": 5,
+    "title": "普通形与日常叙述 · 易混辨析与受控输出 005",
+    "module_goal": "从礼貌形扩展到普通形、引用和连贯叙述",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "contrast_and_use",
+    "objectives": [
+      "比较近义形式，在替换、排序和情境选择中正确使用。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-bf69a1d9f2",
+        "jlpt-vocab-4bdd43130b",
+        "jlpt-vocab-20989c0cb5",
+        "jlpt-vocab-e54d4fef93",
+        "jlpt-vocab-da1a2f9721",
+        "jlpt-vocab-76d4bcd098",
+        "jlpt-vocab-e6f3a7d91a",
+        "jlpt-vocab-0dd54894db",
+        "jlpt-vocab-69589e0288",
+        "jlpt-vocab-c7362b5e02",
+        "jlpt-vocab-78d94c404b",
+        "jlpt-vocab-6d3b3fe0a4"
+      ],
+      "kanji": [
+        "jlpt-kanji-54e1",
+        "jlpt-kanji-7acb",
+        "jlpt-kanji-958b"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-te-shimau-chau",
+        "jlpt-grammar-n4-te-oku"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-1b5a6286d6-2",
+        "jlpt-sentence-vocab-11222e25b5-1",
+        "jlpt-sentence-vocab-11222e25b5-2",
+        "jlpt-sentence-vocab-c67a9658b1-1",
+        "jlpt-sentence-vocab-c67a9658b1-2",
+        "jlpt-sentence-vocab-533b248802-1"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-533b248802-2",
+        "jlpt-sentence-vocab-44f33984fb-1",
+        "jlpt-sentence-vocab-44f33984fb-2",
+        "jlpt-sentence-vocab-9f6e25d5e2-1",
+        "jlpt-sentence-vocab-9f6e25d5e2-2",
+        "jlpt-sentence-vocab-47487b1e85-1",
+        "jlpt-sentence-vocab-47487b1e85-2",
+        "jlpt-sentence-vocab-3139c14254-1",
+        "jlpt-sentence-vocab-3139c14254-2",
+        "jlpt-sentence-vocab-bb01cb559f-1",
+        "jlpt-sentence-vocab-bb01cb559f-2",
+        "jlpt-sentence-vocab-60c9784974-1",
+        "jlpt-sentence-vocab-60c9784974-2",
+        "jlpt-sentence-vocab-5ceed9165d-1",
+        "jlpt-sentence-vocab-5ceed9165d-2",
+        "jlpt-sentence-vocab-53c76e5c6e-1",
+        "jlpt-sentence-vocab-53c76e5c6e-2",
+        "jlpt-sentence-vocab-12e7bd036b-1",
+        "jlpt-sentence-vocab-12e7bd036b-2",
+        "jlpt-sentence-vocab-5c63f36f44-1",
+        "jlpt-sentence-vocab-5c63f36f44-2",
+        "jlpt-sentence-vocab-e5e5899ce2-1",
+        "jlpt-sentence-vocab-e5e5899ce2-2"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "paraphrase",
+      "usage",
+      "sentence_composition",
+      "quick_response"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-006",
+    "level": "N4",
+    "module_number": 1,
+    "lesson_number": 6,
+    "title": "普通形与日常叙述 · 听读整合与任务完成 006",
+    "module_goal": "从礼貌形扩展到普通形、引用和连贯叙述",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "integrated_input",
+    "objectives": [
+      "阅读短文或听取对话，提取关键信息并完成真实任务。",
+      "掌握本课分配的 12 个词汇、4 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-1b5a6286d6",
+        "jlpt-vocab-11222e25b5",
+        "jlpt-vocab-c67a9658b1",
+        "jlpt-vocab-533b248802",
+        "jlpt-vocab-44f33984fb",
+        "jlpt-vocab-9f6e25d5e2",
+        "jlpt-vocab-47487b1e85",
+        "jlpt-vocab-3139c14254",
+        "jlpt-vocab-bb01cb559f",
+        "jlpt-vocab-60c9784974",
+        "jlpt-vocab-5ceed9165d",
+        "jlpt-vocab-53c76e5c6e"
+      ],
+      "kanji": [
+        "jlpt-kanji-624b",
+        "jlpt-kanji-529b",
+        "jlpt-kanji-554f",
+        "jlpt-kanji-4ee3"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-te-miru",
+        "jlpt-grammar-n4-te-aru"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-4d2128cddd-1",
+        "jlpt-sentence-vocab-4d2128cddd-2",
+        "jlpt-sentence-vocab-a58874b751-1",
+        "jlpt-sentence-vocab-a58874b751-2",
+        "jlpt-sentence-vocab-4cfa8f43e2-1",
+        "jlpt-sentence-vocab-4cfa8f43e2-2"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-1065d7145c-1",
+        "jlpt-sentence-vocab-1065d7145c-2",
+        "jlpt-sentence-vocab-ba001e2f36-1",
+        "jlpt-sentence-vocab-ba001e2f36-2",
+        "jlpt-sentence-vocab-af1dae5588-1",
+        "jlpt-sentence-vocab-af1dae5588-2",
+        "jlpt-sentence-vocab-ae8ce3986c-1",
+        "jlpt-sentence-vocab-ae8ce3986c-2",
+        "jlpt-sentence-vocab-99de4451f7-1",
+        "jlpt-sentence-vocab-99de4451f7-2",
+        "jlpt-sentence-vocab-2139fab218-1",
+        "jlpt-sentence-vocab-2139fab218-2",
+        "jlpt-sentence-vocab-2e0f32c097-1",
+        "jlpt-sentence-vocab-2e0f32c097-2",
+        "jlpt-sentence-vocab-3787755f33-1",
+        "jlpt-sentence-vocab-3787755f33-2",
+        "jlpt-sentence-vocab-1f5a7d8e07-1",
+        "jlpt-sentence-vocab-1f5a7d8e07-2",
+        "jlpt-sentence-vocab-6693b4e9f7-1",
+        "jlpt-sentence-vocab-6693b4e9f7-2",
+        "jlpt-sentence-vocab-981ee66f59-1",
+        "jlpt-sentence-vocab-981ee66f59-2",
+        "jlpt-sentence-vocab-050024e2d9-1"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "context_expression",
+      "text_grammar",
+      "short_passage",
+      "task_comprehension",
+      "key_points"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-007",
+    "level": "N4",
+    "module_number": 1,
+    "lesson_number": 7,
+    "title": "普通形与日常叙述 · 新内容识别与语境理解 007",
+    "module_goal": "从礼貌形扩展到普通形、引用和连贯叙述",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "recognition",
+    "objectives": [
+      "学习本课词汇、汉字和语法，在短句中识别形式与核心功能。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 1 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-12e7bd036b",
+        "jlpt-vocab-5c63f36f44",
+        "jlpt-vocab-e5e5899ce2",
+        "jlpt-vocab-4d2128cddd",
+        "jlpt-vocab-a58874b751",
+        "jlpt-vocab-4cfa8f43e2",
+        "jlpt-vocab-1065d7145c",
+        "jlpt-vocab-ba001e2f36",
+        "jlpt-vocab-af1dae5588",
+        "jlpt-vocab-ae8ce3986c",
+        "jlpt-vocab-99de4451f7",
+        "jlpt-vocab-2139fab218"
+      ],
+      "kanji": [
+        "jlpt-kanji-660e",
+        "jlpt-kanji-52d5",
+        "jlpt-kanji-4eac"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-toki"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-050024e2d9-2",
+        "jlpt-sentence-vocab-b8630e0875-1",
+        "jlpt-sentence-vocab-b8630e0875-2",
+        "jlpt-sentence-vocab-f2c38f9517-1",
+        "jlpt-sentence-vocab-f2c38f9517-2",
+        "jlpt-sentence-vocab-c6815e7618-1"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-c6815e7618-2",
+        "jlpt-sentence-vocab-f786333cf9-1",
+        "jlpt-sentence-vocab-f786333cf9-2",
+        "jlpt-sentence-vocab-8c636a46f4-1",
+        "jlpt-sentence-vocab-8c636a46f4-2",
+        "jlpt-sentence-vocab-3280103eb8-1",
+        "jlpt-sentence-vocab-3280103eb8-2",
+        "jlpt-sentence-vocab-6d69734463-1",
+        "jlpt-sentence-vocab-6d69734463-2",
+        "jlpt-sentence-vocab-68ff489ea4-1",
+        "jlpt-sentence-vocab-68ff489ea4-2",
+        "jlpt-sentence-vocab-eb615955c8-1",
+        "jlpt-sentence-vocab-eb615955c8-2",
+        "jlpt-sentence-vocab-f586632207-1",
+        "jlpt-sentence-vocab-f586632207-2",
+        "jlpt-sentence-vocab-3e4c1468c7-1",
+        "jlpt-sentence-vocab-3e4c1468c7-2",
+        "jlpt-sentence-vocab-bad913ed8f-1",
+        "jlpt-sentence-vocab-bad913ed8f-2",
+        "jlpt-sentence-vocab-1579d0db1b-1",
+        "jlpt-sentence-vocab-1579d0db1b-2",
+        "jlpt-sentence-vocab-721424863e-1",
+        "jlpt-sentence-vocab-721424863e-2"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "kanji_reading",
+      "orthography",
+      "context_expression",
+      "sentence_grammar"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-008",
+    "level": "N4",
+    "module_number": 2,
+    "lesson_number": 8,
+    "title": "经历、计划与意向 · 易混辨析与受控输出 008",
+    "module_goal": "表达经验、预定、打算、尝试和建议",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "contrast_and_use",
+    "objectives": [
+      "比较近义形式，在替换、排序和情境选择中正确使用。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 22 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-2e0f32c097",
+        "jlpt-vocab-3787755f33",
+        "jlpt-vocab-1f5a7d8e07",
+        "jlpt-vocab-6693b4e9f7",
+        "jlpt-vocab-981ee66f59",
+        "jlpt-vocab-050024e2d9",
+        "jlpt-vocab-b8630e0875",
+        "jlpt-vocab-f2c38f9517",
+        "jlpt-vocab-c6815e7618",
+        "jlpt-vocab-f786333cf9",
+        "jlpt-vocab-8c636a46f4",
+        "jlpt-vocab-3280103eb8"
+      ],
+      "kanji": [
+        "jlpt-kanji-76ee",
+        "jlpt-kanji-901a",
+        "jlpt-kanji-8a00"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-aida-aida-ni",
+        "jlpt-grammar-n4-sou-da-appearance"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-9099d4615b-1",
+        "jlpt-sentence-vocab-9099d4615b-2",
+        "jlpt-sentence-vocab-d9cf4f541d-1",
+        "jlpt-sentence-vocab-d9cf4f541d-2",
+        "jlpt-sentence-vocab-4806278f5b-1",
+        "jlpt-sentence-vocab-4806278f5b-2"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-ac3d1de39a-1",
+        "jlpt-sentence-vocab-ac3d1de39a-2",
+        "jlpt-sentence-vocab-12db3e5f4e-1",
+        "jlpt-sentence-vocab-12db3e5f4e-2",
+        "jlpt-sentence-vocab-d517e5d931-1",
+        "jlpt-sentence-vocab-d517e5d931-2",
+        "jlpt-sentence-vocab-19cb869e4d-1",
+        "jlpt-sentence-vocab-19cb869e4d-2",
+        "jlpt-sentence-vocab-cbbc4c3524-1",
+        "jlpt-sentence-vocab-cbbc4c3524-2",
+        "jlpt-sentence-vocab-6f4ad2115e-1",
+        "jlpt-sentence-vocab-6f4ad2115e-2",
+        "jlpt-sentence-vocab-83af91b7eb-1",
+        "jlpt-sentence-vocab-83af91b7eb-2",
+        "jlpt-sentence-vocab-93ff1a80c2-1",
+        "jlpt-sentence-vocab-93ff1a80c2-2",
+        "jlpt-sentence-vocab-7508a7d366-1",
+        "jlpt-sentence-vocab-7508a7d366-2",
+        "jlpt-sentence-vocab-81b9c23c14-1",
+        "jlpt-sentence-vocab-81b9c23c14-2",
+        "jlpt-sentence-vocab-6365c5ac47-1",
+        "jlpt-sentence-vocab-6365c5ac47-2"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "paraphrase",
+      "usage",
+      "sentence_composition",
+      "quick_response"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-009",
+    "level": "N4",
+    "module_number": 2,
+    "lesson_number": 9,
+    "title": "经历、计划与意向 · 听读整合与任务完成 009",
+    "module_goal": "表达经验、预定、打算、尝试和建议",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "integrated_input",
+    "objectives": [
+      "阅读短文或听取对话，提取关键信息并完成真实任务。",
+      "掌握本课分配的 11 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-6d69734463",
+        "jlpt-vocab-68ff489ea4",
+        "jlpt-vocab-eb615955c8",
+        "jlpt-vocab-f586632207",
+        "jlpt-vocab-3e4c1468c7",
+        "jlpt-vocab-bad913ed8f",
+        "jlpt-vocab-1579d0db1b",
+        "jlpt-vocab-721424863e",
+        "jlpt-vocab-9099d4615b",
+        "jlpt-vocab-d9cf4f541d",
+        "jlpt-vocab-4806278f5b"
+      ],
+      "kanji": [
+        "jlpt-kanji-7406",
+        "jlpt-kanji-4f53",
+        "jlpt-kanji-7530"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-sou-da-hearsay",
+        "jlpt-grammar-n4-rashii"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-64e3e16740-1",
+        "jlpt-sentence-vocab-64e3e16740-2",
+        "jlpt-sentence-vocab-ea150f3d48-1",
+        "jlpt-sentence-vocab-ea150f3d48-2",
+        "jlpt-sentence-vocab-2c7db27d62-1",
+        "jlpt-sentence-vocab-2c7db27d62-2"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-2d6f99582c-1",
+        "jlpt-sentence-vocab-2d6f99582c-2",
+        "jlpt-sentence-vocab-b64af0c4f7-1",
+        "jlpt-sentence-vocab-b64af0c4f7-2",
+        "jlpt-sentence-vocab-b3c360789e-1",
+        "jlpt-sentence-vocab-b3c360789e-2",
+        "jlpt-sentence-vocab-57c68573b7-1",
+        "jlpt-sentence-vocab-57c68573b7-2",
+        "jlpt-sentence-vocab-d0e700807a-1",
+        "jlpt-sentence-vocab-d0e700807a-2",
+        "jlpt-sentence-vocab-26f2ddd0a2-1",
+        "jlpt-sentence-vocab-26f2ddd0a2-2",
+        "jlpt-sentence-vocab-119fdf575e-1",
+        "jlpt-sentence-vocab-119fdf575e-2",
+        "jlpt-sentence-vocab-26a19196b7-1",
+        "jlpt-sentence-vocab-26a19196b7-2",
+        "jlpt-sentence-vocab-021c00423f-1",
+        "jlpt-sentence-vocab-021c00423f-2",
+        "jlpt-sentence-vocab-876713fb67-1",
+        "jlpt-sentence-vocab-876713fb67-2",
+        "jlpt-sentence-vocab-89927b8fa1-1",
+        "jlpt-sentence-vocab-89927b8fa1-2",
+        "jlpt-sentence-vocab-3153705f1f-1"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "context_expression",
+      "text_grammar",
+      "short_passage",
+      "task_comprehension",
+      "key_points"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-010",
+    "level": "N4",
+    "module_number": 2,
+    "lesson_number": 10,
+    "title": "经历、计划与意向 · 新内容识别与语境理解 010",
+    "module_goal": "表达经验、预定、打算、尝试和建议",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "recognition",
+    "objectives": [
+      "学习本课词汇、汉字和语法，在短句中识别形式与核心功能。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-ac3d1de39a",
+        "jlpt-vocab-12db3e5f4e",
+        "jlpt-vocab-d517e5d931",
+        "jlpt-vocab-19cb869e4d",
+        "jlpt-vocab-cbbc4c3524",
+        "jlpt-vocab-6f4ad2115e",
+        "jlpt-vocab-83af91b7eb",
+        "jlpt-vocab-93ff1a80c2",
+        "jlpt-vocab-7508a7d366",
+        "jlpt-vocab-81b9c23c14",
+        "jlpt-vocab-6365c5ac47",
+        "jlpt-vocab-64e3e16740"
+      ],
+      "kanji": [
+        "jlpt-kanji-4e3b",
+        "jlpt-kanji-984c",
+        "jlpt-kanji-610f"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-you-da",
+        "jlpt-grammar-n4-mitai"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-3153705f1f-2",
+        "jlpt-sentence-vocab-5a76ee84b9-1",
+        "jlpt-sentence-vocab-5a76ee84b9-2",
+        "jlpt-sentence-vocab-be3dacfc93-1",
+        "jlpt-sentence-vocab-be3dacfc93-2",
+        "jlpt-sentence-vocab-0752484ec5-1"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-0752484ec5-2",
+        "jlpt-sentence-vocab-e7dca3ae5a-1",
+        "jlpt-sentence-vocab-e7dca3ae5a-2",
+        "jlpt-sentence-vocab-ec0fe6786a-1",
+        "jlpt-sentence-vocab-ec0fe6786a-2",
+        "jlpt-sentence-vocab-6b240c6105-1",
+        "jlpt-sentence-vocab-6b240c6105-2",
+        "jlpt-sentence-vocab-d1cd028481-1",
+        "jlpt-sentence-vocab-d1cd028481-2",
+        "jlpt-sentence-vocab-4c9297421b-1",
+        "jlpt-sentence-vocab-4c9297421b-2",
+        "jlpt-sentence-vocab-0963c50b58-1",
+        "jlpt-sentence-vocab-0963c50b58-2",
+        "jlpt-sentence-vocab-6345553664-1",
+        "jlpt-sentence-vocab-6345553664-2",
+        "jlpt-sentence-vocab-84c24fbab6-1",
+        "jlpt-sentence-vocab-84c24fbab6-2",
+        "jlpt-sentence-vocab-34071d7901-1",
+        "jlpt-sentence-vocab-34071d7901-2",
+        "jlpt-sentence-vocab-ec1bdccf03-1",
+        "jlpt-sentence-vocab-ec1bdccf03-2",
+        "jlpt-sentence-vocab-cc34f28850-1",
+        "jlpt-sentence-vocab-cc34f28850-2"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "kanji_reading",
+      "orthography",
+      "context_expression",
+      "sentence_grammar"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-011",
+    "level": "N4",
+    "module_number": 2,
+    "lesson_number": 11,
+    "title": "经历、计划与意向 · 易混辨析与受控输出 011",
+    "module_goal": "表达经验、预定、打算、尝试和建议",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "contrast_and_use",
+    "objectives": [
+      "比较近义形式，在替换、排序和情境选择中正确使用。",
+      "掌握本课分配的 12 个词汇、4 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-ea150f3d48",
+        "jlpt-vocab-2c7db27d62",
+        "jlpt-vocab-2d6f99582c",
+        "jlpt-vocab-b64af0c4f7",
+        "jlpt-vocab-376ccb94c4",
+        "jlpt-vocab-b3c360789e",
+        "jlpt-vocab-57c68573b7",
+        "jlpt-vocab-d0e700807a",
+        "jlpt-vocab-26f2ddd0a2",
+        "jlpt-vocab-119fdf575e",
+        "jlpt-vocab-26a19196b7",
+        "jlpt-vocab-021c00423f"
+      ],
+      "kanji": [
+        "jlpt-kanji-4e0d",
+        "jlpt-kanji-4f5c",
+        "jlpt-kanji-7528",
+        "jlpt-kanji-5ea6"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-sugiru",
+        "jlpt-grammar-n4-kata"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-f960d43119-1",
+        "jlpt-sentence-vocab-f960d43119-2",
+        "jlpt-sentence-vocab-374a0aa749-1",
+        "jlpt-sentence-vocab-374a0aa749-2",
+        "jlpt-sentence-vocab-ac20bba998-1",
+        "jlpt-sentence-vocab-ac20bba998-2"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-ab366b6c9d-1",
+        "jlpt-sentence-vocab-ab366b6c9d-2",
+        "jlpt-sentence-vocab-3f4f3a3b9d-1",
+        "jlpt-sentence-vocab-3f4f3a3b9d-2",
+        "jlpt-sentence-vocab-8bbbe3a9e8-1",
+        "jlpt-sentence-vocab-8bbbe3a9e8-2",
+        "jlpt-sentence-vocab-7225b79db5-1",
+        "jlpt-sentence-vocab-7225b79db5-2",
+        "jlpt-sentence-vocab-a0c815188f-1",
+        "jlpt-sentence-vocab-a0c815188f-2",
+        "jlpt-sentence-vocab-bbf69b64f8-1",
+        "jlpt-sentence-vocab-bbf69b64f8-2",
+        "jlpt-sentence-vocab-a1afb31e7b-1",
+        "jlpt-sentence-vocab-a1afb31e7b-2",
+        "jlpt-sentence-vocab-fcca18b129-1",
+        "jlpt-sentence-vocab-fcca18b129-2",
+        "jlpt-sentence-vocab-b284605582-1",
+        "jlpt-sentence-vocab-b284605582-2",
+        "jlpt-sentence-vocab-4d5b12c74c-1",
+        "jlpt-sentence-vocab-4d5b12c74c-2",
+        "jlpt-sentence-vocab-d90ee2957c-1",
+        "jlpt-sentence-vocab-d90ee2957c-2",
+        "jlpt-sentence-vocab-42f05076b3-1"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "paraphrase",
+      "usage",
+      "sentence_composition",
+      "quick_response"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-012",
+    "level": "N4",
+    "module_number": 2,
+    "lesson_number": 12,
+    "title": "经历、计划与意向 · 听读整合与任务完成 012",
+    "module_goal": "表达经验、预定、打算、尝试和建议",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "integrated_input",
+    "objectives": [
+      "阅读短文或听取对话，提取关键信息并完成真实任务。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-876713fb67",
+        "jlpt-vocab-89927b8fa1",
+        "jlpt-vocab-3153705f1f",
+        "jlpt-vocab-5a76ee84b9",
+        "jlpt-vocab-be3dacfc93",
+        "jlpt-vocab-0752484ec5",
+        "jlpt-vocab-e7dca3ae5a",
+        "jlpt-vocab-ec0fe6786a",
+        "jlpt-vocab-6b240c6105",
+        "jlpt-vocab-d1cd028481",
+        "jlpt-vocab-4c9297421b",
+        "jlpt-vocab-0963c50b58"
+      ],
+      "kanji": [
+        "jlpt-kanji-5f37",
+        "jlpt-kanji-516c",
+        "jlpt-kanji-6301"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-chuu-juu",
+        "jlpt-grammar-n4-tsumori"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-42f05076b3-2",
+        "jlpt-sentence-vocab-e4e7e09df0-1",
+        "jlpt-sentence-vocab-e4e7e09df0-2",
+        "jlpt-sentence-vocab-ed36e1d3a7-1",
+        "jlpt-sentence-vocab-ed36e1d3a7-2",
+        "jlpt-sentence-vocab-6a98f898ab-1"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-6a98f898ab-2",
+        "jlpt-sentence-vocab-af80712b7b-1",
+        "jlpt-sentence-vocab-af80712b7b-2",
+        "jlpt-sentence-vocab-a2a012c05f-1",
+        "jlpt-sentence-vocab-a2a012c05f-2",
+        "jlpt-sentence-vocab-cb029e617e-1",
+        "jlpt-sentence-vocab-cb029e617e-2",
+        "jlpt-sentence-vocab-a02c2a6790-1",
+        "jlpt-sentence-vocab-a02c2a6790-2",
+        "jlpt-sentence-vocab-b6027b4099-1",
+        "jlpt-sentence-vocab-b6027b4099-2",
+        "jlpt-sentence-vocab-319186af72-1",
+        "jlpt-sentence-vocab-319186af72-2",
+        "jlpt-sentence-vocab-7a7b79370f-1",
+        "jlpt-sentence-vocab-7a7b79370f-2",
+        "jlpt-sentence-vocab-a9dcbea815-1",
+        "jlpt-sentence-vocab-a9dcbea815-2",
+        "jlpt-sentence-vocab-23ea485338-1",
+        "jlpt-sentence-vocab-23ea485338-2",
+        "jlpt-sentence-vocab-a6d55823a0-1",
+        "jlpt-sentence-vocab-a6d55823a0-2",
+        "jlpt-sentence-vocab-f36e445797-1",
+        "jlpt-sentence-vocab-f36e445797-2"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "context_expression",
+      "text_grammar",
+      "short_passage",
+      "task_comprehension",
+      "key_points"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-013",
+    "level": "N4",
+    "module_number": 2,
+    "lesson_number": 13,
+    "title": "经历、计划与意向 · 新内容识别与语境理解 013",
+    "module_goal": "表达经验、预定、打算、尝试和建议",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "recognition",
+    "objectives": [
+      "学习本课词汇、汉字和语法，在短句中识别形式与核心功能。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-6345553664",
+        "jlpt-vocab-84c24fbab6",
+        "jlpt-vocab-34071d7901",
+        "jlpt-vocab-ec1bdccf03",
+        "jlpt-vocab-cc34f28850",
+        "jlpt-vocab-f960d43119",
+        "jlpt-vocab-374a0aa749",
+        "jlpt-vocab-ac20bba998",
+        "jlpt-vocab-ab366b6c9d",
+        "jlpt-vocab-3f4f3a3b9d",
+        "jlpt-vocab-8bbbe3a9e8",
+        "jlpt-vocab-7225b79db5"
+      ],
+      "kanji": [
+        "jlpt-kanji-91ce",
+        "jlpt-kanji-4ee5",
+        "jlpt-kanji-601d"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-yotei",
+        "jlpt-grammar-n4-koto-ni-suru"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-a70d257a61-1",
+        "jlpt-sentence-vocab-a70d257a61-2",
+        "jlpt-sentence-vocab-0f74a8f3a4-1",
+        "jlpt-sentence-vocab-0f74a8f3a4-2",
+        "jlpt-sentence-vocab-b5b90cb965-1",
+        "jlpt-sentence-vocab-b5b90cb965-2"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-b8da4537a2-1",
+        "jlpt-sentence-vocab-b8da4537a2-2",
+        "jlpt-sentence-vocab-78c6412e35-1",
+        "jlpt-sentence-vocab-78c6412e35-2",
+        "jlpt-sentence-vocab-7db3da6e1b-1",
+        "jlpt-sentence-vocab-7db3da6e1b-2",
+        "jlpt-sentence-vocab-5bfe1d2c25-1",
+        "jlpt-sentence-vocab-5bfe1d2c25-2",
+        "jlpt-sentence-vocab-7d2f81c2a3-1",
+        "jlpt-sentence-vocab-7d2f81c2a3-2",
+        "jlpt-sentence-vocab-17279b1beb-1",
+        "jlpt-sentence-vocab-17279b1beb-2",
+        "jlpt-sentence-vocab-e9bab5c151-1",
+        "jlpt-sentence-vocab-e9bab5c151-2",
+        "jlpt-sentence-vocab-836311c7d4-1",
+        "jlpt-sentence-vocab-836311c7d4-2",
+        "jlpt-sentence-vocab-9746b57413-1",
+        "jlpt-sentence-vocab-9746b57413-2",
+        "jlpt-sentence-vocab-5079fc5daf-1",
+        "jlpt-sentence-vocab-5079fc5daf-2",
+        "jlpt-sentence-vocab-25550955b0-1",
+        "jlpt-sentence-vocab-25550955b0-2",
+        "jlpt-sentence-vocab-8426193f36-1"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "kanji_reading",
+      "orthography",
+      "context_expression",
+      "sentence_grammar"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-014",
+    "level": "N4",
+    "module_number": 2,
+    "lesson_number": 14,
+    "title": "经历、计划与意向 · 易混辨析与受控输出 014",
+    "module_goal": "表达经验、预定、打算、尝试和建议",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "contrast_and_use",
+    "objectives": [
+      "比较近义形式，在替换、排序和情境选择中正确使用。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 1 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-a0c815188f",
+        "jlpt-vocab-bbf69b64f8",
+        "jlpt-vocab-a1afb31e7b",
+        "jlpt-vocab-fcca18b129",
+        "jlpt-vocab-b284605582",
+        "jlpt-vocab-4d5b12c74c",
+        "jlpt-vocab-d90ee2957c",
+        "jlpt-vocab-42f05076b3",
+        "jlpt-vocab-e4e7e09df0",
+        "jlpt-vocab-ed36e1d3a7",
+        "jlpt-vocab-6a98f898ab",
+        "jlpt-vocab-af80712b7b"
+      ],
+      "kanji": [
+        "jlpt-kanji-5bb6",
+        "jlpt-kanji-4e16",
+        "jlpt-kanji-591a"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-koto-ni-naru"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-8426193f36-2",
+        "jlpt-sentence-vocab-8fb005254a-1",
+        "jlpt-sentence-vocab-a200494cec-1",
+        "jlpt-sentence-vocab-a200494cec-2",
+        "jlpt-sentence-vocab-ba1b3c0d13-1",
+        "jlpt-sentence-vocab-ba1b3c0d13-2"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-c3da539389-1",
+        "jlpt-sentence-vocab-c3da539389-2",
+        "jlpt-sentence-vocab-511cbf9eee-1",
+        "jlpt-sentence-vocab-511cbf9eee-2",
+        "jlpt-sentence-vocab-0435dab637-1",
+        "jlpt-sentence-vocab-0435dab637-2",
+        "jlpt-sentence-vocab-43f91bcf9d-1",
+        "jlpt-sentence-vocab-43f91bcf9d-2",
+        "jlpt-sentence-vocab-063c94089d-1",
+        "jlpt-sentence-vocab-063c94089d-2",
+        "jlpt-sentence-vocab-607f3c4430-1",
+        "jlpt-sentence-vocab-607f3c4430-2",
+        "jlpt-sentence-vocab-912c269668-1",
+        "jlpt-sentence-vocab-912c269668-2",
+        "jlpt-sentence-vocab-a9a71878f0-1",
+        "jlpt-sentence-vocab-a9a71878f0-2",
+        "jlpt-sentence-vocab-f17fa2d7e1-1",
+        "jlpt-sentence-vocab-f17fa2d7e1-2",
+        "jlpt-sentence-vocab-aa95e437a0-1",
+        "jlpt-sentence-vocab-aa95e437a0-2",
+        "jlpt-sentence-vocab-8063587e53-1",
+        "jlpt-sentence-vocab-8063587e53-2",
+        "jlpt-sentence-vocab-baaaf1524a-1"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "paraphrase",
+      "usage",
+      "sentence_composition",
+      "quick_response"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-015",
+    "level": "N4",
+    "module_number": 3,
+    "lesson_number": 15,
+    "title": "理由、条件与转折 · 听读整合与任务完成 015",
+    "module_goal": "运用原因、让步及基础条件句组织复句",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "integrated_input",
+    "objectives": [
+      "阅读短文或听取对话，提取关键信息并完成真实任务。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-a2a012c05f",
+        "jlpt-vocab-cb029e617e",
+        "jlpt-vocab-a02c2a6790",
+        "jlpt-vocab-b6027b4099",
+        "jlpt-vocab-319186af72",
+        "jlpt-vocab-7a7b79370f",
+        "jlpt-vocab-a9dcbea815",
+        "jlpt-vocab-23ea485338",
+        "jlpt-vocab-a6d55823a0",
+        "jlpt-vocab-f36e445797",
+        "jlpt-vocab-a70d257a61",
+        "jlpt-vocab-0f74a8f3a4"
+      ],
+      "kanji": [
+        "jlpt-kanji-6b63",
+        "jlpt-kanji-5b89",
+        "jlpt-kanji-9662"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-koto-ga-dekiru",
+        "jlpt-grammar-n4-eru-rareru-potential"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-baaaf1524a-2",
+        "jlpt-sentence-vocab-22ba4ea959-1",
+        "jlpt-sentence-vocab-22ba4ea959-2",
+        "jlpt-sentence-vocab-795156bbfe-1",
+        "jlpt-sentence-vocab-795156bbfe-2",
+        "jlpt-sentence-vocab-8b7434e649-1"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-8b7434e649-2",
+        "jlpt-sentence-vocab-0c49fbf17c-1",
+        "jlpt-sentence-vocab-0c49fbf17c-2",
+        "jlpt-sentence-vocab-d64432f194-1",
+        "jlpt-sentence-vocab-d64432f194-2",
+        "jlpt-sentence-vocab-8786f4e971-1",
+        "jlpt-sentence-vocab-8786f4e971-2",
+        "jlpt-sentence-vocab-9593b3e04f-1",
+        "jlpt-sentence-vocab-9593b3e04f-2",
+        "jlpt-sentence-vocab-a431dff83f-1",
+        "jlpt-sentence-vocab-a431dff83f-2",
+        "jlpt-sentence-vocab-8fd9bc63e8-1",
+        "jlpt-sentence-vocab-8fd9bc63e8-2",
+        "jlpt-sentence-vocab-be527b9f9d-1",
+        "jlpt-sentence-vocab-be527b9f9d-2",
+        "jlpt-sentence-vocab-8bd7bc72e8-1",
+        "jlpt-sentence-vocab-ce133477e7-1",
+        "jlpt-sentence-vocab-ce133477e7-2",
+        "jlpt-sentence-vocab-5bb88bc7a4-1",
+        "jlpt-sentence-vocab-5bb88bc7a4-2",
+        "jlpt-sentence-vocab-aac669551b-1",
+        "jlpt-sentence-vocab-aac669551b-2",
+        "jlpt-sentence-vocab-5bd8adf14c-1"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "context_expression",
+      "text_grammar",
+      "short_passage",
+      "task_comprehension",
+      "key_points"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-016",
+    "level": "N4",
+    "module_number": 3,
+    "lesson_number": 16,
+    "title": "理由、条件与转折 · 新内容识别与语境理解 016",
+    "module_goal": "运用原因、让步及基础条件句组织复句",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "recognition",
+    "objectives": [
+      "学习本课词汇、汉字和语法，在短句中识别形式与核心功能。",
+      "掌握本课分配的 12 个词汇、4 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 22 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-b5b90cb965",
+        "jlpt-vocab-b8da4537a2",
+        "jlpt-vocab-78c6412e35",
+        "jlpt-vocab-7db3da6e1b",
+        "jlpt-vocab-5bfe1d2c25",
+        "jlpt-vocab-7d2f81c2a3",
+        "jlpt-vocab-17279b1beb",
+        "jlpt-vocab-e9bab5c151",
+        "jlpt-vocab-836311c7d4",
+        "jlpt-vocab-9746b57413",
+        "jlpt-vocab-5079fc5daf",
+        "jlpt-vocab-25550955b0"
+      ],
+      "kanji": [
+        "jlpt-kanji-5fc3",
+        "jlpt-kanji-754c",
+        "jlpt-kanji-6559",
+        "jlpt-kanji-6587"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-reru-rareru-passive",
+        "jlpt-grammar-n4-seru-saseru"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-5bd8adf14c-2",
+        "jlpt-sentence-vocab-038f67b635-1",
+        "jlpt-sentence-vocab-038f67b635-2",
+        "jlpt-sentence-vocab-0ae014e274-1",
+        "jlpt-sentence-vocab-0ae014e274-2",
+        "jlpt-sentence-vocab-cd7dd383c9-1"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-cd7dd383c9-2",
+        "jlpt-sentence-vocab-22f8fe69bf-1",
+        "jlpt-sentence-vocab-22f8fe69bf-2",
+        "jlpt-sentence-vocab-286e978a7d-1",
+        "jlpt-sentence-vocab-286e978a7d-2",
+        "jlpt-sentence-vocab-bdab237e0d-1",
+        "jlpt-sentence-vocab-bdab237e0d-2",
+        "jlpt-sentence-vocab-0470fc929f-1",
+        "jlpt-sentence-vocab-0470fc929f-2",
+        "jlpt-sentence-vocab-19a8ef6b7a-1",
+        "jlpt-sentence-vocab-19a8ef6b7a-2",
+        "jlpt-sentence-vocab-17fb3976d2-1",
+        "jlpt-sentence-vocab-17fb3976d2-2",
+        "jlpt-sentence-vocab-b71d50ee32-1",
+        "jlpt-sentence-vocab-b71d50ee32-2",
+        "jlpt-sentence-vocab-a769e4c0da-1",
+        "jlpt-sentence-vocab-a769e4c0da-2",
+        "jlpt-sentence-vocab-0b089107f6-1",
+        "jlpt-sentence-vocab-0b089107f6-2",
+        "jlpt-sentence-vocab-63290aef69-1",
+        "jlpt-sentence-vocab-63290aef69-2",
+        "jlpt-sentence-vocab-d11b994212-1"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "kanji_reading",
+      "orthography",
+      "context_expression",
+      "sentence_grammar"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-017",
+    "level": "N4",
+    "module_number": 3,
+    "lesson_number": 17,
+    "title": "理由、条件与转折 · 易混辨析与受控输出 017",
+    "module_goal": "运用原因、让步及基础条件句组织复句",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "contrast_and_use",
+    "objectives": [
+      "比较近义形式，在替换、排序和情境选择中正确使用。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-8426193f36",
+        "jlpt-vocab-8fb005254a",
+        "jlpt-vocab-a200494cec",
+        "jlpt-vocab-ba1b3c0d13",
+        "jlpt-vocab-c3da539389",
+        "jlpt-vocab-511cbf9eee",
+        "jlpt-vocab-0435dab637",
+        "jlpt-vocab-43f91bcf9d",
+        "jlpt-vocab-063c94089d",
+        "jlpt-vocab-607f3c4430",
+        "jlpt-vocab-912c269668",
+        "jlpt-vocab-a9a71878f0"
+      ],
+      "kanji": [
+        "jlpt-kanji-5143",
+        "jlpt-kanji-91cd",
+        "jlpt-kanji-8fd1"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-serareru-saserareru",
+        "jlpt-grammar-n4-ou-you"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-d11b994212-2",
+        "jlpt-sentence-vocab-cbb63150b8-1",
+        "jlpt-sentence-vocab-cbb63150b8-2",
+        "jlpt-sentence-vocab-918e096f88-1",
+        "jlpt-sentence-vocab-918e096f88-2",
+        "jlpt-sentence-vocab-bdad768057-1"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-bdad768057-2",
+        "jlpt-sentence-vocab-df21df827a-1",
+        "jlpt-sentence-vocab-df21df827a-2",
+        "jlpt-sentence-vocab-c54201ce25-1",
+        "jlpt-sentence-vocab-c54201ce25-2",
+        "jlpt-sentence-vocab-f5c169269f-1",
+        "jlpt-sentence-vocab-f5c169269f-2",
+        "jlpt-sentence-vocab-856f1c8216-1",
+        "jlpt-sentence-vocab-856f1c8216-2",
+        "jlpt-sentence-vocab-0f4440571e-1",
+        "jlpt-sentence-vocab-0f4440571e-2",
+        "jlpt-sentence-vocab-608037bdca-1",
+        "jlpt-sentence-vocab-608037bdca-2",
+        "jlpt-sentence-vocab-c70caf0317-1",
+        "jlpt-sentence-vocab-c70caf0317-2",
+        "jlpt-sentence-vocab-92226ca7db-1",
+        "jlpt-sentence-vocab-92226ca7db-2",
+        "jlpt-sentence-vocab-4d497f75cf-1",
+        "jlpt-sentence-vocab-4d497f75cf-2",
+        "jlpt-sentence-vocab-97bf3a5f9e-1",
+        "jlpt-sentence-vocab-97bf3a5f9e-2",
+        "jlpt-sentence-vocab-6dc70626da-1",
+        "jlpt-sentence-vocab-6dc70626da-2"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "paraphrase",
+      "usage",
+      "sentence_composition",
+      "quick_response"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-018",
+    "level": "N4",
+    "module_number": 3,
+    "lesson_number": 18,
+    "title": "理由、条件与转折 · 听读整合与任务完成 018",
+    "module_goal": "运用原因、让步及基础条件句组织复句",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "integrated_input",
+    "objectives": [
+      "阅读短文或听取对话，提取关键信息并完成真实任务。",
+      "掌握本课分配的 11 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-f17fa2d7e1",
+        "jlpt-vocab-3cd723d544",
+        "jlpt-vocab-aa95e437a0",
+        "jlpt-vocab-8063587e53",
+        "jlpt-vocab-baaaf1524a",
+        "jlpt-vocab-22ba4ea959",
+        "jlpt-vocab-795156bbfe",
+        "jlpt-vocab-8b7434e649",
+        "jlpt-vocab-0c49fbf17c",
+        "jlpt-vocab-d64432f194",
+        "jlpt-vocab-8786f4e971"
+      ],
+      "kanji": [
+        "jlpt-kanji-8003",
+        "jlpt-kanji-753b",
+        "jlpt-kanji-6d77"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-you-to-omou",
+        "jlpt-grammar-n4-e-ro"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-22a8ff8a88-1",
+        "jlpt-sentence-vocab-a6678a1d99-1",
+        "jlpt-sentence-vocab-43f6c947f9-1",
+        "jlpt-sentence-vocab-43f6c947f9-2",
+        "jlpt-sentence-vocab-5afe333d1c-1",
+        "jlpt-sentence-vocab-5afe333d1c-2"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-6d0bb40a1f-1",
+        "jlpt-sentence-vocab-6d0bb40a1f-2",
+        "jlpt-sentence-vocab-28faf8f7a3-1",
+        "jlpt-sentence-vocab-28faf8f7a3-2",
+        "jlpt-sentence-vocab-4b94df57e2-1",
+        "jlpt-sentence-vocab-f919deef04-1",
+        "jlpt-sentence-vocab-f919deef04-2",
+        "jlpt-sentence-vocab-6243a1575b-1",
+        "jlpt-sentence-vocab-6243a1575b-2",
+        "jlpt-sentence-vocab-988f9bb24f-1",
+        "jlpt-sentence-vocab-988f9bb24f-2",
+        "jlpt-sentence-vocab-dd89673ae0-1",
+        "jlpt-sentence-vocab-dd89673ae0-2",
+        "jlpt-sentence-vocab-fd00937783-1",
+        "jlpt-sentence-vocab-fd00937783-2",
+        "jlpt-sentence-vocab-88125cd960-1",
+        "jlpt-sentence-vocab-88125cd960-2",
+        "jlpt-sentence-vocab-f9a20b5203-1",
+        "jlpt-sentence-vocab-f9a20b5203-2",
+        "jlpt-sentence-vocab-7855de335f-1",
+        "jlpt-sentence-vocab-7855de335f-2",
+        "jlpt-sentence-vocab-7f6ffe3432-1",
+        "jlpt-sentence-vocab-7f6ffe3432-2"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "context_expression",
+      "text_grammar",
+      "short_passage",
+      "task_comprehension",
+      "key_points"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-019",
+    "level": "N4",
+    "module_number": 3,
+    "lesson_number": 19,
+    "title": "理由、条件与转折 · 新内容识别与语境理解 019",
+    "module_goal": "运用原因、让步及基础条件句组织复句",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "recognition",
+    "objectives": [
+      "学习本课词汇、汉字和语法，在短句中识别形式与核心功能。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-9593b3e04f",
+        "jlpt-vocab-a431dff83f",
+        "jlpt-vocab-8fd9bc63e8",
+        "jlpt-vocab-be527b9f9d",
+        "jlpt-vocab-8bd7bc72e8",
+        "jlpt-vocab-ce133477e7",
+        "jlpt-vocab-5bb88bc7a4",
+        "jlpt-vocab-aac669551b",
+        "jlpt-vocab-5bd8adf14c",
+        "jlpt-vocab-038f67b635",
+        "jlpt-vocab-0ae014e274",
+        "jlpt-vocab-cd7dd383c9"
+      ],
+      "kanji": [
+        "jlpt-kanji-58f2",
+        "jlpt-kanji-77e5",
+        "jlpt-kanji-9053"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-na-prohibition",
+        "jlpt-grammar-n4-nasai"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-ba8831572d-1",
+        "jlpt-sentence-vocab-ba8831572d-2",
+        "jlpt-sentence-vocab-62ebad7ac3-1",
+        "jlpt-sentence-vocab-62ebad7ac3-2",
+        "jlpt-sentence-vocab-0c0fb94d28-1",
+        "jlpt-sentence-vocab-0c0fb94d28-2"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-ecb83e16fd-1",
+        "jlpt-sentence-vocab-ecb83e16fd-2",
+        "jlpt-sentence-vocab-48fce6928c-1",
+        "jlpt-sentence-vocab-48fce6928c-2",
+        "jlpt-sentence-vocab-a89d2853ea-1",
+        "jlpt-sentence-vocab-a89d2853ea-2",
+        "jlpt-sentence-vocab-695b6626d4-1",
+        "jlpt-sentence-vocab-17af6092db-1",
+        "jlpt-sentence-vocab-17af6092db-2",
+        "jlpt-sentence-vocab-03712fac9d-1",
+        "jlpt-sentence-vocab-03712fac9d-2",
+        "jlpt-sentence-vocab-b1573ec234-1",
+        "jlpt-sentence-vocab-b1573ec234-2",
+        "jlpt-sentence-vocab-8f69279374-1",
+        "jlpt-sentence-vocab-8f69279374-2",
+        "jlpt-sentence-vocab-9690043102-1",
+        "jlpt-sentence-vocab-9690043102-2",
+        "jlpt-sentence-vocab-a7dc742b01-1",
+        "jlpt-sentence-vocab-a7dc742b01-2",
+        "jlpt-sentence-vocab-a40ee6e509-1",
+        "jlpt-sentence-vocab-a40ee6e509-2",
+        "jlpt-sentence-vocab-694ea10b56-1",
+        "jlpt-sentence-vocab-694ea10b56-2"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "kanji_reading",
+      "orthography",
+      "context_expression",
+      "sentence_grammar"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-020",
+    "level": "N4",
+    "module_number": 3,
+    "lesson_number": 20,
+    "title": "理由、条件与转折 · 易混辨析与受控输出 020",
+    "module_goal": "运用原因、让步及基础条件句组织复句",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "contrast_and_use",
+    "objectives": [
+      "比较近义形式，在替换、排序和情境选择中正确使用。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 1 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-22f8fe69bf",
+        "jlpt-vocab-286e978a7d",
+        "jlpt-vocab-bdab237e0d",
+        "jlpt-vocab-0470fc929f",
+        "jlpt-vocab-19a8ef6b7a",
+        "jlpt-vocab-17fb3976d2",
+        "jlpt-vocab-b71d50ee32",
+        "jlpt-vocab-a769e4c0da",
+        "jlpt-vocab-0b089107f6",
+        "jlpt-vocab-63290aef69",
+        "jlpt-vocab-d11b994212",
+        "jlpt-vocab-cbb63150b8"
+      ],
+      "kanji": [
+        "jlpt-kanji-96c6",
+        "jlpt-kanji-5225",
+        "jlpt-kanji-7269"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-ba"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-ddfb670acf-1",
+        "jlpt-sentence-vocab-ddfb670acf-2",
+        "jlpt-sentence-vocab-d1805965ec-1",
+        "jlpt-sentence-vocab-d1805965ec-2",
+        "jlpt-sentence-vocab-eacd8a5221-1",
+        "jlpt-sentence-vocab-eacd8a5221-2"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-47593d1123-1",
+        "jlpt-sentence-vocab-47593d1123-2",
+        "jlpt-sentence-vocab-dcfb33317b-1",
+        "jlpt-sentence-vocab-dcfb33317b-2",
+        "jlpt-sentence-vocab-ab6fd5bdbb-1",
+        "jlpt-sentence-vocab-ab6fd5bdbb-2",
+        "jlpt-sentence-vocab-93f910e281-1",
+        "jlpt-sentence-vocab-93f910e281-2",
+        "jlpt-sentence-vocab-c614552d23-1",
+        "jlpt-sentence-vocab-c614552d23-2",
+        "jlpt-sentence-vocab-7c6d792073-1",
+        "jlpt-sentence-vocab-7c6d792073-2",
+        "jlpt-sentence-vocab-6ce523bcb6-1",
+        "jlpt-sentence-vocab-6ce523bcb6-2",
+        "jlpt-sentence-vocab-c151fe4163-1",
+        "jlpt-sentence-vocab-c151fe4163-2",
+        "jlpt-sentence-vocab-b04bf40187-1",
+        "jlpt-sentence-vocab-b04bf40187-2",
+        "jlpt-sentence-vocab-689dc7a66e-1",
+        "jlpt-sentence-vocab-689dc7a66e-2",
+        "jlpt-sentence-vocab-6111e87e72-1",
+        "jlpt-sentence-vocab-6111e87e72-2",
+        "jlpt-sentence-vocab-b377c7b2ea-1"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "paraphrase",
+      "usage",
+      "sentence_composition",
+      "quick_response"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-021",
+    "level": "N4",
+    "module_number": 4,
+    "lesson_number": 21,
+    "title": "请求与授受 · 听读整合与任务完成 021",
+    "module_goal": "处理许可、义务、帮助、请求和授受关系",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "integrated_input",
+    "objectives": [
+      "阅读短文或听取对话，提取关键信息并完成真实任务。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-918e096f88",
+        "jlpt-vocab-bdad768057",
+        "jlpt-vocab-df21df827a",
+        "jlpt-vocab-c54201ce25",
+        "jlpt-vocab-f5c169269f",
+        "jlpt-vocab-856f1c8216",
+        "jlpt-vocab-0f4440571e",
+        "jlpt-vocab-608037bdca",
+        "jlpt-vocab-c70caf0317",
+        "jlpt-vocab-92226ca7db",
+        "jlpt-vocab-4d497f75cf",
+        "jlpt-vocab-97bf3a5f9e"
+      ],
+      "kanji": [
+        "jlpt-kanji-4f7f",
+        "jlpt-kanji-54c1",
+        "jlpt-kanji-8a08"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-tara",
+        "jlpt-grammar-n4-nara"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-b377c7b2ea-2",
+        "jlpt-sentence-vocab-0e3ecb7665-1",
+        "jlpt-sentence-vocab-0e3ecb7665-2",
+        "jlpt-sentence-vocab-1ad2f6d941-1",
+        "jlpt-sentence-vocab-1ad2f6d941-2",
+        "jlpt-sentence-vocab-2ae7b1cb3b-1"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-2ae7b1cb3b-2",
+        "jlpt-sentence-vocab-8410c15b44-1",
+        "jlpt-sentence-vocab-8410c15b44-2",
+        "jlpt-sentence-vocab-1a680b4cf9-1",
+        "jlpt-sentence-vocab-1a680b4cf9-2",
+        "jlpt-sentence-vocab-beb32f751c-1",
+        "jlpt-sentence-vocab-beb32f751c-2",
+        "jlpt-sentence-vocab-7962f0cea1-1",
+        "jlpt-sentence-vocab-7962f0cea1-2",
+        "jlpt-sentence-vocab-40c673da45-1",
+        "jlpt-sentence-vocab-40c673da45-2",
+        "jlpt-sentence-vocab-c904982ded-1",
+        "jlpt-sentence-vocab-c904982ded-2",
+        "jlpt-sentence-vocab-ff60f2830f-1",
+        "jlpt-sentence-vocab-ff60f2830f-2",
+        "jlpt-sentence-vocab-f7e69f5427-1",
+        "jlpt-sentence-vocab-f7e69f5427-2",
+        "jlpt-sentence-vocab-78de196fe8-1",
+        "jlpt-sentence-vocab-78de196fe8-2",
+        "jlpt-sentence-vocab-2070f21eae-1",
+        "jlpt-sentence-vocab-2070f21eae-2",
+        "jlpt-sentence-vocab-cdddb30c94-1",
+        "jlpt-sentence-vocab-cdddb30c94-2"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "context_expression",
+      "text_grammar",
+      "short_passage",
+      "task_comprehension",
+      "key_points"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-022",
+    "level": "N4",
+    "module_number": 4,
+    "lesson_number": 22,
+    "title": "请求与授受 · 新内容识别与语境理解 022",
+    "module_goal": "处理许可、义务、帮助、请求和授受关系",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "recognition",
+    "objectives": [
+      "学习本课词汇、汉字和语法，在短句中识别形式与核心功能。",
+      "掌握本课分配的 12 个词汇、4 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-6dc70626da",
+        "jlpt-vocab-22a8ff8a88",
+        "jlpt-vocab-a6678a1d99",
+        "jlpt-vocab-43f6c947f9",
+        "jlpt-vocab-5afe333d1c",
+        "jlpt-vocab-6d0bb40a1f",
+        "jlpt-vocab-28faf8f7a3",
+        "jlpt-vocab-4b94df57e2",
+        "jlpt-vocab-f919deef04",
+        "jlpt-vocab-6243a1575b",
+        "jlpt-vocab-988f9bb24f",
+        "jlpt-vocab-dd89673ae0"
+      ],
+      "kanji": [
+        "jlpt-kanji-6b7b",
+        "jlpt-kanji-7279",
+        "jlpt-kanji-79c1",
+        "jlpt-kanji-59cb"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-to",
+        "jlpt-grammar-n4-te-mo-de-mo"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-48341cc3a0-1",
+        "jlpt-sentence-vocab-48341cc3a0-2",
+        "jlpt-sentence-vocab-eb0f717433-1",
+        "jlpt-sentence-vocab-eb0f717433-2",
+        "jlpt-sentence-vocab-8a13543a80-1",
+        "jlpt-sentence-vocab-8a13543a80-2"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-6701f8cbba-1",
+        "jlpt-sentence-vocab-6701f8cbba-2",
+        "jlpt-sentence-vocab-8065461ace-1",
+        "jlpt-sentence-vocab-8065461ace-2",
+        "jlpt-sentence-vocab-270801de39-1",
+        "jlpt-sentence-vocab-ded62a84d0-1",
+        "jlpt-sentence-vocab-ded62a84d0-2",
+        "jlpt-sentence-vocab-5c8702fe01-1",
+        "jlpt-sentence-vocab-5c8702fe01-2",
+        "jlpt-sentence-vocab-44f773f94f-1",
+        "jlpt-sentence-vocab-44f773f94f-2",
+        "jlpt-sentence-vocab-424826c446-1",
+        "jlpt-sentence-vocab-424826c446-2",
+        "jlpt-sentence-vocab-d2937b2999-1",
+        "jlpt-sentence-vocab-d2937b2999-2",
+        "jlpt-sentence-vocab-49ac3c55c7-1",
+        "jlpt-sentence-vocab-49ac3c55c7-2",
+        "jlpt-sentence-vocab-9071f08832-1",
+        "jlpt-sentence-vocab-9071f08832-2",
+        "jlpt-sentence-vocab-97a079585a-1",
+        "jlpt-sentence-vocab-97a079585a-2",
+        "jlpt-sentence-vocab-0627e3997c-1",
+        "jlpt-sentence-vocab-0627e3997c-2"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "kanji_reading",
+      "orthography",
+      "context_expression",
+      "sentence_grammar"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-023",
+    "level": "N4",
+    "module_number": 4,
+    "lesson_number": 23,
+    "title": "请求与授受 · 易混辨析与受控输出 023",
+    "module_goal": "处理许可、义务、帮助、请求和授受关系",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "contrast_and_use",
+    "objectives": [
+      "比较近义形式，在替换、排序和情境选择中正确使用。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 22 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-fd00937783",
+        "jlpt-vocab-88125cd960",
+        "jlpt-vocab-f9a20b5203",
+        "jlpt-vocab-7855de335f",
+        "jlpt-vocab-7f6ffe3432",
+        "jlpt-vocab-ba8831572d",
+        "jlpt-vocab-62ebad7ac3",
+        "jlpt-vocab-0c0fb94d28",
+        "jlpt-vocab-ecb83e16fd",
+        "jlpt-vocab-48fce6928c",
+        "jlpt-vocab-a89d2853ea",
+        "jlpt-vocab-695b6626d4"
+      ],
+      "kanji": [
+        "jlpt-kanji-671d",
+        "jlpt-kanji-904b",
+        "jlpt-kanji-7d42"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-noni-although",
+        "jlpt-grammar-n4-noni-purpose"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-081d0fb4bb-1",
+        "jlpt-sentence-vocab-081d0fb4bb-2",
+        "jlpt-sentence-vocab-9776ccd07d-1",
+        "jlpt-sentence-vocab-9776ccd07d-2",
+        "jlpt-sentence-vocab-1e1b53a2d3-1",
+        "jlpt-sentence-vocab-1e1b53a2d3-2"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-745024b527-1",
+        "jlpt-sentence-vocab-745024b527-2",
+        "jlpt-sentence-vocab-416c1b3679-1",
+        "jlpt-sentence-vocab-416c1b3679-2",
+        "jlpt-sentence-vocab-7817c4eed6-1",
+        "jlpt-sentence-vocab-7817c4eed6-2",
+        "jlpt-sentence-vocab-75acde1d68-1",
+        "jlpt-sentence-vocab-75acde1d68-2",
+        "jlpt-sentence-vocab-75b0305c60-1",
+        "jlpt-sentence-vocab-75b0305c60-2",
+        "jlpt-sentence-vocab-1e4db2ac9d-1",
+        "jlpt-sentence-vocab-1e4db2ac9d-2",
+        "jlpt-sentence-vocab-bfe54303cd-1",
+        "jlpt-sentence-vocab-bfe54303cd-2",
+        "jlpt-sentence-vocab-d11d9a6207-1",
+        "jlpt-sentence-vocab-d11d9a6207-2",
+        "jlpt-sentence-vocab-123ee74d43-1",
+        "jlpt-sentence-vocab-123ee74d43-2",
+        "jlpt-sentence-vocab-d8623369cb-1",
+        "jlpt-sentence-vocab-d8623369cb-2",
+        "jlpt-sentence-vocab-bdf6b26213-1",
+        "jlpt-sentence-vocab-bdf6b26213-2"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "paraphrase",
+      "usage",
+      "sentence_composition",
+      "quick_response"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-024",
+    "level": "N4",
+    "module_number": 4,
+    "lesson_number": 24,
+    "title": "请求与授受 · 听读整合与任务完成 024",
+    "module_goal": "处理许可、义务、帮助、请求和授受关系",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "integrated_input",
+    "objectives": [
+      "阅读短文或听取对话，提取关键信息并完成真实任务。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-17af6092db",
+        "jlpt-vocab-03712fac9d",
+        "jlpt-vocab-b1573ec234",
+        "jlpt-vocab-8f69279374",
+        "jlpt-vocab-9690043102",
+        "jlpt-vocab-a7dc742b01",
+        "jlpt-vocab-a40ee6e509",
+        "jlpt-vocab-694ea10b56",
+        "jlpt-vocab-ddfb670acf",
+        "jlpt-vocab-d1805965ec",
+        "jlpt-vocab-eacd8a5221",
+        "jlpt-vocab-47593d1123"
+      ],
+      "kanji": [
+        "jlpt-kanji-53f0",
+        "jlpt-kanji-5e83",
+        "jlpt-kanji-4f4f"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-node",
+        "jlpt-grammar-n4-te-reason"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-dac7bb4374-1",
+        "jlpt-sentence-vocab-dac7bb4374-2",
+        "jlpt-sentence-vocab-da94019cdd-1",
+        "jlpt-sentence-vocab-da94019cdd-2",
+        "jlpt-sentence-vocab-ba20bc66d0-1",
+        "jlpt-sentence-vocab-ba20bc66d0-2"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-8c83cac81c-1",
+        "jlpt-sentence-vocab-8c83cac81c-2",
+        "jlpt-sentence-vocab-9b3ce398bd-1",
+        "jlpt-sentence-vocab-9b3ce398bd-2",
+        "jlpt-sentence-vocab-554ab81272-1",
+        "jlpt-sentence-vocab-554ab81272-2",
+        "jlpt-sentence-vocab-aa663833e4-1",
+        "jlpt-sentence-vocab-aa663833e4-2",
+        "jlpt-sentence-vocab-ec43853e0f-1",
+        "jlpt-sentence-vocab-ec43853e0f-2",
+        "jlpt-sentence-vocab-6a89d1feee-1",
+        "jlpt-sentence-vocab-6a89d1feee-2",
+        "jlpt-sentence-vocab-14363682cb-1",
+        "jlpt-sentence-vocab-14363682cb-2",
+        "jlpt-sentence-vocab-d2ab60015b-1",
+        "jlpt-sentence-vocab-d2ab60015b-2",
+        "jlpt-sentence-vocab-0f0ed38b4c-1",
+        "jlpt-sentence-vocab-0f0ed38b4c-2",
+        "jlpt-sentence-vocab-67c8e8ac31-1",
+        "jlpt-sentence-vocab-67c8e8ac31-2",
+        "jlpt-sentence-vocab-074e70b529-1",
+        "jlpt-sentence-vocab-074e70b529-2",
+        "jlpt-sentence-vocab-e35f288b22-1"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "context_expression",
+      "text_grammar",
+      "short_passage",
+      "task_comprehension",
+      "key_points"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-025",
+    "level": "N4",
+    "module_number": 4,
+    "lesson_number": 25,
+    "title": "请求与授受 · 新内容识别与语境理解 025",
+    "module_goal": "处理许可、义务、帮助、请求和授受关系",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "recognition",
+    "objectives": [
+      "学习本课词汇、汉字和语法，在短句中识别形式与核心功能。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-dcfb33317b",
+        "jlpt-vocab-ab6fd5bdbb",
+        "jlpt-vocab-93f910e281",
+        "jlpt-vocab-c614552d23",
+        "jlpt-vocab-7c6d792073",
+        "jlpt-vocab-6ce523bcb6",
+        "jlpt-vocab-c151fe4163",
+        "jlpt-vocab-b04bf40187",
+        "jlpt-vocab-689dc7a66e",
+        "jlpt-vocab-6111e87e72",
+        "jlpt-vocab-b377c7b2ea",
+        "jlpt-vocab-0e3ecb7665"
+      ],
+      "kanji": [
+        "jlpt-kanji-771f",
+        "jlpt-kanji-6709",
+        "jlpt-kanji-53e3"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-shi",
+        "jlpt-grammar-n4-kedo-keredomo"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-e35f288b22-2",
+        "jlpt-sentence-vocab-0039e17a55-1",
+        "jlpt-sentence-vocab-0039e17a55-2",
+        "jlpt-sentence-vocab-73688428ee-1",
+        "jlpt-sentence-vocab-73688428ee-2",
+        "jlpt-sentence-vocab-d1cca83038-1"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-d1cca83038-2",
+        "jlpt-sentence-vocab-ced7c01cf1-1",
+        "jlpt-sentence-vocab-ced7c01cf1-2",
+        "jlpt-sentence-vocab-138dee4a26-1",
+        "jlpt-sentence-vocab-138dee4a26-2",
+        "jlpt-sentence-vocab-de9d61dd71-1",
+        "jlpt-sentence-vocab-de9d61dd71-2",
+        "jlpt-sentence-vocab-c0afe72b73-1",
+        "jlpt-sentence-vocab-c0afe72b73-2",
+        "jlpt-sentence-vocab-4e5dab579c-1",
+        "jlpt-sentence-vocab-4e5dab579c-2",
+        "jlpt-sentence-vocab-a174ca4443-1",
+        "jlpt-sentence-vocab-a174ca4443-2",
+        "jlpt-sentence-vocab-b442490fff-1",
+        "jlpt-sentence-vocab-b442490fff-2",
+        "jlpt-sentence-vocab-14d52a91d3-1",
+        "jlpt-sentence-vocab-14d52a91d3-2",
+        "jlpt-sentence-vocab-23afff6d4b-1",
+        "jlpt-sentence-vocab-23afff6d4b-2",
+        "jlpt-sentence-vocab-ced135c81e-1",
+        "jlpt-sentence-vocab-ced135c81e-2",
+        "jlpt-sentence-vocab-2b610cb1a7-1",
+        "jlpt-sentence-vocab-2b610cb1a7-2"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "kanji_reading",
+      "orthography",
+      "context_expression",
+      "sentence_grammar"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-026",
+    "level": "N4",
+    "module_number": 4,
+    "lesson_number": 26,
+    "title": "请求与授受 · 易混辨析与受控输出 026",
+    "module_goal": "处理许可、义务、帮助、请求和授受关系",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "contrast_and_use",
+    "objectives": [
+      "比较近义形式，在替换、排序和情境选择中正确使用。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-1ad2f6d941",
+        "jlpt-vocab-2ae7b1cb3b",
+        "jlpt-vocab-8410c15b44",
+        "jlpt-vocab-1a680b4cf9",
+        "jlpt-vocab-beb32f751c",
+        "jlpt-vocab-7962f0cea1",
+        "jlpt-vocab-40c673da45",
+        "jlpt-vocab-c904982ded",
+        "jlpt-vocab-ff60f2830f",
+        "jlpt-vocab-f7e69f5427",
+        "jlpt-vocab-78de196fe8",
+        "jlpt-vocab-2070f21eae"
+      ],
+      "kanji": [
+        "jlpt-kanji-5c11",
+        "jlpt-kanji-753a",
+        "jlpt-kanji-6599"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-tame-ni",
+        "jlpt-grammar-n4-you-ni"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-12d94456b3-1",
+        "jlpt-sentence-vocab-12d94456b3-2",
+        "jlpt-sentence-vocab-d73148e8d0-1",
+        "jlpt-sentence-vocab-d73148e8d0-2",
+        "jlpt-sentence-vocab-2710211107-1",
+        "jlpt-sentence-vocab-2710211107-2"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-abb49cd233-1",
+        "jlpt-sentence-vocab-abb49cd233-2",
+        "jlpt-sentence-vocab-b5579bc4a6-1",
+        "jlpt-sentence-vocab-b5579bc4a6-2",
+        "jlpt-sentence-vocab-c5741f54d6-1",
+        "jlpt-sentence-vocab-c5741f54d6-2",
+        "jlpt-sentence-vocab-cad7f1010a-1",
+        "jlpt-sentence-vocab-cad7f1010a-2",
+        "jlpt-sentence-vocab-1cda12dd3f-1",
+        "jlpt-sentence-vocab-1cda12dd3f-2",
+        "jlpt-sentence-vocab-9c96fd3cb4-1",
+        "jlpt-sentence-vocab-9c96fd3cb4-2",
+        "jlpt-sentence-vocab-fb53d716c6-1",
+        "jlpt-sentence-vocab-fb53d716c6-2",
+        "jlpt-sentence-vocab-9f86b83cad-1",
+        "jlpt-sentence-vocab-9f86b83cad-2",
+        "jlpt-sentence-vocab-ebaf7ce5e4-1",
+        "jlpt-sentence-vocab-ebaf7ce5e4-2",
+        "jlpt-sentence-vocab-06aec1d647-1",
+        "jlpt-sentence-vocab-06aec1d647-2",
+        "jlpt-sentence-vocab-6cf505ee55-1",
+        "jlpt-sentence-vocab-6cf505ee55-2",
+        "jlpt-sentence-vocab-19f08c094e-1"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "paraphrase",
+      "usage",
+      "sentence_composition",
+      "quick_response"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-027",
+    "level": "N4",
+    "module_number": 4,
+    "lesson_number": 27,
+    "title": "请求与授受 · 听读整合与任务完成 027",
+    "module_goal": "处理许可、义务、帮助、请求和授受关系",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "integrated_input",
+    "objectives": [
+      "阅读短文或听取对话，提取关键信息并完成真实任务。",
+      "掌握本课分配的 11 个词汇、4 个汉字和 1 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-cdddb30c94",
+        "jlpt-vocab-48341cc3a0",
+        "jlpt-vocab-eb0f717433",
+        "jlpt-vocab-8a13543a80",
+        "jlpt-vocab-6701f8cbba",
+        "jlpt-vocab-8065461ace",
+        "jlpt-vocab-270801de39",
+        "jlpt-vocab-ded62a84d0",
+        "jlpt-vocab-5c8702fe01",
+        "jlpt-vocab-44f773f94f",
+        "jlpt-vocab-424826c446"
+      ],
+      "kanji": [
+        "jlpt-kanji-5de5",
+        "jlpt-kanji-5efa",
+        "jlpt-kanji-7a7a",
+        "jlpt-kanji-6025"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-you-ni-suru"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-19f08c094e-2",
+        "jlpt-sentence-vocab-73a3e59782-1",
+        "jlpt-sentence-vocab-73a3e59782-2",
+        "jlpt-sentence-vocab-aaac8221c9-1",
+        "jlpt-sentence-vocab-aaac8221c9-2",
+        "jlpt-sentence-vocab-56a36774ce-1"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-56a36774ce-2",
+        "jlpt-sentence-vocab-83a456da88-1",
+        "jlpt-sentence-vocab-83a456da88-2",
+        "jlpt-sentence-vocab-43965bbba0-1",
+        "jlpt-sentence-vocab-43965bbba0-2",
+        "jlpt-sentence-vocab-f527f52c5c-1",
+        "jlpt-sentence-vocab-f527f52c5c-2",
+        "jlpt-sentence-vocab-18035049f8-1",
+        "jlpt-sentence-vocab-18035049f8-2",
+        "jlpt-sentence-vocab-4e6d200127-1",
+        "jlpt-sentence-vocab-4e6d200127-2",
+        "jlpt-sentence-vocab-4b99b4673b-1",
+        "jlpt-sentence-vocab-4b99b4673b-2",
+        "jlpt-sentence-vocab-3f26d1cef7-1",
+        "jlpt-sentence-vocab-3f26d1cef7-2",
+        "jlpt-sentence-vocab-36f583c207-1",
+        "jlpt-sentence-vocab-36f583c207-2",
+        "jlpt-sentence-vocab-16db6a0f53-1",
+        "jlpt-sentence-vocab-16db6a0f53-2",
+        "jlpt-sentence-vocab-ef537ea4a9-1",
+        "jlpt-sentence-vocab-ef537ea4a9-2",
+        "jlpt-sentence-vocab-ba74488833-1",
+        "jlpt-sentence-vocab-ba74488833-2"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "context_expression",
+      "text_grammar",
+      "short_passage",
+      "task_comprehension",
+      "key_points"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-028",
+    "level": "N4",
+    "module_number": 5,
+    "lesson_number": 28,
+    "title": "变化与动作关系 · 新内容识别与语境理解 028",
+    "module_goal": "掌握状态变化、自动词他动词和进行结果",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "recognition",
+    "objectives": [
+      "学习本课词汇、汉字和语法，在短句中识别形式与核心功能。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-d2937b2999",
+        "jlpt-vocab-49ac3c55c7",
+        "jlpt-vocab-9071f08832",
+        "jlpt-vocab-97a079585a",
+        "jlpt-vocab-0627e3997c",
+        "jlpt-vocab-081d0fb4bb",
+        "jlpt-vocab-9776ccd07d",
+        "jlpt-vocab-1e1b53a2d3",
+        "jlpt-vocab-745024b527",
+        "jlpt-vocab-416c1b3679",
+        "jlpt-vocab-7817c4eed6",
+        "jlpt-vocab-75acde1d68"
+      ],
+      "kanji": [
+        "jlpt-kanji-6b62",
+        "jlpt-kanji-9001",
+        "jlpt-kanji-5207"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-you-ni-naru",
+        "jlpt-grammar-n4-te-hoshii"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-356e03170b-1",
+        "jlpt-sentence-vocab-356e03170b-2",
+        "jlpt-sentence-vocab-c206b05b9d-1",
+        "jlpt-sentence-vocab-c206b05b9d-2",
+        "jlpt-sentence-vocab-7d940762d2-1",
+        "jlpt-sentence-vocab-7d940762d2-2"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-bbe4edb30f-1",
+        "jlpt-sentence-vocab-bbe4edb30f-2",
+        "jlpt-sentence-vocab-a1db204b87-1",
+        "jlpt-sentence-vocab-a1db204b87-2",
+        "jlpt-sentence-vocab-d177796b00-1",
+        "jlpt-sentence-vocab-d177796b00-2",
+        "jlpt-sentence-vocab-ce21381e4f-1",
+        "jlpt-sentence-vocab-ce21381e4f-2",
+        "jlpt-sentence-vocab-342df55815-1",
+        "jlpt-sentence-vocab-342df55815-2",
+        "jlpt-sentence-vocab-15f9f72b7c-1",
+        "jlpt-sentence-vocab-15f9f72b7c-2",
+        "jlpt-sentence-vocab-0319cd1801-1",
+        "jlpt-sentence-vocab-0319cd1801-2",
+        "jlpt-sentence-vocab-aa30940947-1",
+        "jlpt-sentence-vocab-aa30940947-2",
+        "jlpt-sentence-vocab-ccdf4613d1-1",
+        "jlpt-sentence-vocab-ccdf4613d1-2",
+        "jlpt-sentence-vocab-fa043680e3-1",
+        "jlpt-sentence-vocab-fa043680e3-2",
+        "jlpt-sentence-vocab-bbf07b44f0-1",
+        "jlpt-sentence-vocab-bbf07b44f0-2",
+        "jlpt-sentence-vocab-b4206ea6cb-1"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "kanji_reading",
+      "orthography",
+      "context_expression",
+      "sentence_grammar"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-029",
+    "level": "N4",
+    "module_number": 5,
+    "lesson_number": 29,
+    "title": "变化与动作关系 · 易混辨析与受控输出 029",
+    "module_goal": "掌握状态变化、自动词他动词和进行结果",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "contrast_and_use",
+    "objectives": [
+      "比较近义形式，在替换、排序和情境选择中正确使用。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-75b0305c60",
+        "jlpt-vocab-1e4db2ac9d",
+        "jlpt-vocab-bfe54303cd",
+        "jlpt-vocab-d11d9a6207",
+        "jlpt-vocab-123ee74d43",
+        "jlpt-vocab-d8623369cb",
+        "jlpt-vocab-bdf6b26213",
+        "jlpt-vocab-dac7bb4374",
+        "jlpt-vocab-da94019cdd",
+        "jlpt-vocab-ba20bc66d0",
+        "jlpt-vocab-8c83cac81c",
+        "jlpt-vocab-9b3ce398bd"
+      ],
+      "kanji": [
+        "jlpt-kanji-8ee2",
+        "jlpt-kanji-7814",
+        "jlpt-kanji-8db3"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-tagaru",
+        "jlpt-grammar-n4-garu"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-b4206ea6cb-2",
+        "jlpt-sentence-vocab-02dea2f4f6-1",
+        "jlpt-sentence-vocab-02dea2f4f6-2",
+        "jlpt-sentence-vocab-be7c090b8e-1",
+        "jlpt-sentence-vocab-be7c090b8e-2",
+        "jlpt-sentence-vocab-a9687d55e3-1"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-a9687d55e3-2",
+        "jlpt-sentence-vocab-67fb8c065d-1",
+        "jlpt-sentence-vocab-67fb8c065d-2",
+        "jlpt-sentence-vocab-29b43fab16-1",
+        "jlpt-sentence-vocab-29b43fab16-2",
+        "jlpt-sentence-vocab-5fd0c77ef5-1",
+        "jlpt-sentence-vocab-5fd0c77ef5-2",
+        "jlpt-sentence-vocab-db2fc03fcf-1",
+        "jlpt-sentence-vocab-db2fc03fcf-2",
+        "jlpt-sentence-vocab-84e17fcbc2-1",
+        "jlpt-sentence-vocab-84e17fcbc2-2",
+        "jlpt-sentence-vocab-80eba2fabb-1",
+        "jlpt-sentence-vocab-80eba2fabb-2",
+        "jlpt-sentence-vocab-53162e310d-1",
+        "jlpt-sentence-vocab-53162e310d-2",
+        "jlpt-sentence-vocab-c64697ccaa-1",
+        "jlpt-sentence-vocab-c64697ccaa-2",
+        "jlpt-sentence-vocab-9ef4ab5d2a-1",
+        "jlpt-sentence-vocab-9ef4ab5d2a-2",
+        "jlpt-sentence-vocab-69678bc04e-1",
+        "jlpt-sentence-vocab-69678bc04e-2",
+        "jlpt-sentence-vocab-fc60a66d5c-1",
+        "jlpt-sentence-vocab-fc60a66d5c-2"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "paraphrase",
+      "usage",
+      "sentence_composition",
+      "quick_response"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-030",
+    "level": "N4",
+    "module_number": 5,
+    "lesson_number": 30,
+    "title": "变化与动作关系 · 听读整合与任务完成 030",
+    "module_goal": "掌握状态变化、自动词他动词和进行结果",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "integrated_input",
+    "objectives": [
+      "阅读短文或听取对话，提取关键信息并完成真实任务。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-554ab81272",
+        "jlpt-vocab-aa663833e4",
+        "jlpt-vocab-ec43853e0f",
+        "jlpt-vocab-6a89d1feee",
+        "jlpt-vocab-14363682cb",
+        "jlpt-vocab-d2ab60015b",
+        "jlpt-vocab-0f0ed38b4c",
+        "jlpt-vocab-67c8e8ac31",
+        "jlpt-vocab-074e70b529",
+        "jlpt-vocab-e35f288b22",
+        "jlpt-vocab-0039e17a55",
+        "jlpt-vocab-73688428ee"
+      ],
+      "kanji": [
+        "jlpt-kanji-7a76",
+        "jlpt-kanji-697d",
+        "jlpt-kanji-8d77"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-kamo-shirenai",
+        "jlpt-grammar-n4-darou"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-e9c1a3ae2c-1",
+        "jlpt-sentence-vocab-e9c1a3ae2c-2",
+        "jlpt-sentence-vocab-0b2acf3460-1",
+        "jlpt-sentence-vocab-0b2acf3460-2",
+        "jlpt-sentence-vocab-cc2bd01f0a-1",
+        "jlpt-sentence-vocab-cc2bd01f0a-2"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-8743cb4286-1",
+        "jlpt-sentence-vocab-8743cb4286-2",
+        "jlpt-sentence-vocab-9b799806d8-1",
+        "jlpt-sentence-vocab-9b799806d8-2",
+        "jlpt-sentence-vocab-3753f20423-1",
+        "jlpt-sentence-vocab-3753f20423-2",
+        "jlpt-sentence-vocab-bc1e0c2895-1",
+        "jlpt-sentence-vocab-bc1e0c2895-2",
+        "jlpt-sentence-vocab-1200266b8d-1",
+        "jlpt-sentence-vocab-1200266b8d-2",
+        "jlpt-sentence-vocab-3aadcbc234-1",
+        "jlpt-sentence-vocab-3aadcbc234-2",
+        "jlpt-sentence-vocab-7becfb8f21-1",
+        "jlpt-sentence-vocab-7becfb8f21-2",
+        "jlpt-sentence-vocab-76d7890e5d-1",
+        "jlpt-sentence-vocab-76d7890e5d-2",
+        "jlpt-sentence-vocab-ccfefc657c-1",
+        "jlpt-sentence-vocab-ccfefc657c-2",
+        "jlpt-sentence-vocab-8b7b602246-1",
+        "jlpt-sentence-vocab-8b7b602246-2",
+        "jlpt-sentence-vocab-9f64a96651-1",
+        "jlpt-sentence-vocab-9f64a96651-2",
+        "jlpt-sentence-vocab-b43872b197-1"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "context_expression",
+      "text_grammar",
+      "short_passage",
+      "task_comprehension",
+      "key_points"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-031",
+    "level": "N4",
+    "module_number": 5,
+    "lesson_number": 31,
+    "title": "变化与动作关系 · 新内容识别与语境理解 031",
+    "module_goal": "掌握状态变化、自动词他动词和进行结果",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "recognition",
+    "objectives": [
+      "学习本课词汇、汉字和语法，在短句中识别形式与核心功能。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 22 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-d1cca83038",
+        "jlpt-vocab-ced7c01cf1",
+        "jlpt-vocab-138dee4a26",
+        "jlpt-vocab-de9d61dd71",
+        "jlpt-vocab-c0afe72b73",
+        "jlpt-vocab-4e5dab579c",
+        "jlpt-vocab-a174ca4443",
+        "jlpt-vocab-b442490fff",
+        "jlpt-vocab-14d52a91d3",
+        "jlpt-vocab-23afff6d4b",
+        "jlpt-vocab-ced135c81e",
+        "jlpt-vocab-2b610cb1a7"
+      ],
+      "kanji": [
+        "jlpt-kanji-7740",
+        "jlpt-kanji-5e97",
+        "jlpt-kanji-75c5"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-hazu-da",
+        "jlpt-grammar-n4-hazu-ga-nai"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-b43872b197-2",
+        "jlpt-sentence-vocab-d3b3911a79-1",
+        "jlpt-sentence-vocab-d3b3911a79-2",
+        "jlpt-sentence-vocab-a777a7ce62-1",
+        "jlpt-sentence-vocab-a777a7ce62-2",
+        "jlpt-sentence-vocab-2adec6b9b4-1"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-2adec6b9b4-2",
+        "jlpt-sentence-vocab-1d28dbb450-1",
+        "jlpt-sentence-vocab-1d28dbb450-2",
+        "jlpt-sentence-vocab-1b35adeae4-1",
+        "jlpt-sentence-vocab-1b35adeae4-2",
+        "jlpt-sentence-vocab-74c23dc218-1",
+        "jlpt-sentence-vocab-74c23dc218-2",
+        "jlpt-sentence-vocab-3a915c9be5-1",
+        "jlpt-sentence-vocab-3a915c9be5-2",
+        "jlpt-sentence-vocab-626ae1ff39-1",
+        "jlpt-sentence-vocab-626ae1ff39-2",
+        "jlpt-sentence-vocab-76a4fc9d6d-1",
+        "jlpt-sentence-vocab-ce2f134cda-1",
+        "jlpt-sentence-vocab-ce2f134cda-2",
+        "jlpt-sentence-vocab-40f67571a6-1",
+        "jlpt-sentence-vocab-40f67571a6-2",
+        "jlpt-sentence-vocab-e1cfd51839-1",
+        "jlpt-sentence-vocab-e1cfd51839-2",
+        "jlpt-sentence-vocab-eef262a7dd-1",
+        "jlpt-sentence-vocab-f7a51f2c1c-1",
+        "jlpt-sentence-vocab-f7a51f2c1c-2",
+        "jlpt-sentence-vocab-0ddf8d04c2-1"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "kanji_reading",
+      "orthography",
+      "context_expression",
+      "sentence_grammar"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-032",
+    "level": "N4",
+    "module_number": 5,
+    "lesson_number": 32,
+    "title": "变化与动作关系 · 易混辨析与受控输出 032",
+    "module_goal": "掌握状态变化、自动词他动词和进行结果",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "contrast_and_use",
+    "objectives": [
+      "比较近义形式，在替换、排序和情境选择中正确使用。",
+      "掌握本课分配的 12 个词汇、4 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-12d94456b3",
+        "jlpt-vocab-d73148e8d0",
+        "jlpt-vocab-2710211107",
+        "jlpt-vocab-abb49cd233",
+        "jlpt-vocab-b5579bc4a6",
+        "jlpt-vocab-c5741f54d6",
+        "jlpt-vocab-cad7f1010a",
+        "jlpt-vocab-1cda12dd3f",
+        "jlpt-vocab-9c96fd3cb4",
+        "jlpt-vocab-fb53d716c6",
+        "jlpt-vocab-9f86b83cad",
+        "jlpt-vocab-ebaf7ce5e4"
+      ],
+      "kanji": [
+        "jlpt-kanji-8cea",
+        "jlpt-kanji-5f85",
+        "jlpt-kanji-8a66",
+        "jlpt-kanji-65cf"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-n-desu-no-desu",
+        "jlpt-grammar-n4-ka-dou-ka"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-0ddf8d04c2-2",
+        "jlpt-sentence-vocab-178daf8296-1",
+        "jlpt-sentence-vocab-178daf8296-2",
+        "jlpt-sentence-vocab-433da13afb-1",
+        "jlpt-sentence-vocab-433da13afb-2",
+        "jlpt-sentence-vocab-ea2fe2f5de-1"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-ea2fe2f5de-2",
+        "jlpt-sentence-vocab-5cda324083-1",
+        "jlpt-sentence-vocab-5cda324083-2",
+        "jlpt-sentence-vocab-88710a5d10-1",
+        "jlpt-sentence-vocab-88710a5d10-2",
+        "jlpt-sentence-vocab-6631558c00-1",
+        "jlpt-sentence-vocab-6631558c00-2",
+        "jlpt-sentence-vocab-cdabcdd725-1",
+        "jlpt-sentence-vocab-cdabcdd725-2",
+        "jlpt-sentence-vocab-b89d0618be-1",
+        "jlpt-sentence-vocab-b89d0618be-2",
+        "jlpt-sentence-vocab-4fbc32438d-1",
+        "jlpt-sentence-vocab-4fbc32438d-2",
+        "jlpt-sentence-vocab-9de5a5daff-1",
+        "jlpt-sentence-vocab-9de5a5daff-2",
+        "jlpt-sentence-vocab-1af14ddd32-1",
+        "jlpt-sentence-vocab-1af14ddd32-2",
+        "jlpt-sentence-vocab-ac5fa7fe3b-1",
+        "jlpt-sentence-vocab-ac5fa7fe3b-2",
+        "jlpt-sentence-vocab-3575e37548-1",
+        "jlpt-sentence-vocab-3575e37548-2",
+        "jlpt-sentence-vocab-d7f56d8d34-1",
+        "jlpt-sentence-vocab-d7f56d8d34-2"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "paraphrase",
+      "usage",
+      "sentence_composition",
+      "quick_response"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-033",
+    "level": "N4",
+    "module_number": 5,
+    "lesson_number": 33,
+    "title": "变化与动作关系 · 听读整合与任务完成 033",
+    "module_goal": "掌握状态变化、自动词他动词和进行结果",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "integrated_input",
+    "objectives": [
+      "阅读短文或听取对话，提取关键信息并完成真实任务。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-06aec1d647",
+        "jlpt-vocab-6cf505ee55",
+        "jlpt-vocab-19f08c094e",
+        "jlpt-vocab-73a3e59782",
+        "jlpt-vocab-aaac8221c9",
+        "jlpt-vocab-56a36774ce",
+        "jlpt-vocab-83a456da88",
+        "jlpt-vocab-43965bbba0",
+        "jlpt-vocab-f527f52c5c",
+        "jlpt-vocab-18035049f8",
+        "jlpt-vocab-4e6d200127",
+        "jlpt-vocab-4b99b4673b"
+      ],
+      "kanji": [
+        "jlpt-kanji-9280",
+        "jlpt-kanji-65e9",
+        "jlpt-kanji-6620"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-ka-embedded-question",
+        "jlpt-grammar-n4-to-omou"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-6a3d0e7070-1",
+        "jlpt-sentence-vocab-6a3d0e7070-2",
+        "jlpt-sentence-vocab-0114521256-1",
+        "jlpt-sentence-vocab-0114521256-2",
+        "jlpt-sentence-vocab-0787fd5472-1",
+        "jlpt-sentence-vocab-0787fd5472-2"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-254439ebbe-1",
+        "jlpt-sentence-vocab-254439ebbe-2",
+        "jlpt-sentence-vocab-2d86d7e0fc-1",
+        "jlpt-sentence-vocab-2d86d7e0fc-2",
+        "jlpt-sentence-vocab-d051720806-1",
+        "jlpt-sentence-vocab-d051720806-2",
+        "jlpt-sentence-vocab-b7dd1f219b-1",
+        "jlpt-sentence-vocab-b7dd1f219b-2",
+        "jlpt-sentence-vocab-88a295c433-1",
+        "jlpt-sentence-vocab-88a295c433-2",
+        "jlpt-sentence-vocab-9bb337edc6-1",
+        "jlpt-sentence-vocab-9bb337edc6-2",
+        "jlpt-sentence-vocab-2404bdfdb3-1",
+        "jlpt-sentence-vocab-2404bdfdb3-2",
+        "jlpt-sentence-vocab-4610276c99-1",
+        "jlpt-sentence-vocab-4610276c99-2",
+        "jlpt-sentence-vocab-32ca6422d6-1",
+        "jlpt-sentence-vocab-32ca6422d6-2",
+        "jlpt-sentence-vocab-d02b870af1-1",
+        "jlpt-sentence-vocab-d02b870af1-2",
+        "jlpt-sentence-vocab-847b1b7535-1",
+        "jlpt-sentence-vocab-847b1b7535-2",
+        "jlpt-sentence-vocab-54a6f375d8-1"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "context_expression",
+      "text_grammar",
+      "short_passage",
+      "task_comprehension",
+      "key_points"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-034",
+    "level": "N4",
+    "module_number": 5,
+    "lesson_number": 34,
+    "title": "变化与动作关系 · 新内容识别与语境理解 034",
+    "module_goal": "掌握状态变化、自动词他动词和进行结果",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "recognition",
+    "objectives": [
+      "学习本课词汇、汉字和语法，在短句中识别形式与核心功能。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 1 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-3f26d1cef7",
+        "jlpt-vocab-36f583c207",
+        "jlpt-vocab-16db6a0f53",
+        "jlpt-vocab-ef537ea4a9",
+        "jlpt-vocab-ba74488833",
+        "jlpt-vocab-356e03170b",
+        "jlpt-vocab-c206b05b9d",
+        "jlpt-vocab-7d940762d2",
+        "jlpt-vocab-bbe4edb30f",
+        "jlpt-vocab-a1db204b87",
+        "jlpt-vocab-d177796b00",
+        "jlpt-vocab-ce21381e4f"
+      ],
+      "kanji": [
+        "jlpt-kanji-89aa",
+        "jlpt-kanji-9a13",
+        "jlpt-kanji-82f1"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-to-iu-say"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-54a6f375d8-2",
+        "jlpt-sentence-vocab-3ce079af0b-1",
+        "jlpt-sentence-vocab-3ce079af0b-2",
+        "jlpt-sentence-vocab-2078b08350-1",
+        "jlpt-sentence-vocab-2078b08350-2",
+        "jlpt-sentence-vocab-8825d6d645-1"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-8825d6d645-2",
+        "jlpt-sentence-vocab-a2962b07bc-1",
+        "jlpt-sentence-vocab-a2962b07bc-2",
+        "jlpt-sentence-vocab-a6b7fa4afc-1",
+        "jlpt-sentence-vocab-a6b7fa4afc-2",
+        "jlpt-sentence-vocab-76e19fba1a-1",
+        "jlpt-sentence-vocab-76e19fba1a-2",
+        "jlpt-sentence-vocab-d48ed47f5e-1",
+        "jlpt-sentence-vocab-d48ed47f5e-2",
+        "jlpt-sentence-vocab-70eb9aa3ff-1",
+        "jlpt-sentence-vocab-70eb9aa3ff-2",
+        "jlpt-sentence-vocab-f9f80b1a36-1",
+        "jlpt-sentence-vocab-f9f80b1a36-2",
+        "jlpt-sentence-vocab-55a030e65f-1",
+        "jlpt-sentence-vocab-55a030e65f-2",
+        "jlpt-sentence-vocab-897bcab845-1",
+        "jlpt-sentence-vocab-897bcab845-2",
+        "jlpt-sentence-vocab-28c2a94407-1",
+        "jlpt-sentence-vocab-28c2a94407-2",
+        "jlpt-sentence-vocab-c8a0e96a6a-1",
+        "jlpt-sentence-vocab-c8a0e96a6a-2",
+        "jlpt-sentence-vocab-8b7dab271d-1",
+        "jlpt-sentence-vocab-8b7dab271d-2"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "kanji_reading",
+      "orthography",
+      "context_expression",
+      "sentence_grammar"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-035",
+    "level": "N4",
+    "module_number": 6,
+    "lesson_number": 35,
+    "title": "可能、被动与使役 · 易混辨析与受控输出 035",
+    "module_goal": "理解能力、影响、受身和基础使役表达",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "contrast_and_use",
+    "objectives": [
+      "比较近义形式，在替换、排序和情境选择中正确使用。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-776c4df05f",
+        "jlpt-vocab-342df55815",
+        "jlpt-vocab-15f9f72b7c",
+        "jlpt-vocab-0319cd1801",
+        "jlpt-vocab-aa30940947",
+        "jlpt-vocab-ccdf4613d1",
+        "jlpt-vocab-fa043680e3",
+        "jlpt-vocab-bbf07b44f0",
+        "jlpt-vocab-b4206ea6cb",
+        "jlpt-vocab-02dea2f4f6",
+        "jlpt-vocab-be7c090b8e",
+        "jlpt-vocab-a9687d55e3"
+      ],
+      "kanji": [
+        "jlpt-kanji-533b",
+        "jlpt-kanji-4ed5",
+        "jlpt-kanji-53bb"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-shika-nai",
+        "jlpt-grammar-n4-bakari"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-916e92f3da-1",
+        "jlpt-sentence-vocab-916e92f3da-2",
+        "jlpt-sentence-vocab-5d8e0ae01f-1",
+        "jlpt-sentence-vocab-5d8e0ae01f-2",
+        "jlpt-sentence-vocab-36d0fd2044-1",
+        "jlpt-sentence-vocab-36d0fd2044-2"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-546e786cde-1",
+        "jlpt-sentence-vocab-546e786cde-2",
+        "jlpt-sentence-vocab-8c813519f4-1",
+        "jlpt-sentence-vocab-8c813519f4-2",
+        "jlpt-sentence-vocab-eced3a159f-1",
+        "jlpt-sentence-vocab-eced3a159f-2",
+        "jlpt-sentence-vocab-be23bfe1f6-1",
+        "jlpt-sentence-vocab-be23bfe1f6-2",
+        "jlpt-sentence-vocab-ab4a88a2c0-1",
+        "jlpt-sentence-vocab-ab4a88a2c0-2",
+        "jlpt-sentence-vocab-d801b8b37a-1",
+        "jlpt-sentence-vocab-d801b8b37a-2",
+        "jlpt-sentence-vocab-6907fc706d-1",
+        "jlpt-sentence-vocab-6907fc706d-2",
+        "jlpt-sentence-vocab-33a024fce6-1",
+        "jlpt-sentence-vocab-33a024fce6-2",
+        "jlpt-sentence-vocab-dddceb65a5-1",
+        "jlpt-sentence-vocab-dddceb65a5-2",
+        "jlpt-sentence-vocab-ee0c991348-1",
+        "jlpt-sentence-vocab-ee0c991348-2",
+        "jlpt-sentence-vocab-26253e5000-1",
+        "jlpt-sentence-vocab-26253e5000-2",
+        "jlpt-sentence-vocab-a441432c8a-1"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "paraphrase",
+      "usage",
+      "sentence_composition",
+      "quick_response"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-036",
+    "level": "N4",
+    "module_number": 6,
+    "lesson_number": 36,
+    "title": "可能、被动与使役 · 听读整合与任务完成 036",
+    "module_goal": "理解能力、影响、受身和基础使役表达",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "integrated_input",
+    "objectives": [
+      "阅读短文或听取对话，提取关键信息并完成真实任务。",
+      "掌握本课分配的 11 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-67fb8c065d",
+        "jlpt-vocab-29b43fab16",
+        "jlpt-vocab-5fd0c77ef5",
+        "jlpt-vocab-db2fc03fcf",
+        "jlpt-vocab-84e17fcbc2",
+        "jlpt-vocab-80eba2fabb",
+        "jlpt-vocab-53162e310d",
+        "jlpt-vocab-c64697ccaa",
+        "jlpt-vocab-9ef4ab5d2a",
+        "jlpt-vocab-69678bc04e",
+        "jlpt-vocab-fc60a66d5c"
+      ],
+      "kanji": [
+        "jlpt-kanji-5473",
+        "jlpt-kanji-5199",
+        "jlpt-kanji-5b57"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-ta-bakari",
+        "jlpt-grammar-n4-tokoro-da"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-a441432c8a-2",
+        "jlpt-sentence-vocab-ced6d3f112-1",
+        "jlpt-sentence-vocab-ced6d3f112-2",
+        "jlpt-sentence-vocab-59bc2e87aa-1",
+        "jlpt-sentence-vocab-59bc2e87aa-2",
+        "jlpt-sentence-vocab-de718a81e9-1"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-de718a81e9-2",
+        "jlpt-sentence-vocab-1d83ae6a5a-1",
+        "jlpt-sentence-vocab-1d83ae6a5a-2",
+        "jlpt-sentence-vocab-c00788993b-1",
+        "jlpt-sentence-vocab-c00788993b-2",
+        "jlpt-sentence-vocab-346a5da3c2-1",
+        "jlpt-sentence-vocab-346a5da3c2-2",
+        "jlpt-sentence-vocab-fbb6245e8b-1",
+        "jlpt-sentence-vocab-fbb6245e8b-2",
+        "jlpt-sentence-vocab-fceb1b247e-1",
+        "jlpt-sentence-vocab-fceb1b247e-2",
+        "jlpt-sentence-vocab-f6b676e45f-1",
+        "jlpt-sentence-vocab-f6b676e45f-2",
+        "jlpt-sentence-vocab-f1ef6228cb-1",
+        "jlpt-sentence-vocab-f1ef6228cb-2",
+        "jlpt-sentence-vocab-45d920815a-1",
+        "jlpt-sentence-vocab-45d920815a-2",
+        "jlpt-sentence-vocab-25d649bd20-1",
+        "jlpt-sentence-vocab-25d649bd20-2",
+        "jlpt-sentence-vocab-375c7ef77f-1",
+        "jlpt-sentence-vocab-375c7ef77f-2",
+        "jlpt-sentence-vocab-927b45c2eb-1",
+        "jlpt-sentence-vocab-927b45c2eb-2"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "context_expression",
+      "text_grammar",
+      "short_passage",
+      "task_comprehension",
+      "key_points"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-037",
+    "level": "N4",
+    "module_number": 6,
+    "lesson_number": 37,
+    "title": "可能、被动与使役 · 新内容识别与语境理解 037",
+    "module_goal": "理解能力、影响、受身和基础使役表达",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "recognition",
+    "objectives": [
+      "学习本课词汇、汉字和语法，在短句中识别形式与核心功能。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-e9c1a3ae2c",
+        "jlpt-vocab-0b2acf3460",
+        "jlpt-vocab-cc2bd01f0a",
+        "jlpt-vocab-8743cb4286",
+        "jlpt-vocab-9b799806d8",
+        "jlpt-vocab-3753f20423",
+        "jlpt-vocab-bc1e0c2895",
+        "jlpt-vocab-1200266b8d",
+        "jlpt-vocab-3aadcbc234",
+        "jlpt-vocab-7becfb8f21",
+        "jlpt-vocab-76d7890e5d",
+        "jlpt-vocab-ccfefc657c"
+      ],
+      "kanji": [
+        "jlpt-kanji-7b54",
+        "jlpt-kanji-591c",
+        "jlpt-kanji-97f3"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-yasui-nikui",
+        "jlpt-grammar-n4-hajimeru-owaru-tsuzukeru"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-cb716261e6-1",
+        "jlpt-sentence-vocab-cb716261e6-2",
+        "jlpt-sentence-vocab-2f79469321-1",
+        "jlpt-sentence-vocab-2f79469321-2",
+        "jlpt-sentence-vocab-452083ca3c-1",
+        "jlpt-sentence-vocab-452083ca3c-2"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-9eaa627a73-1",
+        "jlpt-sentence-vocab-9eaa627a73-2",
+        "jlpt-sentence-vocab-f271b97de9-1",
+        "jlpt-sentence-vocab-f271b97de9-2",
+        "jlpt-sentence-vocab-e5cfcfab45-1",
+        "jlpt-sentence-vocab-e5cfcfab45-2",
+        "jlpt-sentence-vocab-0f80788417-1",
+        "jlpt-sentence-vocab-0f80788417-2",
+        "jlpt-sentence-vocab-ff9e385277-1",
+        "jlpt-sentence-vocab-ff9e385277-2",
+        "jlpt-sentence-vocab-3597362058-1",
+        "jlpt-sentence-vocab-3597362058-2",
+        "jlpt-sentence-vocab-96799b1b11-1",
+        "jlpt-sentence-vocab-96799b1b11-2",
+        "jlpt-sentence-vocab-845a23790b-1",
+        "jlpt-sentence-vocab-845a23790b-2",
+        "jlpt-sentence-vocab-1587d6fbcf-1",
+        "jlpt-sentence-vocab-1587d6fbcf-2",
+        "jlpt-sentence-vocab-72df46ea9c-1",
+        "jlpt-sentence-vocab-72df46ea9c-2",
+        "jlpt-sentence-vocab-b3f18d07d4-1",
+        "jlpt-sentence-vocab-b3f18d07d4-2",
+        "jlpt-sentence-vocab-7e5b1397b9-1"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "kanji_reading",
+      "orthography",
+      "context_expression",
+      "sentence_grammar"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-038",
+    "level": "N4",
+    "module_number": 6,
+    "lesson_number": 38,
+    "title": "可能、被动与使役 · 易混辨析与受控输出 038",
+    "module_goal": "理解能力、影响、受身和基础使役表达",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "contrast_and_use",
+    "objectives": [
+      "比较近义形式，在替换、排序和情境选择中正确使用。",
+      "掌握本课分配的 12 个词汇、4 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 22 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-8b7b602246",
+        "jlpt-vocab-9f64a96651",
+        "jlpt-vocab-b43872b197",
+        "jlpt-vocab-d3b3911a79",
+        "jlpt-vocab-a777a7ce62",
+        "jlpt-vocab-2adec6b9b4",
+        "jlpt-vocab-1d28dbb450",
+        "jlpt-vocab-1b35adeae4",
+        "jlpt-vocab-74c23dc218",
+        "jlpt-vocab-3a915c9be5",
+        "jlpt-vocab-626ae1ff39",
+        "jlpt-vocab-76a4fc9d6d"
+      ],
+      "kanji": [
+        "jlpt-kanji-6ce8",
+        "jlpt-kanji-5e30",
+        "jlpt-kanji-53e4",
+        "jlpt-kanji-6b4c"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-dasu",
+        "jlpt-grammar-n4-hodo-nai"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-7e5b1397b9-2",
+        "jlpt-sentence-vocab-9097d5cc39-1",
+        "jlpt-sentence-vocab-9097d5cc39-2",
+        "jlpt-sentence-vocab-36dc0ccd26-1",
+        "jlpt-sentence-vocab-36dc0ccd26-2",
+        "jlpt-sentence-vocab-7c74c440e5-1"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-7c74c440e5-2",
+        "jlpt-sentence-vocab-cb6d7546fb-1",
+        "jlpt-sentence-vocab-cb6d7546fb-2",
+        "jlpt-sentence-vocab-d3422596a8-1",
+        "jlpt-sentence-vocab-d3422596a8-2",
+        "jlpt-sentence-vocab-9c0ee7cfcc-1",
+        "jlpt-sentence-vocab-9c0ee7cfcc-2",
+        "jlpt-sentence-vocab-0fa3edce9b-1",
+        "jlpt-sentence-vocab-0fa3edce9b-2",
+        "jlpt-sentence-vocab-91094911c0-1",
+        "jlpt-sentence-vocab-91094911c0-2",
+        "jlpt-sentence-vocab-675232ef05-1",
+        "jlpt-sentence-vocab-675232ef05-2",
+        "jlpt-sentence-vocab-f71b64fa1e-1",
+        "jlpt-sentence-vocab-f71b64fa1e-2",
+        "jlpt-sentence-vocab-b7644eb3fc-1",
+        "jlpt-sentence-vocab-b7644eb3fc-2",
+        "jlpt-sentence-vocab-8077c744a0-1",
+        "jlpt-sentence-vocab-8077c744a0-2",
+        "jlpt-sentence-vocab-59944588a8-1",
+        "jlpt-sentence-vocab-59944588a8-2",
+        "jlpt-sentence-vocab-0c27b9183f-1"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "paraphrase",
+      "usage",
+      "sentence_composition",
+      "quick_response"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-039",
+    "level": "N4",
+    "module_number": 6,
+    "lesson_number": 39,
+    "title": "可能、被动与使役 · 听读整合与任务完成 039",
+    "module_goal": "理解能力、影响、受身和基础使役表达",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "integrated_input",
+    "objectives": [
+      "阅读短文或听取对话，提取关键信息并完成真实任务。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-ce2f134cda",
+        "jlpt-vocab-40f67571a6",
+        "jlpt-vocab-e1cfd51839",
+        "jlpt-vocab-eef262a7dd",
+        "jlpt-vocab-f7a51f2c1c",
+        "jlpt-vocab-0ddf8d04c2",
+        "jlpt-vocab-178daf8296",
+        "jlpt-vocab-433da13afb",
+        "jlpt-vocab-ea2fe2f5de",
+        "jlpt-vocab-5cda324083",
+        "jlpt-vocab-88710a5d10",
+        "jlpt-vocab-6631558c00"
+      ],
+      "kanji": [
+        "jlpt-kanji-8cb7",
+        "jlpt-kanji-60aa",
+        "jlpt-kanji-56f3"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-nakanaka-nai",
+        "jlpt-grammar-n4-zutsu"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-0c27b9183f-2",
+        "jlpt-sentence-vocab-07a76f9be7-1",
+        "jlpt-sentence-vocab-07a76f9be7-2",
+        "jlpt-sentence-vocab-fcf790e186-1",
+        "jlpt-sentence-vocab-a4e2dc046c-1",
+        "jlpt-sentence-vocab-a4e2dc046c-2"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-64f85b7fdf-1",
+        "jlpt-sentence-vocab-64f85b7fdf-2",
+        "jlpt-sentence-vocab-eb7247f404-1",
+        "jlpt-sentence-vocab-eb7247f404-2",
+        "jlpt-sentence-vocab-221e63cb1e-1",
+        "jlpt-sentence-vocab-221e63cb1e-2",
+        "jlpt-sentence-vocab-6978e278b2-1",
+        "jlpt-sentence-vocab-6978e278b2-2",
+        "jlpt-sentence-vocab-1687840ea3-1",
+        "jlpt-sentence-vocab-1687840ea3-2",
+        "jlpt-sentence-vocab-58cd37c48b-1",
+        "jlpt-sentence-vocab-58cd37c48b-2",
+        "jlpt-sentence-vocab-505c1fd62e-1",
+        "jlpt-sentence-vocab-505c1fd62e-2",
+        "jlpt-sentence-vocab-88be7d523a-1",
+        "jlpt-sentence-vocab-88be7d523a-2",
+        "jlpt-sentence-vocab-5c27cba3be-1",
+        "jlpt-sentence-vocab-5c27cba3be-2",
+        "jlpt-sentence-vocab-3d1727a56f-1",
+        "jlpt-sentence-vocab-3d1727a56f-2",
+        "jlpt-sentence-vocab-d9c64cdfa1-1",
+        "jlpt-sentence-vocab-d9c64cdfa1-2",
+        "jlpt-sentence-vocab-6307098126-1"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "context_expression",
+      "text_grammar",
+      "short_passage",
+      "task_comprehension",
+      "key_points"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-040",
+    "level": "N4",
+    "module_number": 6,
+    "lesson_number": 40,
+    "title": "可能、被动与使役 · 新内容识别与语境理解 040",
+    "module_goal": "理解能力、影响、受身和基础使役表达",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "recognition",
+    "objectives": [
+      "学习本课词汇、汉字和语法，在短句中识别形式与核心功能。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 1 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-cdabcdd725",
+        "jlpt-vocab-b89d0618be",
+        "jlpt-vocab-4fbc32438d",
+        "jlpt-vocab-9de5a5daff",
+        "jlpt-vocab-1af14ddd32",
+        "jlpt-vocab-ac5fa7fe3b",
+        "jlpt-vocab-3575e37548",
+        "jlpt-vocab-d7f56d8d34",
+        "jlpt-vocab-6a3d0e7070",
+        "jlpt-vocab-0114521256",
+        "jlpt-vocab-0787fd5472",
+        "jlpt-vocab-254439ebbe"
+      ],
+      "kanji": [
+        "jlpt-kanji-9031",
+        "jlpt-kanji-5ba4",
+        "jlpt-kanji-6b69"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-mo-emphasis"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-6307098126-2",
+        "jlpt-sentence-vocab-5434f0c376-1",
+        "jlpt-sentence-vocab-5434f0c376-2",
+        "jlpt-sentence-vocab-8e7b945555-1",
+        "jlpt-sentence-vocab-8e7b945555-2",
+        "jlpt-sentence-vocab-0f494574f0-1"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-0f494574f0-2",
+        "jlpt-sentence-vocab-bbaeab9c94-1",
+        "jlpt-sentence-vocab-bbaeab9c94-2",
+        "jlpt-sentence-vocab-a695a20c52-1",
+        "jlpt-sentence-vocab-a695a20c52-2",
+        "jlpt-sentence-vocab-6e13cee4dc-1",
+        "jlpt-sentence-vocab-6e13cee4dc-2",
+        "jlpt-sentence-vocab-c858640672-1",
+        "jlpt-sentence-vocab-c858640672-2",
+        "jlpt-sentence-vocab-96e10e7209-1",
+        "jlpt-sentence-vocab-96e10e7209-2",
+        "jlpt-sentence-vocab-ad62110b55-1",
+        "jlpt-sentence-vocab-ad62110b55-2",
+        "jlpt-sentence-vocab-f0e069d89e-1",
+        "jlpt-sentence-vocab-f0e069d89e-2",
+        "jlpt-sentence-vocab-506aca7161-1",
+        "jlpt-sentence-vocab-506aca7161-2",
+        "jlpt-sentence-vocab-2ef2e06612-1",
+        "jlpt-sentence-vocab-2ef2e06612-2",
+        "jlpt-sentence-vocab-8011fa51a8-1",
+        "jlpt-sentence-vocab-8011fa51a8-2",
+        "jlpt-sentence-vocab-7d2bcb5a30-1",
+        "jlpt-sentence-vocab-7d2bcb5a30-2"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "kanji_reading",
+      "orthography",
+      "context_expression",
+      "sentence_grammar"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-041",
+    "level": "N4",
+    "module_number": 7,
+    "lesson_number": 41,
+    "title": "社会生活与旅行 · 易混辨析与受控输出 041",
+    "module_goal": "应对设施、健康、校园、职场和旅行计划",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "contrast_and_use",
+    "objectives": [
+      "比较近义形式，在替换、排序和情境选择中正确使用。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-2d86d7e0fc",
+        "jlpt-vocab-d051720806",
+        "jlpt-vocab-b7dd1f219b",
+        "jlpt-vocab-88a295c433",
+        "jlpt-vocab-9bb337edc6",
+        "jlpt-vocab-2404bdfdb3",
+        "jlpt-vocab-4610276c99",
+        "jlpt-vocab-32ca6422d6",
+        "jlpt-vocab-d02b870af1",
+        "jlpt-vocab-847b1b7535",
+        "jlpt-vocab-54a6f375d8",
+        "jlpt-vocab-3ce079af0b"
+      ],
+      "kanji": [
+        "jlpt-kanji-98a8",
+        "jlpt-kanji-7d19",
+        "jlpt-kanji-9ed2"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-made-ni",
+        "jlpt-grammar-n4-koto-ga-aru"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-427a618271-1",
+        "jlpt-sentence-vocab-427a618271-2",
+        "jlpt-sentence-vocab-3771ac0921-1",
+        "jlpt-sentence-vocab-3771ac0921-2",
+        "jlpt-sentence-vocab-f2a77c1c6d-1",
+        "jlpt-sentence-vocab-f2a77c1c6d-2"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-7a0b48d3e5-1",
+        "jlpt-sentence-vocab-7a0b48d3e5-2",
+        "jlpt-sentence-vocab-10ee6bdb9e-1",
+        "jlpt-sentence-vocab-10ee6bdb9e-2",
+        "jlpt-sentence-vocab-3ccc927e4b-1",
+        "jlpt-sentence-vocab-3ccc927e4b-2",
+        "jlpt-sentence-vocab-d81bb54f03-1",
+        "jlpt-sentence-vocab-d81bb54f03-2",
+        "jlpt-sentence-vocab-ad11ce072b-1",
+        "jlpt-sentence-vocab-ad11ce072b-2",
+        "jlpt-sentence-vocab-5d0d49b3fe-1",
+        "jlpt-sentence-vocab-5d0d49b3fe-2",
+        "jlpt-sentence-vocab-63846aa88f-1",
+        "jlpt-sentence-vocab-63846aa88f-2",
+        "jlpt-sentence-vocab-688ed7ca0f-1",
+        "jlpt-sentence-vocab-688ed7ca0f-2",
+        "jlpt-sentence-vocab-79e62e3c87-1",
+        "jlpt-sentence-vocab-79e62e3c87-2",
+        "jlpt-sentence-vocab-fa8716c349-1",
+        "jlpt-sentence-vocab-fa8716c349-2",
+        "jlpt-sentence-vocab-7c9d2c46eb-1",
+        "jlpt-sentence-vocab-7c9d2c46eb-2",
+        "jlpt-sentence-vocab-cbb67e1b4d-1"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "paraphrase",
+      "usage",
+      "sentence_composition",
+      "quick_response"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-042",
+    "level": "N4",
+    "module_number": 7,
+    "lesson_number": 42,
+    "title": "社会生活与旅行 · 听读整合与任务完成 042",
+    "module_goal": "应对设施、健康、校园、职场和旅行计划",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "integrated_input",
+    "objectives": [
+      "阅读短文或听取对话，提取关键信息并完成真实任务。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-2078b08350",
+        "jlpt-vocab-8825d6d645",
+        "jlpt-vocab-a2962b07bc",
+        "jlpt-vocab-a6b7fa4afc",
+        "jlpt-vocab-76e19fba1a",
+        "jlpt-vocab-d48ed47f5e",
+        "jlpt-vocab-70eb9aa3ff",
+        "jlpt-vocab-f9f80b1a36",
+        "jlpt-vocab-55a030e65f",
+        "jlpt-vocab-897bcab845",
+        "jlpt-vocab-28c2a94407",
+        "jlpt-vocab-c8a0e96a6a"
+      ],
+      "kanji": [
+        "jlpt-kanji-82b1",
+        "jlpt-kanji-6625",
+        "jlpt-kanji-8d64"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-nai-to-ikenai-nakucha",
+        "jlpt-grammar-n4-sasete-kudasai"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-cbb67e1b4d-2",
+        "jlpt-sentence-vocab-c64fff23ae-1",
+        "jlpt-sentence-vocab-c64fff23ae-2",
+        "jlpt-sentence-vocab-cd96cff1ab-1",
+        "jlpt-sentence-vocab-cd96cff1ab-2",
+        "jlpt-sentence-vocab-de815ae4e6-1"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-de815ae4e6-2",
+        "jlpt-sentence-vocab-a9fe0e98c1-1",
+        "jlpt-sentence-vocab-a9fe0e98c1-2",
+        "jlpt-sentence-vocab-ed37fe04b5-1",
+        "jlpt-sentence-vocab-ed37fe04b5-2",
+        "jlpt-sentence-vocab-7ffceb4055-1",
+        "jlpt-sentence-vocab-7ffceb4055-2",
+        "jlpt-sentence-vocab-82b0bf966f-1",
+        "jlpt-sentence-vocab-82b0bf966f-2",
+        "jlpt-sentence-vocab-5f81e206e3-1",
+        "jlpt-sentence-vocab-5f81e206e3-2",
+        "jlpt-sentence-vocab-df83eb2b9c-1",
+        "jlpt-sentence-vocab-df83eb2b9c-2",
+        "jlpt-sentence-vocab-977d6bf88c-1",
+        "jlpt-sentence-vocab-977d6bf88c-2",
+        "jlpt-sentence-vocab-520cc83d87-1",
+        "jlpt-sentence-vocab-520cc83d87-2",
+        "jlpt-sentence-vocab-cd95253850-1",
+        "jlpt-sentence-vocab-cd95253850-2",
+        "jlpt-sentence-vocab-0989d94de1-1",
+        "jlpt-sentence-vocab-0989d94de1-2",
+        "jlpt-sentence-vocab-8ff4f12975-1",
+        "jlpt-sentence-vocab-8ff4f12975-2"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "context_expression",
+      "text_grammar",
+      "short_passage",
+      "task_comprehension",
+      "key_points"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-043",
+    "level": "N4",
+    "module_number": 7,
+    "lesson_number": 43,
+    "title": "社会生活与旅行 · 新内容识别与语境理解 043",
+    "module_goal": "应对设施、健康、校园、职场和旅行计划",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "recognition",
+    "objectives": [
+      "学习本课词汇、汉字和语法，在短句中识别形式与核心功能。",
+      "掌握本课分配的 12 个词汇、4 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-8b7dab271d",
+        "jlpt-vocab-916e92f3da",
+        "jlpt-vocab-5d8e0ae01f",
+        "jlpt-vocab-36d0fd2044",
+        "jlpt-vocab-546e786cde",
+        "jlpt-vocab-8c813519f4",
+        "jlpt-vocab-eced3a159f",
+        "jlpt-vocab-be23bfe1f6",
+        "jlpt-vocab-ab4a88a2c0",
+        "jlpt-vocab-d801b8b37a",
+        "jlpt-vocab-6907fc706d",
+        "jlpt-vocab-33a024fce6"
+      ],
+      "kanji": [
+        "jlpt-kanji-9752",
+        "jlpt-kanji-9928",
+        "jlpt-kanji-5c4b",
+        "jlpt-kanji-8272"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-sonkeigo",
+        "jlpt-grammar-n4-kenjougo"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-vocab-bcb7922671-1",
+        "jlpt-sentence-vocab-bcb7922671-2",
+        "jlpt-sentence-vocab-b80da200ff-1",
+        "jlpt-sentence-vocab-b80da200ff-2",
+        "jlpt-sentence-vocab-d9f9f17224-1",
+        "jlpt-sentence-vocab-d9f9f17224-2"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-vocab-6926bbe9d4-1",
+        "jlpt-sentence-vocab-6926bbe9d4-2",
+        "jlpt-sentence-vocab-f079ca12a7-1",
+        "jlpt-sentence-vocab-f079ca12a7-2",
+        "jlpt-sentence-vocab-58c9a21aa1-1",
+        "jlpt-sentence-vocab-58c9a21aa1-2",
+        "jlpt-sentence-vocab-e1641974f4-1",
+        "jlpt-sentence-vocab-e1641974f4-2",
+        "jlpt-sentence-vocab-f7e0744822-1",
+        "jlpt-sentence-vocab-f7e0744822-2",
+        "jlpt-sentence-vocab-ceec15828f-1",
+        "jlpt-sentence-vocab-ceec15828f-2",
+        "jlpt-sentence-vocab-12abb2a2c6-1",
+        "jlpt-sentence-vocab-12abb2a2c6-2",
+        "jlpt-sentence-vocab-327c67b830-1",
+        "jlpt-sentence-vocab-327c67b830-2",
+        "jlpt-sentence-vocab-44a2bc7c32-1",
+        "jlpt-sentence-vocab-44a2bc7c32-2",
+        "jlpt-sentence-vocab-27046b71e1-1",
+        "jlpt-sentence-vocab-27046b71e1-2",
+        "jlpt-sentence-grammar-n4-ageru-kureru-morau-1",
+        "jlpt-sentence-grammar-n4-ageru-kureru-morau-2",
+        "jlpt-sentence-grammar-n4-ageru-kureru-morau-3"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "kanji_reading",
+      "orthography",
+      "context_expression",
+      "sentence_grammar"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-044",
+    "level": "N4",
+    "module_number": 7,
+    "lesson_number": 44,
+    "title": "社会生活与旅行 · 易混辨析与受控输出 044",
+    "module_goal": "应对设施、健康、校园、职场和旅行计划",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "contrast_and_use",
+    "objectives": [
+      "比较近义形式，在替换、排序和情境选择中正确使用。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-dddceb65a5",
+        "jlpt-vocab-1fb9d39cd6",
+        "jlpt-vocab-ee0c991348",
+        "jlpt-vocab-26253e5000",
+        "jlpt-vocab-a441432c8a",
+        "jlpt-vocab-ced6d3f112",
+        "jlpt-vocab-59bc2e87aa",
+        "jlpt-vocab-de718a81e9",
+        "jlpt-vocab-1d83ae6a5a",
+        "jlpt-vocab-c00788993b",
+        "jlpt-vocab-346a5da3c2",
+        "jlpt-vocab-fbb6245e8b"
+      ],
+      "kanji": [
+        "jlpt-kanji-8d70",
+        "jlpt-kanji-79cb",
+        "jlpt-kanji-590f"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-o-ni-naru",
+        "jlpt-grammar-n4-o-suru"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-grammar-n4-te-ageru-1",
+        "jlpt-sentence-grammar-n4-te-ageru-2",
+        "jlpt-sentence-grammar-n4-te-ageru-3",
+        "jlpt-sentence-grammar-n4-te-kureru-1",
+        "jlpt-sentence-grammar-n4-te-kureru-2",
+        "jlpt-sentence-grammar-n4-te-kureru-3"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-grammar-n4-te-morau-1",
+        "jlpt-sentence-grammar-n4-te-morau-2",
+        "jlpt-sentence-grammar-n4-te-morau-3",
+        "jlpt-sentence-grammar-n4-te-kudasaru-te-itadaku-1",
+        "jlpt-sentence-grammar-n4-te-kudasaru-te-itadaku-2",
+        "jlpt-sentence-grammar-n4-te-kudasaru-te-itadaku-3",
+        "jlpt-sentence-grammar-n4-te-iku-1",
+        "jlpt-sentence-grammar-n4-te-iku-2",
+        "jlpt-sentence-grammar-n4-te-iku-3",
+        "jlpt-sentence-grammar-n4-te-kuru-1",
+        "jlpt-sentence-grammar-n4-te-kuru-2",
+        "jlpt-sentence-grammar-n4-te-kuru-3",
+        "jlpt-sentence-grammar-n4-te-shimau-chau-1",
+        "jlpt-sentence-grammar-n4-te-shimau-chau-2",
+        "jlpt-sentence-grammar-n4-te-shimau-chau-3",
+        "jlpt-sentence-grammar-n4-te-oku-1",
+        "jlpt-sentence-grammar-n4-te-oku-2",
+        "jlpt-sentence-grammar-n4-te-oku-3",
+        "jlpt-sentence-grammar-n4-te-miru-1",
+        "jlpt-sentence-grammar-n4-te-miru-2",
+        "jlpt-sentence-grammar-n4-te-miru-3",
+        "jlpt-sentence-grammar-n4-te-aru-1",
+        "jlpt-sentence-grammar-n4-te-aru-2"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "paraphrase",
+      "usage",
+      "sentence_composition",
+      "quick_response"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-045",
+    "level": "N4",
+    "module_number": 7,
+    "lesson_number": 45,
+    "title": "社会生活与旅行 · 听读整合与任务完成 045",
+    "module_goal": "应对设施、健康、校园、职场和旅行计划",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "integrated_input",
+    "objectives": [
+      "阅读短文或听取对话，提取关键信息并完成真实任务。",
+      "掌握本课分配的 11 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-fceb1b247e",
+        "jlpt-vocab-f6b676e45f",
+        "jlpt-vocab-f1ef6228cb",
+        "jlpt-vocab-45d920815a",
+        "jlpt-vocab-25d649bd20",
+        "jlpt-vocab-375c7ef77f",
+        "jlpt-vocab-927b45c2eb",
+        "jlpt-vocab-cb716261e6",
+        "jlpt-vocab-2f79469321",
+        "jlpt-vocab-452083ca3c",
+        "jlpt-vocab-9eaa627a73"
+      ],
+      "kanji": [
+        "jlpt-kanji-7fd2",
+        "jlpt-kanji-99c5",
+        "jlpt-kanji-6d0b"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-de-gozaimasu",
+        "jlpt-grammar-n4-te-mo-kamawanai"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-grammar-n4-te-aru-3",
+        "jlpt-sentence-grammar-n4-toki-1",
+        "jlpt-sentence-grammar-n4-toki-2",
+        "jlpt-sentence-grammar-n4-toki-3",
+        "jlpt-sentence-grammar-n4-aida-aida-ni-1",
+        "jlpt-sentence-grammar-n4-aida-aida-ni-2"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-grammar-n4-aida-aida-ni-3",
+        "jlpt-sentence-grammar-n4-sou-da-appearance-1",
+        "jlpt-sentence-grammar-n4-sou-da-appearance-2",
+        "jlpt-sentence-grammar-n4-sou-da-appearance-3",
+        "jlpt-sentence-grammar-n4-sou-da-hearsay-1",
+        "jlpt-sentence-grammar-n4-sou-da-hearsay-2",
+        "jlpt-sentence-grammar-n4-sou-da-hearsay-3",
+        "jlpt-sentence-grammar-n4-rashii-1",
+        "jlpt-sentence-grammar-n4-rashii-2",
+        "jlpt-sentence-grammar-n4-rashii-3",
+        "jlpt-sentence-grammar-n4-you-da-1",
+        "jlpt-sentence-grammar-n4-you-da-2",
+        "jlpt-sentence-grammar-n4-you-da-3",
+        "jlpt-sentence-grammar-n4-mitai-1",
+        "jlpt-sentence-grammar-n4-mitai-2",
+        "jlpt-sentence-grammar-n4-mitai-3",
+        "jlpt-sentence-grammar-n4-sugiru-1",
+        "jlpt-sentence-grammar-n4-sugiru-2",
+        "jlpt-sentence-grammar-n4-sugiru-3",
+        "jlpt-sentence-grammar-n4-kata-1",
+        "jlpt-sentence-grammar-n4-kata-2",
+        "jlpt-sentence-grammar-n4-kata-3",
+        "jlpt-sentence-grammar-n4-chuu-juu-1"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "context_expression",
+      "text_grammar",
+      "short_passage",
+      "task_comprehension",
+      "key_points"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-046",
+    "level": "N4",
+    "module_number": 7,
+    "lesson_number": 46,
+    "title": "社会生活与旅行 · 新内容识别与语境理解 046",
+    "module_goal": "应对设施、健康、校园、职场和旅行计划",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "recognition",
+    "objectives": [
+      "学习本课词汇、汉字和语法，在短句中识别形式与核心功能。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 22 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-f271b97de9",
+        "jlpt-vocab-e5cfcfab45",
+        "jlpt-vocab-0f80788417",
+        "jlpt-vocab-ff9e385277",
+        "jlpt-vocab-3597362058",
+        "jlpt-vocab-96799b1b11",
+        "jlpt-vocab-845a23790b",
+        "jlpt-vocab-1587d6fbcf",
+        "jlpt-vocab-72df46ea9c",
+        "jlpt-vocab-b3f18d07d4",
+        "jlpt-vocab-7e5b1397b9",
+        "jlpt-vocab-9097d5cc39"
+      ],
+      "kanji": [
+        "jlpt-kanji-65c5",
+        "jlpt-kanji-670d",
+        "jlpt-kanji-5915"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-no-koto-nominalizer",
+        "jlpt-grammar-n4-ba-yokatta"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-grammar-n4-chuu-juu-2",
+        "jlpt-sentence-grammar-n4-chuu-juu-3",
+        "jlpt-sentence-grammar-n4-tsumori-1",
+        "jlpt-sentence-grammar-n4-tsumori-2",
+        "jlpt-sentence-grammar-n4-tsumori-3",
+        "jlpt-sentence-grammar-n4-yotei-1"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-grammar-n4-yotei-2",
+        "jlpt-sentence-grammar-n4-yotei-3",
+        "jlpt-sentence-grammar-n4-koto-ni-suru-1",
+        "jlpt-sentence-grammar-n4-koto-ni-suru-2",
+        "jlpt-sentence-grammar-n4-koto-ni-suru-3",
+        "jlpt-sentence-grammar-n4-koto-ni-naru-1",
+        "jlpt-sentence-grammar-n4-koto-ni-naru-2",
+        "jlpt-sentence-grammar-n4-koto-ni-naru-3",
+        "jlpt-sentence-grammar-n4-koto-ga-dekiru-1",
+        "jlpt-sentence-grammar-n4-koto-ga-dekiru-2",
+        "jlpt-sentence-grammar-n4-koto-ga-dekiru-3",
+        "jlpt-sentence-grammar-n4-eru-rareru-potential-1",
+        "jlpt-sentence-grammar-n4-eru-rareru-potential-2",
+        "jlpt-sentence-grammar-n4-eru-rareru-potential-3",
+        "jlpt-sentence-grammar-n4-reru-rareru-passive-1",
+        "jlpt-sentence-grammar-n4-reru-rareru-passive-2",
+        "jlpt-sentence-grammar-n4-reru-rareru-passive-3",
+        "jlpt-sentence-grammar-n4-seru-saseru-1",
+        "jlpt-sentence-grammar-n4-seru-saseru-2",
+        "jlpt-sentence-grammar-n4-seru-saseru-3",
+        "jlpt-sentence-grammar-n4-serareru-saserareru-1",
+        "jlpt-sentence-grammar-n4-serareru-saserareru-2"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "kanji_reading",
+      "orthography",
+      "context_expression",
+      "sentence_grammar"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-047",
+    "level": "N4",
+    "module_number": 7,
+    "lesson_number": 47,
+    "title": "社会生活与旅行 · 易混辨析与受控输出 047",
+    "module_goal": "应对设施、健康、校园、职场和旅行计划",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "contrast_and_use",
+    "objectives": [
+      "比较近义形式，在替换、排序和情境选择中正确使用。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 1 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-36dc0ccd26",
+        "jlpt-vocab-7c74c440e5",
+        "jlpt-vocab-cb6d7546fb",
+        "jlpt-vocab-d3422596a8",
+        "jlpt-vocab-9c0ee7cfcc",
+        "jlpt-vocab-0fa3edce9b",
+        "jlpt-vocab-91094911c0",
+        "jlpt-vocab-675232ef05",
+        "jlpt-vocab-f71b64fa1e",
+        "jlpt-vocab-b7644eb3fc",
+        "jlpt-vocab-8077c744a0",
+        "jlpt-vocab-59944588a8"
+      ],
+      "kanji": [
+        "jlpt-kanji-501f",
+        "jlpt-kanji-66dc",
+        "jlpt-kanji-98f2"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-tara-dou"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-grammar-n4-serareru-saserareru-3",
+        "jlpt-sentence-grammar-n4-ou-you-1",
+        "jlpt-sentence-grammar-n4-ou-you-2",
+        "jlpt-sentence-grammar-n4-ou-you-3",
+        "jlpt-sentence-grammar-n4-you-to-omou-1",
+        "jlpt-sentence-grammar-n4-you-to-omou-2"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-grammar-n4-you-to-omou-3",
+        "jlpt-sentence-grammar-n4-e-ro-1",
+        "jlpt-sentence-grammar-n4-e-ro-2",
+        "jlpt-sentence-grammar-n4-e-ro-3",
+        "jlpt-sentence-grammar-n4-na-prohibition-1",
+        "jlpt-sentence-grammar-n4-na-prohibition-2",
+        "jlpt-sentence-grammar-n4-na-prohibition-3",
+        "jlpt-sentence-grammar-n4-nasai-1",
+        "jlpt-sentence-grammar-n4-nasai-2",
+        "jlpt-sentence-grammar-n4-nasai-3",
+        "jlpt-sentence-grammar-n4-ba-1",
+        "jlpt-sentence-grammar-n4-ba-2",
+        "jlpt-sentence-grammar-n4-ba-3",
+        "jlpt-sentence-grammar-n4-tara-1",
+        "jlpt-sentence-grammar-n4-tara-2",
+        "jlpt-sentence-grammar-n4-tara-3",
+        "jlpt-sentence-grammar-n4-nara-1",
+        "jlpt-sentence-grammar-n4-nara-2",
+        "jlpt-sentence-grammar-n4-nara-3",
+        "jlpt-sentence-grammar-n4-to-1",
+        "jlpt-sentence-grammar-n4-to-2",
+        "jlpt-sentence-grammar-n4-to-3",
+        "jlpt-sentence-grammar-n4-te-mo-de-mo-1"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "paraphrase",
+      "usage",
+      "sentence_composition",
+      "quick_response"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-048",
+    "level": "N4",
+    "module_number": 8,
+    "lesson_number": 48,
+    "title": "日常短文与听力整合 · 听读整合与任务完成 048",
+    "module_goal": "处理较长叙述、通知、邮件和行动选择",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "integrated_input",
+    "objectives": [
+      "阅读短文或听取对话，提取关键信息并完成真实任务。",
+      "掌握本课分配的 12 个词汇、4 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-0c27b9183f",
+        "jlpt-vocab-07a76f9be7",
+        "jlpt-vocab-fcf790e186",
+        "jlpt-vocab-a4e2dc046c",
+        "jlpt-vocab-64f85b7fdf",
+        "jlpt-vocab-eb7247f404",
+        "jlpt-vocab-221e63cb1e",
+        "jlpt-vocab-6978e278b2",
+        "jlpt-vocab-1687840ea3",
+        "jlpt-vocab-58cd37c48b",
+        "jlpt-vocab-505c1fd62e",
+        "jlpt-vocab-88be7d523a"
+      ],
+      "kanji": [
+        "jlpt-kanji-8089",
+        "jlpt-kanji-8cb8",
+        "jlpt-kanji-5802",
+        "jlpt-kanji-9ce5"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-hou-ga-ii",
+        "jlpt-grammar-n4-toka-toka"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-grammar-n4-te-mo-de-mo-2",
+        "jlpt-sentence-grammar-n4-te-mo-de-mo-3",
+        "jlpt-sentence-grammar-n4-noni-although-1",
+        "jlpt-sentence-grammar-n4-noni-although-2",
+        "jlpt-sentence-grammar-n4-noni-although-3",
+        "jlpt-sentence-grammar-n4-noni-purpose-1"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-grammar-n4-noni-purpose-2",
+        "jlpt-sentence-grammar-n4-noni-purpose-3",
+        "jlpt-sentence-grammar-n4-node-1",
+        "jlpt-sentence-grammar-n4-node-2",
+        "jlpt-sentence-grammar-n4-node-3",
+        "jlpt-sentence-grammar-n4-te-reason-1",
+        "jlpt-sentence-grammar-n4-te-reason-2",
+        "jlpt-sentence-grammar-n4-te-reason-3",
+        "jlpt-sentence-grammar-n4-shi-1",
+        "jlpt-sentence-grammar-n4-shi-2",
+        "jlpt-sentence-grammar-n4-shi-3",
+        "jlpt-sentence-grammar-n4-kedo-keredomo-1",
+        "jlpt-sentence-grammar-n4-kedo-keredomo-2",
+        "jlpt-sentence-grammar-n4-kedo-keredomo-3",
+        "jlpt-sentence-grammar-n4-tame-ni-1",
+        "jlpt-sentence-grammar-n4-tame-ni-2",
+        "jlpt-sentence-grammar-n4-tame-ni-3",
+        "jlpt-sentence-grammar-n4-you-ni-1",
+        "jlpt-sentence-grammar-n4-you-ni-2",
+        "jlpt-sentence-grammar-n4-you-ni-3",
+        "jlpt-sentence-grammar-n4-you-ni-suru-1",
+        "jlpt-sentence-grammar-n4-you-ni-suru-2",
+        "jlpt-sentence-grammar-n4-you-ni-suru-3"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "context_expression",
+      "text_grammar",
+      "short_passage",
+      "task_comprehension",
+      "key_points"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-049",
+    "level": "N4",
+    "module_number": 8,
+    "lesson_number": 49,
+    "title": "日常短文与听力整合 · 新内容识别与语境理解 049",
+    "module_goal": "处理较长叙述、通知、邮件和行动选择",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "recognition",
+    "objectives": [
+      "学习本课词汇、汉字和语法，在短句中识别形式与核心功能。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-5c27cba3be",
+        "jlpt-vocab-3d1727a56f",
+        "jlpt-vocab-d9c64cdfa1",
+        "jlpt-vocab-6307098126",
+        "jlpt-vocab-5434f0c376",
+        "jlpt-vocab-8e7b945555",
+        "jlpt-vocab-0f494574f0",
+        "jlpt-vocab-bbaeab9c94",
+        "jlpt-vocab-a695a20c52",
+        "jlpt-vocab-6e13cee4dc",
+        "jlpt-vocab-c858640672",
+        "jlpt-vocab-96e10e7209"
+      ],
+      "kanji": [
+        "jlpt-kanji-98ef",
+        "jlpt-kanji-52c9",
+        "jlpt-kanji-51ac"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-nado",
+        "jlpt-grammar-n4-de-mo-suggestion"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-grammar-n4-you-ni-naru-1",
+        "jlpt-sentence-grammar-n4-you-ni-naru-2",
+        "jlpt-sentence-grammar-n4-you-ni-naru-3",
+        "jlpt-sentence-grammar-n4-te-hoshii-1",
+        "jlpt-sentence-grammar-n4-te-hoshii-2",
+        "jlpt-sentence-grammar-n4-te-hoshii-3"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-grammar-n4-tagaru-1",
+        "jlpt-sentence-grammar-n4-tagaru-2",
+        "jlpt-sentence-grammar-n4-tagaru-3",
+        "jlpt-sentence-grammar-n4-garu-1",
+        "jlpt-sentence-grammar-n4-garu-2",
+        "jlpt-sentence-grammar-n4-garu-3",
+        "jlpt-sentence-grammar-n4-kamo-shirenai-1",
+        "jlpt-sentence-grammar-n4-kamo-shirenai-2",
+        "jlpt-sentence-grammar-n4-kamo-shirenai-3",
+        "jlpt-sentence-grammar-n4-darou-1",
+        "jlpt-sentence-grammar-n4-darou-2",
+        "jlpt-sentence-grammar-n4-darou-3",
+        "jlpt-sentence-grammar-n4-hazu-da-1",
+        "jlpt-sentence-grammar-n4-hazu-da-2",
+        "jlpt-sentence-grammar-n4-hazu-da-3",
+        "jlpt-sentence-grammar-n4-hazu-ga-nai-1",
+        "jlpt-sentence-grammar-n4-hazu-ga-nai-2",
+        "jlpt-sentence-grammar-n4-hazu-ga-nai-3",
+        "jlpt-sentence-grammar-n4-n-desu-no-desu-1",
+        "jlpt-sentence-grammar-n4-n-desu-no-desu-2",
+        "jlpt-sentence-grammar-n4-n-desu-no-desu-3",
+        "jlpt-sentence-grammar-n4-ka-dou-ka-1",
+        "jlpt-sentence-grammar-n4-ka-dou-ka-2"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "kanji_reading",
+      "orthography",
+      "context_expression",
+      "sentence_grammar"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-050",
+    "level": "N4",
+    "module_number": 8,
+    "lesson_number": 50,
+    "title": "日常短文与听力整合 · 易混辨析与受控输出 050",
+    "module_goal": "处理较长叙述、通知、邮件和行动选择",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "contrast_and_use",
+    "objectives": [
+      "比较近义形式，在替换、排序和情境选择中正确使用。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-ad62110b55",
+        "jlpt-vocab-f0e069d89e",
+        "jlpt-vocab-506aca7161",
+        "jlpt-vocab-2ef2e06612",
+        "jlpt-vocab-8011fa51a8",
+        "jlpt-vocab-7d2bcb5a30",
+        "jlpt-vocab-427a618271",
+        "jlpt-vocab-3771ac0921",
+        "jlpt-vocab-f2a77c1c6d",
+        "jlpt-vocab-7a0b48d3e5",
+        "jlpt-vocab-10ee6bdb9e",
+        "jlpt-vocab-3ccc927e4b"
+      ],
+      "kanji": [
+        "jlpt-kanji-663c",
+        "jlpt-kanji-8336",
+        "jlpt-kanji-5f1f"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-sa",
+        "jlpt-grammar-n4-me"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-grammar-n4-ka-dou-ka-3",
+        "jlpt-sentence-grammar-n4-ka-embedded-question-1",
+        "jlpt-sentence-grammar-n4-ka-embedded-question-2",
+        "jlpt-sentence-grammar-n4-ka-embedded-question-3",
+        "jlpt-sentence-grammar-n4-to-omou-1",
+        "jlpt-sentence-grammar-n4-to-omou-2"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-grammar-n4-to-omou-3",
+        "jlpt-sentence-grammar-n4-to-iu-say-1",
+        "jlpt-sentence-grammar-n4-to-iu-say-2",
+        "jlpt-sentence-grammar-n4-to-iu-say-3",
+        "jlpt-sentence-grammar-n4-shika-nai-1",
+        "jlpt-sentence-grammar-n4-shika-nai-2",
+        "jlpt-sentence-grammar-n4-shika-nai-3",
+        "jlpt-sentence-grammar-n4-bakari-1",
+        "jlpt-sentence-grammar-n4-bakari-2",
+        "jlpt-sentence-grammar-n4-bakari-3",
+        "jlpt-sentence-grammar-n4-ta-bakari-1",
+        "jlpt-sentence-grammar-n4-ta-bakari-2",
+        "jlpt-sentence-grammar-n4-ta-bakari-3",
+        "jlpt-sentence-grammar-n4-tokoro-da-1",
+        "jlpt-sentence-grammar-n4-tokoro-da-2",
+        "jlpt-sentence-grammar-n4-tokoro-da-3",
+        "jlpt-sentence-grammar-n4-yasui-nikui-1",
+        "jlpt-sentence-grammar-n4-yasui-nikui-2",
+        "jlpt-sentence-grammar-n4-yasui-nikui-3",
+        "jlpt-sentence-grammar-n4-hajimeru-owaru-tsuzukeru-1",
+        "jlpt-sentence-grammar-n4-hajimeru-owaru-tsuzukeru-2",
+        "jlpt-sentence-grammar-n4-hajimeru-owaru-tsuzukeru-3",
+        "jlpt-sentence-grammar-n4-dasu-1"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "paraphrase",
+      "usage",
+      "sentence_composition",
+      "quick_response"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-051",
+    "level": "N4",
+    "module_number": 8,
+    "lesson_number": 51,
+    "title": "日常短文与听力整合 · 听读整合与任务完成 051",
+    "module_goal": "处理较长叙述、通知、邮件和行动选择",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "integrated_input",
+    "objectives": [
+      "阅读短文或听取对话，提取关键信息并完成真实任务。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-d81bb54f03",
+        "jlpt-vocab-ad11ce072b",
+        "jlpt-vocab-5d0d49b3fe",
+        "jlpt-vocab-63846aa88f",
+        "jlpt-vocab-688ed7ca0f",
+        "jlpt-vocab-79e62e3c87",
+        "jlpt-vocab-fa8716c349",
+        "jlpt-vocab-7c9d2c46eb",
+        "jlpt-vocab-cbb67e1b4d",
+        "jlpt-vocab-c64fff23ae",
+        "jlpt-vocab-cd96cff1ab",
+        "jlpt-vocab-de815ae4e6"
+      ],
+      "kanji": [
+        "jlpt-kanji-725b",
+        "jlpt-kanji-9b5a",
+        "jlpt-kanji-5144"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-oki-ni",
+        "jlpt-grammar-n4-ku-suru-ni-suru"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-grammar-n4-dasu-2",
+        "jlpt-sentence-grammar-n4-hodo-nai-1",
+        "jlpt-sentence-grammar-n4-hodo-nai-2",
+        "jlpt-sentence-grammar-n4-hodo-nai-3",
+        "jlpt-sentence-grammar-n4-nakanaka-nai-1",
+        "jlpt-sentence-grammar-n4-nakanaka-nai-2"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-grammar-n4-nakanaka-nai-3",
+        "jlpt-sentence-grammar-n4-zutsu-1",
+        "jlpt-sentence-grammar-n4-zutsu-2",
+        "jlpt-sentence-grammar-n4-zutsu-3",
+        "jlpt-sentence-grammar-n4-mo-emphasis-1",
+        "jlpt-sentence-grammar-n4-mo-emphasis-2",
+        "jlpt-sentence-grammar-n4-mo-emphasis-3",
+        "jlpt-sentence-grammar-n4-made-ni-1",
+        "jlpt-sentence-grammar-n4-made-ni-2",
+        "jlpt-sentence-grammar-n4-made-ni-3",
+        "jlpt-sentence-grammar-n4-koto-ga-aru-1",
+        "jlpt-sentence-grammar-n4-koto-ga-aru-2",
+        "jlpt-sentence-grammar-n4-koto-ga-aru-3",
+        "jlpt-sentence-grammar-n4-nai-to-ikenai-nakucha-1",
+        "jlpt-sentence-grammar-n4-nai-to-ikenai-nakucha-2",
+        "jlpt-sentence-grammar-n4-nai-to-ikenai-nakucha-3",
+        "jlpt-sentence-grammar-n4-sasete-kudasai-1",
+        "jlpt-sentence-grammar-n4-sasete-kudasai-2",
+        "jlpt-sentence-grammar-n4-sasete-kudasai-3",
+        "jlpt-sentence-grammar-n4-sonkeigo-1",
+        "jlpt-sentence-grammar-n4-sonkeigo-2",
+        "jlpt-sentence-grammar-n4-sonkeigo-3",
+        "jlpt-sentence-grammar-n4-kenjougo-1"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "context_expression",
+      "text_grammar",
+      "short_passage",
+      "task_comprehension",
+      "key_points"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-052",
+    "level": "N4",
+    "module_number": 8,
+    "lesson_number": 52,
+    "title": "日常短文与听力整合 · 新内容识别与语境理解 052",
+    "module_goal": "处理较长叙述、通知、邮件和行动选择",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "recognition",
+    "objectives": [
+      "学习本课词汇、汉字和语法，在短句中识别形式与核心功能。",
+      "掌握本课分配的 12 个词汇、3 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-a9fe0e98c1",
+        "jlpt-vocab-ed37fe04b5",
+        "jlpt-vocab-7ffceb4055",
+        "jlpt-vocab-82b0bf966f",
+        "jlpt-vocab-5f81e206e3",
+        "jlpt-vocab-df83eb2b9c",
+        "jlpt-vocab-977d6bf88c",
+        "jlpt-vocab-520cc83d87",
+        "jlpt-vocab-cd95253850",
+        "jlpt-vocab-0989d94de1",
+        "jlpt-vocab-8ff4f12975",
+        "jlpt-vocab-bcb7922671"
+      ],
+      "kanji": [
+        "jlpt-kanji-72ac",
+        "jlpt-kanji-59b9",
+        "jlpt-kanji-59c9"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-ga-suru",
+        "jlpt-grammar-n4-kana-kashira"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-grammar-n4-kenjougo-2",
+        "jlpt-sentence-grammar-n4-kenjougo-3",
+        "jlpt-sentence-grammar-n4-o-ni-naru-1",
+        "jlpt-sentence-grammar-n4-o-ni-naru-2",
+        "jlpt-sentence-grammar-n4-o-ni-naru-3",
+        "jlpt-sentence-grammar-n4-o-suru-1"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-grammar-n4-o-suru-2",
+        "jlpt-sentence-grammar-n4-o-suru-3",
+        "jlpt-sentence-grammar-n4-de-gozaimasu-1",
+        "jlpt-sentence-grammar-n4-de-gozaimasu-2",
+        "jlpt-sentence-grammar-n4-de-gozaimasu-3",
+        "jlpt-sentence-grammar-n4-te-mo-kamawanai-1",
+        "jlpt-sentence-grammar-n4-te-mo-kamawanai-2",
+        "jlpt-sentence-grammar-n4-te-mo-kamawanai-3",
+        "jlpt-sentence-grammar-n4-no-koto-nominalizer-1",
+        "jlpt-sentence-grammar-n4-no-koto-nominalizer-2",
+        "jlpt-sentence-grammar-n4-no-koto-nominalizer-3",
+        "jlpt-sentence-grammar-n4-ba-yokatta-1",
+        "jlpt-sentence-grammar-n4-ba-yokatta-2",
+        "jlpt-sentence-grammar-n4-ba-yokatta-3",
+        "jlpt-sentence-grammar-n4-tara-dou-1",
+        "jlpt-sentence-grammar-n4-tara-dou-2",
+        "jlpt-sentence-grammar-n4-hou-ga-ii-1",
+        "jlpt-sentence-grammar-n4-hou-ga-ii-2",
+        "jlpt-sentence-grammar-n4-hou-ga-ii-3",
+        "jlpt-sentence-grammar-n4-toka-toka-1",
+        "jlpt-sentence-grammar-n4-toka-toka-2",
+        "jlpt-sentence-grammar-n4-toka-toka-3",
+        "jlpt-sentence-grammar-n4-nado-1"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "kanji_reading",
+      "orthography",
+      "context_expression",
+      "sentence_grammar"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  },
+  {
+    "id": "jlpt-n4-lesson-053",
+    "level": "N4",
+    "module_number": 8,
+    "lesson_number": 53,
+    "title": "日常短文与听力整合 · 易混辨析与受控输出 053",
+    "module_goal": "处理较长叙述、通知、邮件和行动选择",
+    "level_ability_goal": "理解以熟悉日常主题为中心的基础日语：能读基础词汇和汉字构成的短文，能听懂语速较慢的日常对话。",
+    "phase": "contrast_and_use",
+    "objectives": [
+      "比较近义形式，在替换、排序和情境选择中正确使用。",
+      "掌握本课分配的 12 个词汇、4 个汉字和 2 个语法点。",
+      "精学 6 条目标例句，其余 23 条作为检索和扩展语料。",
+      "通过复习任务把新内容与此前课程建立联系。"
+    ],
+    "content_ids": {
+      "vocabulary": [
+        "jlpt-vocab-b80da200ff",
+        "jlpt-vocab-d9f9f17224",
+        "jlpt-vocab-6926bbe9d4",
+        "jlpt-vocab-f079ca12a7",
+        "jlpt-vocab-58c9a21aa1",
+        "jlpt-vocab-e1641974f4",
+        "jlpt-vocab-f7e0744822",
+        "jlpt-vocab-ceec15828f",
+        "jlpt-vocab-12abb2a2c6",
+        "jlpt-vocab-327c67b830",
+        "jlpt-vocab-44a2bc7c32",
+        "jlpt-vocab-27046b71e1"
+      ],
+      "kanji": [
+        "jlpt-kanji-6f22",
+        "jlpt-kanji-574a",
+        "jlpt-kanji-51c4",
+        "jlpt-kanji-75e9"
+      ],
+      "grammar": [
+        "jlpt-grammar-n4-te-kuremasen-ka-te-itadakemasen-ka",
+        "jlpt-grammar-n4-naide"
+      ],
+      "target_sentences": [
+        "jlpt-sentence-grammar-n4-nado-2",
+        "jlpt-sentence-grammar-n4-nado-3",
+        "jlpt-sentence-grammar-n4-de-mo-suggestion-1",
+        "jlpt-sentence-grammar-n4-de-mo-suggestion-2",
+        "jlpt-sentence-grammar-n4-de-mo-suggestion-3",
+        "jlpt-sentence-grammar-n4-sa-1"
+      ],
+      "reference_sentences": [
+        "jlpt-sentence-grammar-n4-sa-2",
+        "jlpt-sentence-grammar-n4-sa-3",
+        "jlpt-sentence-grammar-n4-me-1",
+        "jlpt-sentence-grammar-n4-me-2",
+        "jlpt-sentence-grammar-n4-me-3",
+        "jlpt-sentence-grammar-n4-oki-ni-1",
+        "jlpt-sentence-grammar-n4-oki-ni-2",
+        "jlpt-sentence-grammar-n4-oki-ni-3",
+        "jlpt-sentence-grammar-n4-ku-suru-ni-suru-1",
+        "jlpt-sentence-grammar-n4-ku-suru-ni-suru-2",
+        "jlpt-sentence-grammar-n4-ku-suru-ni-suru-3",
+        "jlpt-sentence-grammar-n4-ga-suru-1",
+        "jlpt-sentence-grammar-n4-ga-suru-2",
+        "jlpt-sentence-grammar-n4-ga-suru-3",
+        "jlpt-sentence-grammar-n4-kana-kashira-1",
+        "jlpt-sentence-grammar-n4-kana-kashira-2",
+        "jlpt-sentence-grammar-n4-kana-kashira-3",
+        "jlpt-sentence-grammar-n4-te-kuremasen-ka-te-itadakemasen-ka-1",
+        "jlpt-sentence-grammar-n4-te-kuremasen-ka-te-itadakemasen-ka-2",
+        "jlpt-sentence-grammar-n4-te-kuremasen-ka-te-itadakemasen-ka-3",
+        "jlpt-sentence-grammar-n4-naide-1",
+        "jlpt-sentence-grammar-n4-naide-2",
+        "jlpt-sentence-grammar-n4-naide-3"
+      ]
+    },
+    "activities": [
+      {
+        "type": "recognition",
+        "instruction": "形式—读音—含义三向识别；错误项进入本地错题与间隔复习。"
+      },
+      {
+        "type": "controlled_practice",
+        "instruction": "完成语境选择、句子排序、改写和易混辨析。"
+      },
+      {
+        "type": "reading",
+        "instruction": "使用本课及已学内容完成分级阅读；正式发布前补齐经审核文本和解析。"
+      },
+      {
+        "type": "listening",
+        "instruction": "使用本课及已学内容完成分级听辨；正式发布前补齐经审核音频、脚本和解析。"
+      },
+      {
+        "type": "output",
+        "instruction": "按情境组织 2—5 句口头或书面表达；AI 反馈为可选，不影响本地课程学习。"
+      }
+    ],
+    "official_item_type_alignment": [
+      "paraphrase",
+      "usage",
+      "sentence_composition",
+      "quick_response"
+    ],
+    "pass_criteria": {
+      "recognition_accuracy": 0.8,
+      "production_accuracy": 0.7,
+      "reading_or_listening_accuracy": 0.7,
+      "minimum_review_items": 5
+    },
+    "review_plan": {
+      "first_review": "same_day",
+      "later_reviews_days": [
+        1,
+        3,
+        7,
+        14,
+        30
+      ],
+      "adaptive_rule": "按本地答题结果调整；未经用户主动选择不调用 AI。"
+    },
+    "review_status": "draft_needs_native_review"
+  }
+]

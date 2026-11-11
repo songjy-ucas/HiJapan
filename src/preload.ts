@@ -1,7 +1,41 @@
 import { contextBridge, ipcRenderer } from 'electron';
 import type { HiJapanApi } from './shared/contracts';
+import type { PetSnapshot, PetDestination } from './shared/pet-contracts';
 
 const api: HiJapanApi = {
+  companion: {
+    onLesson: (listener) => {
+      const handler = (_event: Electron.IpcRendererEvent, id: string) =>
+        listener(id);
+      ipcRenderer.on('pet:lesson', handler);
+      return () => {
+        ipcRenderer.removeListener('pet:lesson', handler);
+      };
+    },
+    resetPosition: () => ipcRenderer.invoke('pet:resetPosition'),
+    getState: () => ipcRenderer.invoke('pet:getState'),
+    updatePreferences: (patch) =>
+      ipcRenderer.invoke('pet:updatePreferences', patch),
+    setActivity: (activity) => ipcRenderer.invoke('pet:setActivity', activity),
+    onState: (listener) => {
+      const handler = (_event: Electron.IpcRendererEvent, state: PetSnapshot) =>
+        listener(state);
+      ipcRenderer.on('pet:state', handler);
+      return () => {
+        ipcRenderer.removeListener('pet:state', handler);
+      };
+    },
+    onNavigate: (listener) => {
+      const handler = (
+        _event: Electron.IpcRendererEvent,
+        destination: PetDestination,
+      ) => listener(destination);
+      ipcRenderer.on('pet:navigate', handler);
+      return () => {
+        ipcRenderer.removeListener('pet:navigate', handler);
+      };
+    },
+  },
   app: {
     getSnapshot: () => ipcRenderer.invoke('app:getSnapshot'),
     saveProfile: (input) => ipcRenderer.invoke('app:saveProfile', input),
@@ -22,6 +56,15 @@ const api: HiJapanApi = {
         lessonId,
         gameCompleted,
       ),
+    listJlptLessons: (level) =>
+      ipcRenderer.invoke('learning:listJlptLessons', level),
+    getJlptLesson: (lessonId) =>
+      ipcRenderer.invoke('learning:getJlptLesson', lessonId),
+    getJlptProgress: () => ipcRenderer.invoke('learning:getJlptProgress'),
+    completeJlptLesson: (input) =>
+      ipcRenderer.invoke('learning:completeJlptLesson', input),
+    getJlptCumulativeLesson: (level) =>
+      ipcRenderer.invoke('learning:getJlptCumulativeLesson', level),
   },
   review: {
     getDue: (limit) => ipcRenderer.invoke('review:getDue', limit),

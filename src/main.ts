@@ -3,6 +3,8 @@ import path from 'node:path';
 import started from 'electron-squirrel-startup';
 import { HiJapanDatabase } from './main/database';
 import { registerIpcHandlers } from './main/ipc';
+import { DesktopPetController } from './main/desktop-pet';
+import { PetChatService } from './main/pet-chat';
 
 // HiJapan is a mostly static learning interface. Software rendering avoids
 // transient green/black Chromium compositor tiles seen on some Windows GPUs.
@@ -17,6 +19,7 @@ if (started) {
 
 let database: HiJapanDatabase | null = null;
 let unregisterIpc: (() => void) | null = null;
+let desktopPet: DesktopPetController | null = null;
 
 const createWindow = () => {
   const mainWindow = new BrowserWindow({
@@ -53,7 +56,28 @@ const createWindow = () => {
 
   if (!database) database = new HiJapanDatabase();
   unregisterIpc?.();
-  unregisterIpc = registerIpcHandlers(database, mainWindow);
+  desktopPet = new DesktopPetController(
+    mainWindow,
+    (petWindow) => {
+      if (MAIN_WINDOW_VITE_DEV_SERVER_URL) {
+        void petWindow.loadURL(
+          new URL('pet.html', MAIN_WINDOW_VITE_DEV_SERVER_URL).toString(),
+        );
+      } else {
+        void petWindow.loadFile(
+          path.join(__dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/pet.html`),
+        );
+      }
+    },
+    new PetChatService(database),
+  );
+  unregisterIpc = registerIpcHandlers(database, mainWindow, desktopPet);
+  mainWindow.on('closed', () => {
+    desktopPet?.dispose();
+    desktopPet = null;
+    unregisterIpc?.();
+    unregisterIpc = null;
+  });
 };
 
 // This method will be called when Electron has finished
@@ -80,6 +104,8 @@ app.whenReady().then(() => {
 });
 
 app.on('before-quit', () => {
+  desktopPet?.dispose();
+  desktopPet = null;
   unregisterIpc?.();
   database?.close();
   database = null;

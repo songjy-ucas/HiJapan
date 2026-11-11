@@ -1,7 +1,7 @@
 {
   "name": "hijapan",
   "productName": "HiJapan 日语随行",
-  "version": "0.1.5",
+  "version": "0.1.7",
   "private": true,
   "description": "纯本地、无后端的日语学习桌面软件",
   "keywords": [
@@ -27,6 +27,7 @@
     "test:watch": "vitest",
     "assets:icon": "node scripts/assets/build-icons.mjs",
     "content:validate": "node scripts/content/validate-content.mjs",
+    "content:jlpt:build": "node scripts/content/build-jlpt-runtime.mjs",
     "release:check": "node scripts/content/validate-content.mjs --release && npm run typecheck && npm run lint && npm run test",
     "make:win": "npm run assets:icon && electron-forge make --platform=win32"
   },

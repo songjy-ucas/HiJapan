@@ -1,0 +1,94 @@
+{
+  "schema_version": "0.2.0-draft",
+  "generated_on": "2026-10-29",
+  "review_status": "draft_needs_native_review",
+  "levels": {
+    "N5": {
+      "files": {
+        "vocabulary": "data/vocabulary-N5.jsonl",
+        "kanji": "data/kanji-N5.jsonl",
+        "grammar": "data/grammar-N5.jsonl",
+        "sentences": "data/sentences-N5.jsonl",
+        "lessons": "data/lessons-N5.json"
+      },
+      "counts": {
+        "vocabulary": 674,
+        "kanji": 84,
+        "grammar": 81,
+        "sentences": 1562,
+        "lessons": 57
+      }
+    },
+    "N4": {
+      "files": {
+        "vocabulary": "data/vocabulary-N4.jsonl",
+        "kanji": "data/kanji-N4.jsonl",
+        "grammar": "data/grammar-N4.jsonl",
+        "sentences": "data/sentences-N4.jsonl",
+        "lessons": "data/lessons-N4.json"
+      },
+      "counts": {
+        "vocabulary": 630,
+        "kanji": 169,
+        "grammar": 98,
+        "sentences": 1530,
+        "lessons": 53
+      }
+    },
+    "N3": {
+      "files": {
+        "vocabulary": "data/vocabulary-N3.jsonl",
+        "kanji": "data/kanji-N3.jsonl",
+        "grammar": "data/grammar-N3.jsonl",
+        "sentences": "data/sentences-N3.jsonl",
+        "lessons": "data/lessons-N3.json"
+      },
+      "counts": {
+        "vocabulary": 1659,
+        "kanji": 387,
+        "grammar": 101,
+        "sentences": 3521,
+        "lessons": 139
+      }
+    },
+    "N2": {
+      "files": {
+        "vocabulary": "data/vocabulary-N2.jsonl",
+        "kanji": "data/kanji-N2.jsonl",
+        "grammar": "data/grammar-N2.jsonl",
+        "sentences": "data/sentences-N2.jsonl",
+        "lessons": "data/lessons-N2.json"
+      },
+      "counts": {
+        "vocabulary": 1778,
+        "kanji": 398,
+        "grammar": 123,
+        "sentences": 3417,
+        "lessons": 149
+      }
+    },
+    "N1": {
+      "files": {
+        "vocabulary": "data/vocabulary-N1.jsonl",
+        "kanji": "data/kanji-N1.jsonl",
+        "grammar": "data/grammar-N1.jsonl",
+        "sentences": "data/sentences-N1.jsonl",
+        "lessons": "data/lessons-N1.json"
+      },
+      "counts": {
+        "vocabulary": 3070,
+        "kanji": 1345,
+        "grammar": 123,
+        "sentences": 5214,
+        "lessons": 269
+      }
+    }
+  },
+  "totals": {
+    "vocabulary": 7811,
+    "kanji": 2383,
+    "grammar": 526,
+    "sentences": 15244,
+    "lessons": 667
+  }
+}

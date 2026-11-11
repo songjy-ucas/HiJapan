@@ -1,0 +1,335 @@
+:root {
+  font-family: 'Segoe UI', 'Microsoft YaHei UI', sans-serif;
+  color: #3f426a;
+  background: transparent;
+}
+.pet-pose {
+  display: block;
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  left: -20px;
+  bottom: 0;
+  background-size: 300% 300%;
+  background-repeat: no-repeat;
+  animation: pet-breathe 4s ease-in-out infinite;
+}
+.activity-cheer .pet-pose {
+  animation: pet-cheer 0.65s ease-in-out 3;
+}
+.activity-hello .pet-pose {
+  animation: pet-hello 0.7s ease-in-out 3;
+}
+.activity-drag .pet-pose {
+  animation: none;
+  transform: rotate(-4deg);
+}
+.activity-sleep .pet-pose {
+  animation: pet-breathe 7s ease-in-out infinite;
+}
+.pet-scene.chat-open {
+  width: 640px;
+  height: 600px;
+}
+.chat-open .pet-character {
+  left: auto;
+  right: 20px;
+}
+.chat-open .pet-name {
+  left: auto;
+  right: 52px;
+}
+.chat-open .pet-bubble {
+  left: auto;
+  right: 10px;
+  width: 220px;
+  top: 180px;
+}
+.chat-open .pet-menu {
+  left: auto;
+  right: 5px;
+  top: 10px;
+}
+.pet-chat {
+  position: absolute;
+  top: 10px;
+  left: 8px;
+  width: 380px;
+  height: 575px;
+  padding: 14px;
+  background: #fffdfafc;
+  border: 1px solid #d3d7e7;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+}
+.pet-chat header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pet-chat button {
+  border: 1px solid #d3d7e7;
+  border-radius: 8px;
+  background: #eff0fa;
+  padding: 7px;
+}
+.pet-chat-notice {
+  font-size: 11px;
+  color: #777;
+  line-height: 1.4;
+  margin: 0;
+}
+.pet-chat-history {
+  overflow: auto;
+  flex: 1;
+  user-select: text;
+}
+.pet-chat-history article {
+  border-radius: 10px;
+  background: #f2f3fa;
+  padding: 10px;
+  margin: 8px 0;
+}
+.pet-chat-history article.user {
+  background: #e5eff4;
+  margin-left: 30px;
+}
+.pet-chat-history p {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+  margin: 6px 0;
+}
+.pet-course {
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin-top: 8px;
+}
+.pet-course small {
+  display: block;
+  margin-top: 4px;
+  color: #65728b;
+}
+.pet-followup {
+  border-left: 3px solid #b49bc9;
+  padding-left: 8px;
+}
+.pet-chat form {
+  display: flex;
+  gap: 6px;
+}
+.pet-chat textarea {
+  resize: none;
+  width: 100%;
+  height: 64px;
+  border: 1px solid #d3d7e7;
+  border-radius: 8px;
+  padding: 8px;
+  font: inherit;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+#pet-root {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+}
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+button:focus-visible {
+  outline: 3px solid #7f8cce;
+  outline-offset: 2px;
+}
+.pet-scene {
+  width: 280px;
+  height: 400px;
+  position: relative;
+  user-select: none;
+}
+.pet-bubble {
+  position: absolute;
+  top: 14px;
+  left: 18px;
+  width: 244px;
+  padding: 12px 15px;
+  border: 1px solid #d8daf0;
+  border-radius: 18px 18px 6px 18px;
+  background: #fffcf9f5;
+  font-size: 13px;
+  line-height: 1.5;
+  box-shadow: 0 3px 12px #29365f15;
+}
+.pet-character {
+  position: absolute;
+  bottom: 42px;
+  left: 40px;
+  width: 200px;
+  height: 275px;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  touch-action: none;
+}
+.pet-character img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  transform-origin: 50% 95%;
+  animation: pet-breathe 4s ease-in-out infinite;
+  filter: drop-shadow(0 4px 3px #3d447524);
+}
+.pet-name {
+  position: absolute;
+  bottom: 12px;
+  left: 72px;
+  width: 136px;
+  min-height: 29px;
+  border: 1px solid #dde0ef;
+  border-radius: 18px;
+  background: #fffcfaf2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  font-size: 12px;
+}
+.pet-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #83a5ad;
+}
+.pet-sparkle {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  color: #b48abb;
+  font-size: 27px;
+  pointer-events: none;
+}
+.activity-cheer img {
+  animation: pet-cheer 0.65s ease-in-out 3;
+}
+.activity-hello img {
+  animation: pet-hello 0.7s ease-in-out 3;
+}
+.activity-drag img {
+  animation: none;
+  transform: translateY(-8px) rotate(-5deg);
+}
+.activity-sleep img {
+  animation: pet-breathe 7s ease-in-out infinite;
+  filter: brightness(0.85) saturate(0.7);
+  transform: rotate(3deg);
+}
+.activity-study img {
+  animation: pet-breathe 5s ease-in-out infinite;
+}
+.activity-think .pet-sparkle {
+  animation: pet-pulse 1.5s ease-in-out infinite;
+}
+.activity-speak .pet-sparkle {
+  animation: pet-pulse 0.8s ease-in-out infinite;
+}
+.pet-menu {
+  position: absolute;
+  z-index: 5;
+  top: 10px;
+  left: 12px;
+  width: 256px;
+  padding: 13px;
+  border: 1px solid #d3d7e7;
+  border-radius: 18px;
+  background: #fffdfafc;
+  box-shadow: 0 5px 18px #36406920;
+}
+.pet-menu-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8px;
+  font-size: 13px;
+  font-weight: 650;
+}
+.pet-menu-title button {
+  border: 0;
+  background: transparent;
+  font-size: 21px;
+}
+.pet-menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+.pet-menu-grid button {
+  background: #f3f4fb;
+  border: 1px solid #e2e4f2;
+  border-radius: 9px;
+  padding: 9px 3px;
+  font-size: 12px;
+}
+.pet-menu-grid button:hover {
+  background: #e9eaf8;
+}
+@keyframes pet-breathe {
+  0%,
+  100% {
+    scale: 1 1;
+  }
+  50% {
+    scale: 1.012 0.987;
+  }
+}
+@keyframes pet-cheer {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-13px) rotate(-3deg);
+  }
+}
+@keyframes pet-hello {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  30% {
+    transform: rotate(-4deg);
+  }
+  70% {
+    transform: rotate(4deg);
+  }
+}
+@keyframes pet-pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.reduced-motion *,
+.reduced-motion img {
+  animation: none !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  img {
+    animation: none !important;
+  }
+}

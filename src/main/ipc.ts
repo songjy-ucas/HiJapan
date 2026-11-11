@@ -1,6 +1,6 @@
 import { ipcMain, type BrowserWindow, type IpcMainInvokeEvent } from 'electron';
 import { z } from 'zod';
-import type { Scene } from '../shared/contracts';
+import type { JlptLevel, Scene } from '../shared/contracts';
 import {
   createConversationFeedback,
   createConversationReply,
@@ -10,8 +10,16 @@ import {
 import { exportBackup, importBackup } from './backup';
 import { deleteApiKey, loadApiKey, saveApiKey } from './credentials';
 import type { HiJapanDatabase } from './database';
+import type { DesktopPetController } from './desktop-pet';
 
 const sceneSchema = z.enum(['hotel', 'restaurant', 'shopping', 'sightseeing']);
+const jlptLevelSchema = z.enum(['N5', 'N4', 'N3', 'N2', 'N1']);
+const jlptCompletionSchema = z.object({
+  lessonId: z.string().min(1).max(120),
+  score: z.number().min(0).max(100),
+  difficultItemIds: z.array(z.string().min(1)).max(30),
+  gameCompleted: z.boolean().optional(),
+});
 const profileSchema = z.object({
   displayName: z.string().trim().max(40),
   primaryMode: z.enum(['travel', 'jlpt', 'conversation']),
@@ -40,6 +48,7 @@ const turnSchema = z.object({
 export function registerIpcHandlers(
   database: HiJapanDatabase,
   mainWindow: BrowserWindow,
+  desktopPet?: DesktopPetController,
 ) {
   const trusted = (event: IpcMainInvokeEvent) => {
     if (event.sender !== mainWindow.webContents)
@@ -54,7 +63,24 @@ export function registerIpcHandlers(
   ) => {
     ipcMain.handle(channel, async (event, ...args: TArgs) => {
       trusted(event);
-      return callback(event, ...args);
+      const aiRequest =
+        channel === 'ai:sendTurn' || channel === 'ai:finishConversation';
+      if (aiRequest) desktopPet?.setBase('think');
+      try {
+        const result = await callback(event, ...args);
+        if (
+          [
+            'learning:completeLesson',
+            'learning:completeKanaLesson',
+            'learning:completeJlptLesson',
+            'review:grade',
+          ].includes(channel)
+        )
+          desktopPet?.react('cheer');
+        return result;
+      } finally {
+        if (aiRequest) desktopPet?.setBase('idle');
+      }
     });
   };
 
@@ -64,6 +90,7 @@ export function registerIpcHandlers(
   );
   handle('app:resetAllData', async () => {
     database.resetAllData();
+    desktopPet?.reset();
     await deleteApiKey();
   });
 
@@ -82,6 +109,19 @@ export function registerIpcHandlers(
         z.string().min(1).parse(lessonId),
         z.array(z.string().min(1)).parse(difficultIds),
       ),
+  );
+  handle('learning:listJlptLessons', (_event, level: JlptLevel) =>
+    database.listJlptLessons(jlptLevelSchema.parse(level)),
+  );
+  handle('learning:getJlptLesson', (_event, lessonId: string) =>
+    database.getJlptLesson(z.string().min(1).max(120).parse(lessonId)),
+  );
+  handle('learning:getJlptProgress', () => database.getJlptProgress());
+  handle('learning:completeJlptLesson', (_event, input: unknown) =>
+    database.completeJlptLesson(jlptCompletionSchema.parse(input)),
+  );
+  handle('learning:getJlptCumulativeLesson', (_event, level: JlptLevel) =>
+    database.getJlptCumulativeLesson(jlptLevelSchema.parse(level)),
   );
   handle('learning:listDialogues', (_event, scene?: Scene) => {
     const parsed = scene ? sceneSchema.parse(scene) : undefined;
@@ -214,6 +254,11 @@ export function registerIpcHandlers(
       'learning:listDialogues',
       'learning:getKanaProgress',
       'learning:completeKanaLesson',
+      'learning:listJlptLessons',
+      'learning:getJlptLesson',
+      'learning:getJlptProgress',
+      'learning:completeJlptLesson',
+      'learning:getJlptCumulativeLesson',
       'review:getDue',
       'review:grade',
       'ai:getSettings',

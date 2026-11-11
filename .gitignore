@@ -157,6 +157,8 @@ out/
 *.db-wal
 *.hijapan-backup.json
 credentials.json
+desktop-pet.json
+pet-chat.json
 playwright-report/
 test-results/
 

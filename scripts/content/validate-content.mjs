@@ -3,8 +3,10 @@ import { resolve } from 'node:path';
 
 const path = resolve('source/data/travel_priority_content.json');
 const kanaPath = resolve('source/data/kana_course.json');
+const jlptPath = resolve('source/data/jlpt_runtime.json');
 const data = JSON.parse(await readFile(path, 'utf8'));
 const kana = JSON.parse(await readFile(kanaPath, 'utf8'));
+const jlpt = JSON.parse(await readFile(jlptPath, 'utf8'));
 const errors = [];
 const expected = {
   vocabulary: 438,
@@ -18,6 +20,36 @@ for (const [key, count] of Object.entries(expected)) {
   if (!Array.isArray(data[key])) errors.push(`${key} 不是数组`);
   else if (data[key].length !== count)
     errors.push(`${key} 计数应为 ${count}，实际 ${data[key].length}`);
+}
+
+const jlptExpected = { vocabulary: 7811, grammar: 526, lessons: 782 };
+for (const [key, count] of Object.entries(jlptExpected)) {
+  if (!Array.isArray(jlpt[key])) errors.push(`JLPT ${key} 不是数组`);
+  else if (jlpt[key].length !== count)
+    errors.push(`JLPT ${key} 计数应为 ${count}，实际 ${jlpt[key].length}`);
+}
+const jlptVocabularyIds = new Set(jlpt.vocabulary.map((item) => item.id));
+const jlptGrammarIds = new Set(jlpt.grammar.map((item) => item.id));
+for (const grammar of jlpt.grammar) {
+  const text = `${grammar.formationZh ?? ''}${grammar.meaningZh ?? ''}${grammar.explanationZh ?? ''}`;
+  if (/\+{4,}|\uFFFD/u.test(text))
+    errors.push(`JLPT 语法 ${grammar.id} 含乱码或异常重复字符`);
+  if (!Array.isArray(grammar.examples) || grammar.examples.length === 0)
+    errors.push(`JLPT 语法 ${grammar.id} 缺少例句`);
+}
+for (const lesson of jlpt.lessons) {
+  if (lesson.minutes < 5 || lesson.minutes > 10)
+    errors.push(`JLPT 课程 ${lesson.id} 时长不在 5—10 分钟内`);
+  if (lesson.vocabularyIds.length > 10)
+    errors.push(`JLPT 课程 ${lesson.id} 超过 10 个新词`);
+  if (lesson.grammarIds.length > 2)
+    errors.push(`JLPT 课程 ${lesson.id} 超过 2 个语法点`);
+  for (const id of lesson.vocabularyIds)
+    if (!jlptVocabularyIds.has(id))
+      errors.push(`JLPT 课程 ${lesson.id} 引用了不存在的单词 ${id}`);
+  for (const id of lesson.grammarIds)
+    if (!jlptGrammarIds.has(id))
+      errors.push(`JLPT 课程 ${lesson.id} 引用了不存在的语法 ${id}`);
 }
 
 const collections = [
@@ -101,6 +133,8 @@ if (process.argv.includes('--release')) {
     errors.push(`正式发布被阻止：仍有 ${drafts.length} 条草稿内容`);
   if (String(kana.review_status).includes('draft'))
     errors.push('正式发布被阻止：五十音课程仍是草稿内容');
+  if (String(jlpt.reviewStatus).includes('draft'))
+    errors.push('正式发布被阻止：JLPT 课程仍是草稿内容');
 }
 
 if (errors.length > 0) {
@@ -109,5 +143,5 @@ if (errors.length > 0) {
 }
 
 console.log(
-  `内容校验通过：${expected.vocabulary} 词汇、${expected.phrases} 语句、${expected.grammar} 语法、${expected.dialogues} 对话行、${expected.lessons} 旅行课程、${kana.lessons.length} 节五十音课程。`,
+  `内容校验通过：旅行 ${expected.vocabulary} 词汇、${expected.phrases} 语句、${expected.grammar} 语法、${expected.dialogues} 对话行、${expected.lessons} 课程；五十音 ${kana.lessons.length} 课；JLPT ${jlptExpected.vocabulary} 词汇、${jlptExpected.grammar} 语法、${jlptExpected.lessons} 课程。`,
 );
